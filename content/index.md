@@ -3,19 +3,22 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
+title: "Phil White"
+permalink: /
 ---
 
-# Phil White
 I am an all-round engineer with leadership experience and a passion for delivering working software, fast. I am always open to and on the look out for new and exciting projects.
 
 ## Skills
 - Devops
 - Software Development
 - Leadership
-- Coaching 
+- Coaching
 
 ## Career
 
+|                           |                 |                |                       
+|---------------------------|-----------------|----------------|                       
 | Senior Software Engineer  | Triptease       | 2019 – present |
 | Devops Coach              | Triptease       | 2017 – 2019    |
 | Devops Engineer           | Triptease       | 2015 – 2017    |
@@ -24,7 +27,8 @@ I am an all-round engineer with leadership experience and a passion for deliveri
 | IT Project Manager        | Milsted Langdon | 2008 – 2009    |
 
 ## Education
-
+|                                                               |                     |           |                       
+|---------------------------------------------------------------|---------------------|-----------|
 | BA 1st Hons, Cultural Studies and Creative Studies in English | Bath Spa University | 2005–2008 |
 
 ## Training
@@ -49,7 +53,7 @@ Senior Software Engineer, Triptease
 > Puppeteer.js, Kustomization, Helm, Terraform, Prometheus
 
 - On demand browserless solution for web scraping >40rps
-- Containers on spot VMs autoscaled using custom metrics 
+- Containers on spot VMs autoscaled using custom metrics
 - Websocket connections load balanced via HAProxy
 
 ### Inventory Data Feed
@@ -66,8 +70,8 @@ Senior Software Engineer, Triptease
 Devops Coach, Triptease
 > Terraform, PagerDuty, Sysdig, Datadog, GCP
 
-- Led projects across engineering teams such as: 
-  - monitoring/alerting 
+- Led projects across engineering teams such as:
+  - monitoring/alerting
   - adopting IAC
   - observability
 - 1-2-1 and squad-level agile coaching
