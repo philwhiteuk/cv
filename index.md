@@ -6,6 +6,7 @@ layout: home
 title: "Phil White"
 permalink: /
 ---
+# Phil White
 
 I am an all-round engineer with leadership experience and a passion for delivering working software, fast. I am always open to and on the look out for new and exciting projects.
 
