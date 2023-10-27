@@ -43,7 +43,11 @@ baseurl: "/cv" # the subpath of your site, e.g. /blog
 url: "https://philwhite.uk" # the base hostname & protocol for your site, e.g. http://example.com
 
 collections:
-  - projects
+  projects:
+    output: false
+  skills:
+    output: true
+    permalink: /:collection/:path/
 
 # Theme Settings
 theme: minima

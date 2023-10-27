@@ -6,15 +6,13 @@ layout: home
 title: "Phil White"
 permalink: /
 ---
-# Phil White
 
 I am an all-round engineer with leadership experience and a passion for delivering working software, fast. I am always open to and on the look out for new and exciting projects.
 
 ## Skills
-- Devops
-- Software Development
-- Leadership
-- Coaching
+{% for skill in site.skills %}
+- [{{ skill.title }}]({{ skill.url | relative_url }})
+{% endfor %}
 
 ## Career
 

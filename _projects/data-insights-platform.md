@@ -8,6 +8,7 @@ tags:
     - Shell
     - BigQuery
     - Cloud Storage
+    - Software Development
 ---
 1. Service for providing aggregated data insights in near realtime
 2. Querying across >8Mil daily events

@@ -1,4 +1,5 @@
 {% for project in site.projects %}
+{% if include.tag == nil or project.tags contains include.tag %}
 <article>
     <h3><a href="#{{ project.title | slugify: 'latin' }}" id="{{ project.title | slugify: 'latin' }}">{{ project.title }}</a></h3>
     <h4><em>{{ project.role }}</em>, {{ project.org }}</h4>
@@ -11,4 +12,5 @@
         {{ project.content | markdownify }}
     </div>
 </article>
+{% endif %}
 {% endfor %}

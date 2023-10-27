@@ -8,6 +8,9 @@ tags:
     - Sysdig
     - Datadog
     - GCP
+    - Devops
+    - Coaching
+    - Leadership
 ---
 1. Led projects across engineering teams such as:
     1. monitoring/alerting
