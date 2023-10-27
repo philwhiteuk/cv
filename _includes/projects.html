@@ -1,0 +1,14 @@
+{% for project in site.projects %}
+<article>
+    <h3><a href="#{{ project.title | slugify: 'latin' }}" id="{{ project.title | slugify: 'latin' }}">{{ project.title }}</a></h3>
+    <h4><em>{{ project.role }}</em>, {{ project.org }}</h4>
+    <ul>
+        {% for tag in project.tags %}
+        <li>{{ tag }}</li>
+        {% endfor %}
+    </ul>
+    <div>
+        {{ project.content | markdownify }}
+    </div>
+</article>
+{% endfor %}

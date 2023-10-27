@@ -8,8 +8,11 @@
     {%- include header.html -%}
 
     <main class="page-content" aria-label="Content">
-      <div class="wrapper">
+      <aside class="wrapper">
         {% include anchor_headings.html anchorBody="%heading%" html=content %}
+      </aside>
+      <div class="wrapper">
+        {%- include projects.html -%}
       </div>
     </main>
 
