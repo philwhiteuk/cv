@@ -17,8 +17,8 @@ permalink: /
     <aside>
         <h2>Skills</h2>
         <ul>
-            {% for skill in site.skills %}
-            <li><a href="{{ skill.url | relative_url }}">{{ skill.title }}</a></li>
+            {% for tag in site.tags %}
+            <li><a href="{{ tag.url | relative_url }}">{{ tag.title }}</a></li>
             {% endfor %}
         </ul>
 

@@ -45,7 +45,7 @@ url: "https://philwhite.uk" # the base hostname & protocol for your site, e.g. h
 collections:
   projects:
     output: false
-  skills:
+  tags:
     output: true
     permalink: /:collection/:path/
 
