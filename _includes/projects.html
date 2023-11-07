@@ -5,7 +5,8 @@
     <h4><em>{{ project.role }}</em>, {{ project.org }}</h4>
     <ul>
         {% for tag in project.tags %}
-        <li>{{ tag }}</li>
+        {% assign tag_data = site.tags | where: "title", tag | first %}
+        <li>{% if tag_data %}<a href="{{ tag_data.url | relative_url }}">{% endif %}{{ tag }}{% if tag_data %}</a>{% endif %}</li>
         {% endfor %}
     </ul>
     <div>
