@@ -8,6 +8,12 @@ permalink: /
 ---
 
 <div class="home wrapper">
+    <section>
+        <p>I am an all-round engineer with leadership experience and a passion for delivering working software, fast. I am always open to and on the look out for new and exciting projects.
+        </p>
+        <h2>Recent Projects</h2>
+        {%- include projects.html -%}
+    </section>
     <aside>
         <h2>Skills</h2>
         <ul>
@@ -71,14 +77,4 @@ permalink: /
         </ul>
 
     </aside>
-
-    <section>
-        {%- if page.title -%}
-        <h1 class="page-heading">{{ page.title }}</h1>
-        {%- endif -%}
-        <p>I am an all-round engineer with leadership experience and a passion for delivering working software, fast. I am always open to and on the look out for new and exciting projects.
-        </p>
-        <h2>Recent Projects</h2>
-        {%- include projects.html -%}
-    </section>
 </div>
