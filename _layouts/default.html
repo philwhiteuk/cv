@@ -11,7 +11,10 @@
     </div>
   </header>
   <main class="page-content" aria-label="Content">
+    <div class="wrapper">
       {{ content }}
+      {%- include aside.html -%}
+    </div>
   </main>
   {%- include footer.html -%}
 </body>

@@ -26,22 +26,16 @@
     height: 100px;
   }
 
-  .wrapper.home {
-    align-items: center;
-    display: flex;
+  .page-content .wrapper {
+    display: grid;
+    grid-template-columns: 60% 40%;
   }
 
-  .wrapper.home section {
-    align-self: flex-end;
-    display: flex;
-    flex-direction: column;
+  .page-content .wrapper section {
     text-align: justify;
   }
 
-  .wrapper.home aside {
-    align-self: flex-start;
-    display: flex;
-    flex-direction: column;
+  .page-content .wrapper aside {
     padding-left: 4em;
   }
 

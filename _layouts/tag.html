@@ -2,15 +2,13 @@
 layout: default
 ---
 
-<div class="skill wrapper">
+<section id="tag">
     {%- if page.title -%}
     <h1 class="page-heading">{{ page.title }}</h1>
     {%- endif -%}
-    <aside>
-        {{ content }}
-    </aside>
+    {{ content }}
     <div>
         <h2>Related Experience</h2>
         {%- include projects.html tag=page.title -%}
     </div>
-</div>
+</section>
