@@ -1,7 +1,7 @@
 {% for project in site.projects %}
 {% if include.tag == nil or project.tags contains include.tag %}
 <article>
-    <h3><a href="#{{ project.title | slugify: 'latin' }}" id="{{ project.title | slugify: 'latin' }}">{{ project.title }}</a></h3>
+    <h3>{% include anchor.html text=project.title %}</h3>
     <h4><em>{{ project.role }}</em>, {{ project.org }}</h4>
     <ul>
         {% for tag in project.tags %}

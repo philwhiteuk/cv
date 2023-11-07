@@ -1,0 +1,2 @@
+{%- assign anchor = include.text | slugify: 'latin' -%}
+<a href="#{{ anchor }}" id="{{ anchor }}">{{ include.text }}</a>
