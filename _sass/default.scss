@@ -52,4 +52,8 @@ $on-laptop:        800px !default;
   "minima/layout"
 ;
 
-@import "partials/_overrides";
+@import
+  "overrides/base",
+  "overrides/layout",
+  "overrides/projects"
+;

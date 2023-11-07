@@ -1,0 +1,20 @@
+.project {
+  ul {
+    font-size: 0.9em;
+    margin: 0;
+    padding-bottom: 1em;
+  }
+
+  ul li {
+    display: inline;
+    list-style: none;
+  }
+
+  ul li::after {
+    content: ",";
+  }
+
+  ul li:last-child::after {
+    content: "";
+  }
+}

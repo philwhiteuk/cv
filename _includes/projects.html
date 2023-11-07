@@ -1,6 +1,6 @@
 {% for project in site.projects %}
 {% if include.tag == nil or project.tags contains include.tag %}
-<article>
+<article class="project">
     <h3>{{ project.title }}</h3>
     <h4><em>{{ project.role }}</em>, {{ project.org }}</h4>
     <ul>

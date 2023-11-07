@@ -1,0 +1,51 @@
+.site-header {
+  height: 80px;
+  overflow: visible;
+}
+
+.site-header .wrapper {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+}
+
+.site-header #badge {
+  border: 1px solid transparent;
+  border-radius: 55px;
+  justify-self: end;
+  margin-left: 1em;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+}
+
+.page-content .wrapper {
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+.page-content .wrapper section {
+  text-align: justify;
+}
+
+.page-content .wrapper aside {
+  padding-left: 4em;
+}
+
+.progress {
+  margin: 0;
+  padding-bottom: 1em;
+}
+
+.progress li {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.progress li span {
+  background: #0097EA;
+  border: #0097EA solid 0.4em;
+  border-radius: 0.3em;
+}
