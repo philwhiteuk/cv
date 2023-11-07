@@ -16,9 +16,9 @@ permalink: /
     </section>
     <aside>
         <h2>Skills</h2>
-        <ul>
+        <ul class="progress">
             {% for tag in site.tags %}
-            <li><a href="{{ tag.url | relative_url }}">{{ tag.title }}</a></li>
+            <li><a href="{{ tag.url | relative_url }}">{{ tag.title }}</a><span style="width: {{ tag.level }}%;"></span><p>{{ tag.level }}%</p></li>
             {% endfor %}
         </ul>
 
