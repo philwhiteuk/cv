@@ -1,4 +1,5 @@
-{% for project in site.projects %}
+{% assign projects_by_date = site.projects | sort: "start_date" | reverse %}
+{% for project in projects_by_date %}
 {% if include.tag == nil or project.tags contains include.tag %}
 <article class="project">
     <h3>{{ project.title }}</h3>

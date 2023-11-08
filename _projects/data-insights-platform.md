@@ -9,6 +9,7 @@ tags:
     - BigQuery
     - Cloud Storage
     - Software Development
+start_date: "2023-02-01"
 ---
 1. Service for providing aggregated data insights in near realtime
 2. Querying across >8Mil daily events

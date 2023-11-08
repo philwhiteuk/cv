@@ -11,6 +11,7 @@ tags:
     - Devops
     - Coaching
     - Leadership
+start_date: "2017-01-01"
 ---
 1. Led projects across engineering teams such as:
     1. monitoring/alerting

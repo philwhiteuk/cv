@@ -10,6 +10,7 @@ tags:
     - Serverless
     - Software Development
     - Leadership
+start_date: "2020-05-01"
 ---
 1. Initially a 6-month trial project sponsored by Google which later grew to become a production service
 2. Working with project sponsors and Google engineers Scaling from 1 to 10,000 hotels
