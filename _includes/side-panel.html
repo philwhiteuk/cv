@@ -1,7 +1,8 @@
 <aside>
     <h2>Skills</h2>
     <ul class="progress">
-        {% for tag in site.tags %}
+        {% assign site_tags = site.tags | sort: "level" | reverse %}
+        {% for tag in site_tags %}
         <li><a href="{{ tag.url | relative_url }}">{{ tag.title }}</a><span style="width: {{ tag.level }}%;"></span><p>{{ tag.level }}%</p></li>
         {% endfor %}
     </ul>
