@@ -28,16 +28,18 @@
     </ol>
 
     <h2>Education</h2>
-    <table>
-        <tbody>
-        <tr>
-            <td>BA 1st Class Hons, Cultural Studies and Creative Studies in English</td>
-            <td>Bath Spa University</td>
-            <td>2005–2008</td>
-        </tr>
-        </tbody>
-    </table>
-
+    <ol class="education">
+    {% assign education = site.data.education | sort: "from_date" | reverse %}
+    {% for period in education %}
+        <li>
+            <div>
+                <span>{{ period.award }} {{ period.subject }}</span>
+                <span><em>{{ period.institution }}</em></span>
+            </div>
+            <div>{{ period.from_date | date: "%Y" }} - {{ period.to_date | date: "%Y" | default: 'Now' }}</div>
+        </li>
+    {% endfor %}
+    </ol>
     <h2>Training</h2>
     <ul>
         <li>Linux Foundation Systems Administrator</li>
