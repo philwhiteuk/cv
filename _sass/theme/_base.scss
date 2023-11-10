@@ -1,0 +1,29 @@
+* {
+  font-size: $base_font_size;
+  font-style: normal;
+  font-weight: normal;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bolder;
+}
+
+h1 { font-size: $base_font_size * ($base_heading_modifier * 5) + 1 }
+h2 { font-size: $base_font_size * ($base_heading_modifier * 4) + 1 }
+h3 { font-size: $base_font_size * ($base_heading_modifier * 3) + 1 }
+h4 { font-size: $base_font_size * ($base_heading_modifier * 2) + 1 }
+h5 { font-size: $base_font_size * ($base_heading_modifier * 1) + 1 }
+

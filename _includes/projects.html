@@ -3,7 +3,8 @@
 {% if include.tag == nil or project.tags contains include.tag %}
 <article class="project">
     <h3>{{ project.title }}</h3>
-    <h4><em>{{ project.role }}</em>, {{ project.org }}</h4>
+    <h4>{{ project.role }}</h4>
+    <h5>{{ project.org }}</h5>
     <ul class="tags">
         {% assign tags_by_title = project.tags | sort %}
         {% for tag in tags_by_title %}

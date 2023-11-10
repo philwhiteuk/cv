@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
-{%- include head.html -%}
-<body>
-  <header class="site-header" role="banner">
-    <div class="wrapper">
+  {%- include head.html -%}
+  <body>
+    <header class="site-header" role="banner">
       <a class="site-title" rel="author" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
       <div id="badge">
         <img src="{{ '/assets/profile.jpeg' | relative_url }}" alt="my profile photo"/>
       </div>
-    </div>
-  </header>
-  <main class="page-content" aria-label="Content">
-    <div class="wrapper">
+    </header>
+    <main aria-label="Content">
       {{ content }}
       {%- include side-panel.html -%}
-    </div>
-  </main>
-  {%- include footer.html -%}
-</body>
+    </main>
+    {%- include footer.html -%}
+  </body>
 </html>
