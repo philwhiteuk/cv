@@ -13,8 +13,10 @@ tags:
     - Leadership
 start_date: "2017-01-01"
 ---
-1. Led projects across engineering teams such as:
-    1. monitoring/alerting
-    2. adopting IAC
-    3. observability
-2. 1-2-1 and squad-level agile coaching
+Led Devops transformation projects across engineering teams such as:
+
+- monitoring/alerting
+- adopting IAC
+- observability
+
+1-2-1 and squad-level mentoring and coaching.

@@ -4,7 +4,7 @@
 <article class="project">
     <h3>{{ project.title }}</h3>
     <h4><em>{{ project.role }}</em>, {{ project.org }}</h4>
-    <ul>
+    <ul class="tags">
         {% assign tags_by_title = project.tags | sort %}
         {% for tag in tags_by_title %}
         {% assign tag_data = site.tags | where: "title", tag | first %}

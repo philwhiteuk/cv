@@ -13,6 +13,6 @@ tags:
     - Devops
 start_date: "2015-11-01"
 ---
-1. Migrating production workload from Rackspace to GCP
-2. Enabling teams to build and deploy autonomously with building blocks provided via a Jenkins pipeline
-3. Researching and costing options for different providers
+Migrating production workload from _Rackspace to GCP_.
+Enabling teams to build and deploy autonomously with _building blocks provided via a Jenkins pipeline_.
+Researching and costing options for different providers.

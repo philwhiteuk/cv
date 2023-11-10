@@ -11,8 +11,8 @@ tags:
     - Software Development
 start_date: "2023-02-01"
 ---
-1. Service for providing aggregated data insights in near realtime
-2. Querying across >8Mil daily events
-3. Optimised using BI Engine to provide access to data with ~1s response time
-4. Dynamically merging data on an hourly cron
-5. Test-driven SQL using in-house mocking library
+API providing _aggregated data insights in near realtime_.
+Querying across _>8Mil daily events_.
+Optimised _using BI Engine_ to provide access to _data with ~1s response time_.
+Dynamically merging data on an hourly cron.
+_Test-driven SQL_ using in-house mocking library.
