@@ -1,0 +1,14 @@
+main section.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+}
+
+article.project {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+}
+
+#tag > div {
+  width: 100%;
+}

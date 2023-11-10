@@ -1,6 +1,25 @@
 @charset "utf-8";
 
-$base_font_size: 1em;
+$base_font_size: 16px;
+$base_line_height: 1.5em;
 $base_heading_modifier: 0.1;
+$base_text_colour: #000000;
 
-@import "theme/_base.scss";
+$base_anchor_text_colour_normal: #666666;
+$base_anchor_text_colour_visited: 'inherit';
+$base_anchor_text_colour_hovered: $base_text_colour;
+
+$base_primary_colour_100: red;
+$base_primary_colour_110: darkred;
+$base_secondary_colour_100: white;
+
+$base_primary_colour_200: green;
+$base_secondary_colour_200: black;
+
+
+@import
+  "theme/_aside.scss",
+  "theme/_base.scss",
+  "theme/_header.scss",
+  "theme/_projects.scss"
+;

@@ -2,28 +2,59 @@
   font-size: $base_font_size;
   font-style: normal;
   font-weight: normal;
+  line-height: $base_line_height;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
+body > header, body > main, body > aside, body > footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 2em 3em;
+}
+
+body > header:nth-child(odd),
+body > main:nth-child(odd),
+body > aside:nth-child(odd),
+body > footer:nth-child(odd)
+{
+  background-color: $base_primary_colour_100;
+  color: $base_secondary_colour_100;
+}
+
+body > header:nth-child(even),
+body > main:nth-child(even),
+body > aside:nth-child(even),
+body > footer:nth-child(even)
+{
+  background-color: $base_primary_colour_200;
+  color: $base_secondary_colour_200;
+}
+
 a {
-  color: inherit;
+  color: $base_anchor_text_colour_normal;
   cursor: pointer;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:visited {
-  color: inherit;
+  color: $base_anchor_text_colour_visited;
+}
+
+a:hover {
+  color: $base_anchor_text_colour_hovered;
+  text-decoration: underline;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: bolder;
 }
 
-h1 { font-size: $base_font_size * ($base_heading_modifier * 5) + 1 }
-h2 { font-size: $base_font_size * ($base_heading_modifier * 4) + 1 }
-h3 { font-size: $base_font_size * ($base_heading_modifier * 3) + 1 }
-h4 { font-size: $base_font_size * ($base_heading_modifier * 2) + 1 }
-h5 { font-size: $base_font_size * ($base_heading_modifier * 1) + 1 }
+h1 { font-size: 1em * ($base_heading_modifier * 5) + 1 }
+h2 { font-size: 1em * ($base_heading_modifier * 4) + 1 }
+h3 { font-size: 1em * ($base_heading_modifier * 3) + 1 }
+h4 { font-size: 1em * ($base_heading_modifier * 2) + 1 }
+h5 { font-size: 1em * ($base_heading_modifier * 1) + 1 }
 

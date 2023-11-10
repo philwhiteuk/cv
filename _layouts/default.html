@@ -2,7 +2,7 @@
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
   {%- include head.html -%}
   <body>
-    <header class="site-header" role="banner">
+    <header role="banner">
       <a class="site-title" rel="author" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
       <div id="badge">
         <img src="{{ '/assets/profile.jpeg' | relative_url }}" alt="my profile photo"/>
@@ -10,8 +10,13 @@
     </header>
     <main aria-label="Content">
       {{ content }}
-      {%- include side-panel.html -%}
     </main>
+    <div id="line-break">
+      <svg viewBox="0 0 1024 45">
+        <polygon points="1024,0 1024,45 0,45" />
+      </svg>
+    </div>
+    {%- include aside.html -%}
     {%- include footer.html -%}
   </body>
 </html>
