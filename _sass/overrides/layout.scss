@@ -21,59 +21,79 @@
 }
 
 .page-content .wrapper {
-    display: grid;
-    grid-template-columns: 60% 40%;
+  display: grid;
+  grid-template-columns: 60% 40%;
 }
 
 .page-content .wrapper section {
-    text-align: justify;
+  text-align: justify;
 }
 
 .page-content .wrapper aside {
-    padding-left: 4em;
-
-    .progress {
-      margin: 0;
-      padding-bottom: 1em;
-    }
-
-    .progress li {
-      display: flex;
-      flex-direction: column;
-      list-style: none;
-      margin: 0.1em 0;
-    }
-
-    .progress li a {
-      display: block;
-      height: 100%;
-      padding: 0.05em 0.05em 0.05em 0.5em;
-      text-decoration: none;
-      width: 100%;
-
-      color: inherit;
-      margin: 0;
-    }
-
-    .progress li a:hover {
-      background: #f7f7f7;
-      border: #e8e8e8 solid 0.1em;
-      border-radius: 0.3em;
-      padding: 0em 0em 0em 0.45em;
-    }
-
-    .progress li span {
-      background: #0097EA;
-      border: #0097EA solid 0.4em;
-      border-radius: 0.3em;
-      display: inline-block;
-    }
-
-    .progress li p {
-      margin: 0;
-    }
+  padding-left: 4em;
 }
 
+.page-content .wrapper aside .progress {
+  margin: 0;
+  padding-bottom: 1em;
 
+  li {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0.1em 0;
+  }
 
+  li a {
+    display: block;
+    height: 100%;
+    padding: 0.4em 0.5em;
+    text-decoration: none;
+    width: 100%;
 
+    color: inherit;
+    margin: 0;
+  }
+
+  li a:hover {
+    border: #e8e8e8 solid 0.05em;
+    border-radius: 0.3em;
+    padding: 0.35em 0.45em;
+  }
+
+  li span {
+    background: #0097EA;
+    border: #0097EA solid 0.4em;
+    border-radius: 0.3em;
+    display: inline-block;
+  }
+
+  li p {
+    margin: 0;
+  }
+}
+
+.page-content .wrapper aside .career {
+  margin: 0;
+  padding-bottom: 1em;
+
+  li {
+    border: solid #e8e8e8;
+    border-width: 0 0 0.05em 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0.2em 0;
+    padding: 0.5em 0;
+  }
+
+  li:last-child {
+    border: none;
+  }
+
+  li div {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,18 +1,25 @@
 - role: Senior Software Engineer
   org: Triptease
-  tenure: 2019 – present
-- role: Devops Coach
-  org: Triptease
-  tenure: 2017 - 2019
+  from_date: 2019-01-01
+  to_date:
 - role: Devops Engineer
   org: Triptease
-  tenure: 2015 - 2017
+  from_date: 2015-01-01
+  to_date: 2017-01-01
+- role: Devops Coach
+  org: Triptease
+  from_date: 2017-01-01
+  to_date: 2019-01-01
 - role: Devops / Delivery Manager
   org: GForces
-  tenure: 2011 - 2015
+  from_date: 2011-01-01
+  to_date: 2015-01-01
 - role: IT Project Manager
   org: GForces
-  tenure: 2009 – 2011
+  from_date: 2009-01-01
+  to_date: 2011-01-01
 - role: IT Project Manager
   org: Milsted Langdon
-  tenure: 2008 - 2009
+  from_date: 2008-01-01
+  to_date: 2009-01-01
+

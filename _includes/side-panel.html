@@ -1,6 +1,6 @@
 <aside>
-    <h2>Skills</h2>
-    <ul class="progress">
+    <h2>Skills / Expertise</h2>
+    <ol class="progress">
         {% assign site_tags = site.tags | sort: "level" | reverse %}
         {% for tag in site_tags %}
         <li>
@@ -11,20 +11,21 @@
             </a>
         </li>
         {% endfor %}
-    </ul>
+    </ol>
 
     <h2>Career</h2>
-    <table>
-        <tbody>
-        {% for item in site.data.career %}
-            <tr>
-                <td>{{ item.role }}</td>
-                <td>{{ item.org }}</td>
-                <td>{{ item.tenure }}</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <ol class="career">
+    {% assign career = site.data.career | sort: "from_date" | reverse %}
+    {% for position in career %}
+        <li>
+            <div>
+                <span>{{ position.role }}</span>
+                <span><em>{{ position.org }}</em></span>
+            </div>
+            <div>{{ position.from_date | date: "%Y" }} - {{ position.to_date | date: "%Y" | default: 'Now' }}</div>
+        </li>
+    {% endfor %}
+    </ol>
 
     <h2>Education</h2>
     <table>
