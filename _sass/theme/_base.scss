@@ -1,8 +1,12 @@
-* {
+html {
+  font-family: $base_font_family;
   font-size: $base_font_size;
   font-style: normal;
   font-weight: normal;
   line-height: $base_line_height;
+}
+
+* {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -83,6 +87,10 @@ h1, h2, h3, h4, h5, h6 {
 
 h1, h2 {
   margin: 1rem 0;
+}
+
+h3, h4, h5, h6 {
+  margin: 0.5rem 0;
 }
 
 h1 { font-size: 1em * ($base_heading_modifier * 5) + 1 }

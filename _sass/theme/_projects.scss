@@ -8,8 +8,18 @@ article.project {
   display: flex;
   flex-direction: column;
   text-align: justify;
-}
 
-#tag > div {
-  width: 100%;
+  .tags li {
+    display: inline;
+    font-size: 0.85em;
+    line-height: $base_line_height * 2;
+  }
+
+  .tags li:after {
+    content: ', ';
+  }
+
+  .tags li:last-child:after {
+    content: '';
+  }
 }
