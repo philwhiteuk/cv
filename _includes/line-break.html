@@ -1,0 +1,10 @@
+<div class="line-break">
+    <svg viewBox="0 0 1024 45">
+        {% if include.direction == "right" %}
+        <polygon points="1024,0 1024,45 0,45" />
+        {% endif %}
+        {% if include.direction == "left" %}
+        <polygon points="0,45 1024,45 0,0" />
+        {% endif %}
+    </svg>
+</div>

@@ -8,29 +8,58 @@
   padding: 0;
 }
 
-body > header, body > main, body > aside, body > footer {
+body > * {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+body > * .wrapper {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  padding: 2em 3em;
+  padding: 2rem 3rem;
+  max-width: 1024px;
+  width: 95%;
 }
 
-body > header:nth-child(odd),
-body > main:nth-child(odd),
-body > aside:nth-child(odd),
-body > footer:nth-child(odd)
+body > *:nth-child(odd)
 {
   background-color: $base_primary_colour_100;
   color: $base_secondary_colour_100;
+
+  .line-break {
+    background: $base_primary_colour_200;
+
+    svg {
+      fill: $base_primary_colour_100;
+      stroke: $base_primary_colour_100;
+    }
+  }
 }
 
-body > header:nth-child(even),
-body > main:nth-child(even),
-body > aside:nth-child(even),
-body > footer:nth-child(even)
+body > *:nth-child(even)
 {
   background-color: $base_primary_colour_200;
   color: $base_secondary_colour_200;
+
+  .line-break {
+    background: $base_primary_colour_100;
+
+    svg {
+      fill: $base_primary_colour_200;
+      stroke: $base_primary_colour_200;
+    }
+  }
+}
+
+.line-break {
+  width: 100%;
+
+  svg {
+    display: block;
+    stroke-width: 1;
+  }
 }
 
 a {
@@ -50,6 +79,10 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: bolder;
+}
+
+h1, h2 {
+  margin: 1rem 0;
 }
 
 h1 { font-size: 1em * ($base_heading_modifier * 5) + 1 }

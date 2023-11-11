@@ -1,6 +1,7 @@
 main section.projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+  grid-gap: 3.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
 
 article.project {

@@ -1,18 +1,17 @@
 body > header {
-  border-top: 0.3em solid $base_primary_colour_110;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  padding: 2em 3em;
+  border-top: 0.3rem solid $base_primary_colour_110;
+
+  .wrapper {
+    padding: 0;
+  }
 
   #badge {
     border: solid 1px transparent;
     border-radius: 50%;
+    height: 7rem;
+    margin-top: 1rem;
     overflow: hidden;
-    position: absolute;
-    right: 3em;
-    width: 7em;
-    height: 7em;
+    width: 7rem;
   }
 
   #badge img {

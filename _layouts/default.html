@@ -3,19 +3,19 @@
   {%- include head.html -%}
   <body>
     <header role="banner">
-      <a class="site-title" rel="author" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
-      <div id="badge">
-        <img src="{{ '/assets/profile.jpeg' | relative_url }}" alt="my profile photo"/>
+      <div class="wrapper">
+        <a class="site-title" rel="author" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
+        <div id="badge">
+          <img src="{{ '/assets/profile.jpeg' | relative_url }}" alt="my profile photo"/>
+        </div>
       </div>
     </header>
     <main aria-label="Content">
-      {{ content }}
+      {% include line-break.html direction="left" %}
+      <div class="wrapper">
+        {{ content }}
+      </div>
     </main>
-    <div id="line-break">
-      <svg viewBox="0 0 1024 45">
-        <polygon points="1024,0 1024,45 0,45" />
-      </svg>
-    </div>
     {%- include aside.html -%}
     {%- include footer.html -%}
   </body>

@@ -1,50 +1,58 @@
 <aside>
-    <h2>Skills / Expertise</h2>
-    <ol class="progress">
-        {% assign site_tags = site.tags | sort: "level" | reverse %}
-        {% for tag in site_tags %}
-        <li>
-            <a href="{{ tag.url | relative_url }}" target="_self">
-                <p>{{ tag.title }}</p>
-                <span style="width: {{ tag.level | minus: 16 }}%;"></span>
-                <small>{{ tag.level }}%</small>
-            </a>
-        </li>
-        {% endfor %}
-    </ol>
-
-    <h2>Career</h2>
-    <ol class="career">
-    {% assign career = site.data.career | sort: "from_date" | reverse %}
-    {% for position in career %}
-        <li>
-            <div>
-                <span>{{ position.role }}</span>
-                <span><em>{{ position.org }}</em></span>
-            </div>
-            <div>{{ position.from_date | date: "%Y" }} - {{ position.to_date | date: "%Y" | default: 'Now' }}</div>
-        </li>
-    {% endfor %}
-    </ol>
-
-    <h2>Education</h2>
-    <ol class="education">
-    {% assign education = site.data.education | sort: "from_date" | reverse %}
-    {% for period in education %}
-        <li>
-            <div>
-                <span>{{ period.award }} {{ period.subject }}</span>
-                <span><em>{{ period.institution }}</em></span>
-            </div>
-            <div>{{ period.from_date | date: "%Y" }} - {{ period.to_date | date: "%Y" | default: 'Now' }}</div>
-        </li>
-    {% endfor %}
-    </ol>
-    <h2>Training</h2>
-    <ul>
-        <li>Linux Foundation Systems Administrator</li>
-        <li>ITIL Foundation in IT Service Management</li>
-        <li>Prince 2 Foundation</li>
-    </ul>
-
+    {% include line-break.html direction="right" %}
+    <div class="wrapper">
+        <section>
+            <h2>Skills / Expertise</h2>
+            <ol class="progress">
+                {% assign site_tags = site.tags | sort: "level" | reverse %}
+                {% for tag in site_tags %}
+                <li>
+                    <a href="{{ tag.url | relative_url }}" target="_self">
+                        <p>{{ tag.title }}</p>
+                        <span style="width: {{ tag.level | minus: 16 }}%;"></span>
+                        <small>{{ tag.level }}%</small>
+                    </a>
+                </li>
+                {% endfor %}
+            </ol>
+        </section>
+        <section>
+            <h2>Career</h2>
+            <ol class="career">
+            {% assign career = site.data.career | sort: "from_date" | reverse %}
+            {% for position in career %}
+                <li>
+                    <div>
+                        <span>{{ position.role }}</span>
+                        <span><em>{{ position.org }}</em></span>
+                    </div>
+                    <div>{{ position.from_date | date: "%Y" }} - {{ position.to_date | date: "%Y" | default: 'Now' }}</div>
+                </li>
+            {% endfor %}
+            </ol>
+        </section>
+        <section>
+            <h2>Education</h2>
+            <ol class="education">
+            {% assign education = site.data.education | sort: "from_date" | reverse %}
+            {% for period in education %}
+                <li>
+                    <div>
+                        <span>{{ period.award }} {{ period.subject }}</span>
+                        <span><em>{{ period.institution }}</em></span>
+                    </div>
+                    <div>{{ period.from_date | date: "%Y" }} - {{ period.to_date | date: "%Y" | default: 'Now' }}</div>
+                </li>
+            {% endfor %}
+            </ol>
+        </section>
+        <section>
+            <h2>Training</h2>
+            <ul>
+                <li>Linux Foundation Systems Administrator</li>
+                <li>ITIL Foundation in IT Service Management</li>
+                <li>Prince 2 Foundation</li>
+            </ul>
+        </section>
+    </div>
 </aside>
