@@ -9,9 +9,9 @@ body > header {
   nav ul {
     display: flex;
     flex-direction: row;
+    gap: 2rem;
     justify-content: space-between;
     padding: 1rem 0;
     width: 75%;
   }
-
 }

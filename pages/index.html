@@ -3,15 +3,17 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: "Philip White"
+title: "Home"
 permalink: /
 ---
 
-<section id="home">
+<section id="intro">
+    <p>I am an all-round engineer with leadership experience and a passion for delivering working software, fast. I am always open to and on the look out for new and exciting projects.</p>
     <div id="badge">
         <img src="{{ '/assets/profile.jpeg' | relative_url }}" alt="my profile photo"/>
     </div>
-    <p>I am an all-round engineer with leadership experience and a passion for delivering working software, fast. I am always open to and on the look out for new and exciting projects.</p>
+</section>
+<section>
     <h2>Recent Projects</h2>
     {%- include projects.html -%}
 </section>

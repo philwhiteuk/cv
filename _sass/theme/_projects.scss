@@ -6,9 +6,14 @@ main section.projects {
 
 article.project {
   display: flex;
-  flex-direction: column;
+  flex-flow: column wrap;
   line-height: $base_line_height * 1.2;
   text-align: justify;
+
+  h4, h5 {
+    display: inline;
+    margin: 0;
+  }
 
   ul.tags {
     display: flex;
