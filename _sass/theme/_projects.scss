@@ -7,19 +7,25 @@ main section.projects {
 article.project {
   display: flex;
   flex-direction: column;
+  line-height: $base_line_height * 1.2;
   text-align: justify;
 
-  .tags li {
-    display: inline;
-    font-size: 0.85em;
-    line-height: $base_line_height * 2;
+  ul.tags {
+    display: flex;
+    flex-flow: row wrap;
   }
 
-  .tags li:after {
+  ul.tags li {
+    font-size: 0.85em;
+    line-height: $base_line_height * 1;
+    margin: 0.1em;
+  }
+
+  ul.tags li:after {
     content: ', ';
   }
 
-  .tags li:last-child:after {
-    content: '';
+  ul.tags li:last-child:after {
+    content: '.';
   }
 }

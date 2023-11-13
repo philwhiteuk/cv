@@ -2,7 +2,8 @@ html {
   font-family: $base_font_family;
   font-size: $base_font_size;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 200;
+  letter-spacing: 0.12em;
   line-height: $base_line_height;
 }
 
@@ -32,12 +33,15 @@ body > *:nth-child(odd)
   background-color: $base_primary_colour_100;
   color: $base_secondary_colour_100;
 
+  a, a:visited {
+    color: $base_secondary_colour_100;
+  }
+
   .line-break {
     background: $base_primary_colour_200;
 
     svg {
       fill: $base_primary_colour_100;
-      stroke: $base_primary_colour_100;
     }
   }
 }
@@ -47,12 +51,15 @@ body > *:nth-child(even)
   background-color: $base_primary_colour_200;
   color: $base_secondary_colour_200;
 
+  a, a:visited {
+    color: $base_secondary_colour_200;
+  }
+
   .line-break {
     background: $base_primary_colour_100;
 
     svg {
       fill: $base_primary_colour_200;
-      stroke: $base_primary_colour_200;
     }
   }
 }
@@ -82,7 +89,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: bolder;
+  font-weight: 500;
 }
 
 h1, h2 {
