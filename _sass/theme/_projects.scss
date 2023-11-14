@@ -1,4 +1,4 @@
-main section.projects {
+main section#projects {
   display: grid;
   grid-gap: 3.5rem;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));

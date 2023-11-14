@@ -1,10 +1,17 @@
+main section#home {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+
 #badge {
     border: solid 1px transparent;
     border-radius: 50%;
-    height: 7rem;
-    margin-top: 1rem;
     overflow: hidden;
-    width: 7rem;
+    width: 20rem;
 }
 
 #badge img {

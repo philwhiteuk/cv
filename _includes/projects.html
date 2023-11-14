@@ -1,5 +1,5 @@
 {% assign projects_by_date = site.projects | sort: "start_date" | reverse %}
-<section class="projects">
+<section id="projects">
     {% for project in projects_by_date %}
     {% if include.tag == nil or project.tags contains include.tag %}
     <article class="project">
