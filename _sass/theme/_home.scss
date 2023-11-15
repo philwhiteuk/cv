@@ -15,7 +15,7 @@ main section#home {
     }
 }
 
-main > section:first-of-type {
+main > section#home {
     @extend %bg-primary;
 }
 

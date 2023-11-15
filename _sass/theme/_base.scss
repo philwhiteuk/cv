@@ -25,7 +25,11 @@ body > * .wrapper {
   justify-content: space-between;
   padding: 2rem 3rem;
   max-width: 1024px;
-  width: 95%;
+  width: 100%;
+}
+
+body > * .no-width {
+  width: initial;
 }
 
 %bg-primary {
@@ -77,8 +81,16 @@ main:nth-child(even)
 
   svg {
     display: block;
-    height: 101%;
+    height: 100%;
   }
+}
+
+.line-break-left {
+  margin-bottom: -2rem;
+}
+
+.line-break-right {
+  margin-top: -2rem;
 }
 
 a {
