@@ -93,15 +93,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2 {
-  margin: 1rem 0;
+  margin: 2rem 0;
 }
 
 h3, h4, h5, h6 {
   margin: 0.5rem 0;
 }
 
-h1 { font-size: 1em * ($base_heading_modifier * 5) + 1 }
-h2 { font-size: 1em * ($base_heading_modifier * 4) + 1 }
+h1 { font-size: 1em * ($base_heading_modifier * 6) + 1 }
+h2 { font-size: 1em * ($base_heading_modifier * 5) + 1 }
 h3 { font-size: 1em * ($base_heading_modifier * 3) + 1 }
 h4 { font-size: 1em * ($base_heading_modifier * 2) + 1 }
 h5 { font-size: 1em * ($base_heading_modifier * 1) + 1 }

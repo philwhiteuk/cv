@@ -1,4 +1,15 @@
 aside {
+    .grid {
+        display: grid !important;
+        grid-gap: 1rem 3rem;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        width: 100%;
+    }
+
+    .column {
+        grid-column: 1 / -1;
+    }
+
     .progress {
         margin-left: -0.45em;
         padding-bottom: 1em;

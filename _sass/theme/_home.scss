@@ -1,17 +1,22 @@
 main section#home {
     align-items: center;
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     gap: 3rem;
-    justify-content: space-between;
-    padding: 2rem 0;
+    justify-content: flex-start;
+    padding-bottom: 2rem;
+
+    p {
+        max-width: 75%;
+    }
 }
 
 #badge {
     border: solid 1px transparent;
     border-radius: 50%;
     overflow: hidden;
-    width: 20rem;
+    min-width: 10rem;
+    max-width: 20%;
 }
 
 #badge img {

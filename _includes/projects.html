@@ -4,18 +4,26 @@
     {% if include.tag == nil or project.tags contains include.tag %}
     <article class="project">
         <h3>{{ project.title }}</h3>
-        <h4>{{ project.role }}</h4>
-        <h5>{{ project.org }}</h5>
+        <span>
+            <h4>{{ project.role }}</h4>
+            <h5>{{ project.org }}</h5>
+        </span>
+        <div class="content">
+            {{ project.content | markdownify }}
+        </div>
         <ul class="tags">
             {% assign tags_by_title = project.tags | sort %}
             {% for tag in tags_by_title %}
             {% assign tag_data = site.tags | where: "title", tag | first %}
-            <li>{% if tag_data %}<a href="{{ tag_data.url | relative_url }}">{% endif %}{{ tag }}{% if tag_data %}</a>{% endif %}</li>
+            <li>
+                {% if tag_data %}
+                <a href="{{ tag_data.url | relative_url }}">{{ tag }}</a>
+                {% else %}
+                <span>{{ tag }}</span>
+                {% endif %}
+            </li>
             {% endfor %}
         </ul>
-        <div>
-            {{ project.content | markdownify }}
-        </div>
     </article>
     {% endif %}
     {% endfor %}
