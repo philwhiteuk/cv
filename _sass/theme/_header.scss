@@ -1,4 +1,5 @@
 body > header {
+  @extend  %bg-secondary;
   border-top: 0.3rem solid $base_primary_colour_110;
 
   .wrapper {

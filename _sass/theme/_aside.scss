@@ -1,4 +1,6 @@
 aside {
+    @extend %bg-primary;
+
     .grid {
         display: grid !important;
         grid-gap: 1rem 3rem;

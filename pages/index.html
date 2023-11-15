@@ -8,12 +8,17 @@ permalink: /
 ---
 
 <section id="home">
-    <div id="badge">
-        <img src="{{ '/assets/profile.jpeg' | relative_url }}" alt="my profile photo"/>
+    <div class="wrapper">
+        <div id="badge">
+            <img src="{{ '/assets/profile.jpeg' | relative_url }}" alt="my profile photo"/>
+        </div>
+        <p>I am an all-round engineer with leadership experience and a passion for delivering working software, fast. I am always open to and on the look out for new and exciting projects.</p>
     </div>
-    <p>I am an all-round engineer with leadership experience and a passion for delivering working software, fast. I am always open to and on the look out for new and exciting projects.</p>
 </section>
+{% include line-break.html direction="right" %}
 <section>
-    <h2>Recent Projects</h2>
-    {%- include projects.html -%}
+    <div class="wrapper">
+        <h2>Recent Projects</h2>
+        {%- include projects.html -%}
+    </div>
 </section>

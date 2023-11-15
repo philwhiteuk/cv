@@ -28,8 +28,7 @@ body > * .wrapper {
   width: 95%;
 }
 
-header, aside, main:nth-child(odd)
-{
+%bg-primary {
   background-color: $base_primary_colour_100;
   color: $base_secondary_colour_100;
 
@@ -46,8 +45,7 @@ header, aside, main:nth-child(odd)
   }
 }
 
-footer, main:nth-child(even)
-{
+%bg-secondary {
   background-color: $base_primary_colour_200;
   color: $base_secondary_colour_200;
 
@@ -62,6 +60,16 @@ footer, main:nth-child(even)
       fill: $base_primary_colour_200;
     }
   }
+}
+
+main:nth-child(odd)
+{
+  @extend %bg-primary;
+}
+
+main:nth-child(even)
+{
+  @extend %bg-secondary;
 }
 
 .line-break {

@@ -3,12 +3,20 @@ main section#home {
     display: flex;
     flex-flow: row wrap;
     gap: 3rem;
-    justify-content: flex-start;
-    padding-bottom: 2rem;
+    justify-content: center;
+    width: 100%;
+
+    .wrapper {
+        align-items: center;
+    }
 
     p {
         max-width: 75%;
     }
+}
+
+main > section:first-of-type {
+    @extend %bg-primary;
 }
 
 #badge {
