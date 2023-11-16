@@ -45,6 +45,7 @@ body > * .no-width {
 
     svg {
       fill: $base_primary_colour_100;
+      stroke: $base_primary_colour_100;
     }
   }
 }
@@ -62,6 +63,7 @@ body > * .no-width {
 
     svg {
       fill: $base_primary_colour_200;
+      stroke: $base_primary_colour_200;
     }
   }
 }
@@ -81,16 +83,9 @@ main:nth-child(even)
 
   svg {
     display: block;
-    height: 100%;
+    stroke-width: 0.1;
+    width: 100%;
   }
-}
-
-.line-break-left {
-  margin-bottom: -2rem;
-}
-
-.line-break-right {
-  margin-top: -2rem;
 }
 
 a {
