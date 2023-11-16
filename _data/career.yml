@@ -1,25 +1,36 @@
+- role: Senior Cloud Engineer
+  org: Apple
+  from_date: 2023-12-04
+  to_date:
+  class: top
 - role: Senior Software Engineer
   org: Triptease
   from_date: 2019-01-01
-  to_date:
+  to_date: 2023-11-30
+  class: close-branch
 - role: Devops Engineer
   org: Triptease
   from_date: 2015-01-01
   to_date: 2017-01-01
+  class: open-branch
 - role: Devops Coach
   org: Triptease
   from_date: 2017-01-01
   to_date: 2019-01-01
+  class: branch
 - role: Devops / Delivery Manager
   org: GForces
   from_date: 2011-01-01
   to_date: 2015-01-01
+  class: close-branch
 - role: IT Project Manager
   org: GForces
   from_date: 2009-01-01
   to_date: 2011-01-01
+  class: open-branch
 - role: IT Project Manager
   org: Milsted Langdon
   from_date: 2008-01-01
   to_date: 2009-01-01
+  class: root
 

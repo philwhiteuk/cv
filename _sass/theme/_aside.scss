@@ -21,7 +21,6 @@ aside {
             li {
                 display: flex;
                 flex-direction: column;
-                list-style: none;
                 margin: 0.1em 0;
             }
 
@@ -51,5 +50,19 @@ aside {
                 margin: 0;
             }
         }
+    }
+
+    [aria-label=career-history] {
+        li {
+            background: url("/cv/assets/branch-sprite.png") no-repeat 0 0;
+            padding: 10px 0 10px 100px;
+        }
+
+        li.root  { background-position: 0 -530px; }
+        li.trunk  { background-position: 0 -457px; }
+        li.open-branch  { background-position: 0 -296px; padding-bottom: 40px; }
+        li.branch  { background-position: 0 -217px; }
+        li.close-branch  { background-position: 0 -104px; padding-top: 40px; }
+        li.top  { background-position: 0 0%; }
     }
 }

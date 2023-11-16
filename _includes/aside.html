@@ -7,7 +7,7 @@
                 <ol>
                 {% assign career = site.data.career | sort: "from_date" | reverse %}
                 {% for position in career %}
-                    <li>
+                    <li class="{{ position.class }}">
                         <div>
                             <span>{{ position.role }}</span>
                             <span><em>{{ position.org }}</em></span>
