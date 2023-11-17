@@ -1,59 +1,33 @@
 @charset "utf-8";
 
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
 
-// Define defaults for each variable.
+$base_font_family: 'Poppins', serif;
+$base_font_size: 16px;
+$base_letter_spacing: 0.05em;
+$base_line_height: 1.5em;
+$base_heading_modifier: 0.1;
+$base_text_colour: #000000;
 
-$base-font-family: 'M PLUS Rounded 1c', sans-serif;
-$base-font-size:   16px !default;
-$base-font-weight: 400 !default;
-$small-font-size:  $base-font-size * 0.875 !default;
-$base-line-height: 1.5 !default;
+$base_anchor_text_colour_normal: #fff;
+$base_anchor_text_colour_visited: 'inherit';
+$base_anchor_text_colour_hovered: #fff;
 
-$spacing-unit:     30px !default;
+$base_primary_colour_100: navy;
+$base_primary_colour_110: blue;
+$base_secondary_colour_100: white;
 
-$text-color:       #37423E !default;
-$background-color: #fff !default;
-$brand-color:      #0097EA !default;
+$base_primary_colour_200: white;
+$base_primary_colour_210: grey;
+$base_secondary_colour_200: black;
 
-$grey-color:       #828282 !default;
-$grey-color-light: lighten($grey-color, 40%) !default;
-$grey-color-dark:  darken($grey-color, 25%) !default;
-
-$table-text-align: left !default;
-
-// Width of the content area
-$content-width:    1024px !default;
-
-$on-palm:          600px !default;
-$on-laptop:        800px !default;
-
-// Use media queries like this:
-// @include media-query($on-palm) {
-//   .wrapper {
-//     padding-right: $spacing-unit / 2;
-//     padding-left: $spacing-unit / 2;
-//   }
-// }
-@mixin media-query($device) {
-  @media screen and (max-width: $device) {
-    @content;
-  }
-}
-
-@mixin relative-font-size($ratio) {
-  font-size: $base-font-size * $ratio;
-}
-
-// Import partials.
-@import
-  "minima/base",
-  "minima/syntax-highlighting",
-  "minima/layout"
-;
 
 @import
-  "overrides/base",
-  "overrides/layout",
-  "overrides/projects"
+  "theme/_aside.scss",
+  "theme/_base.scss",
+  "theme/_footer.scss",
+  "theme/_header.scss",
+  "theme/_home.scss",
+  "theme/_projects.scss",
+  "theme/_tag.scss"
 ;

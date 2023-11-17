@@ -7,7 +7,10 @@ layout: default
     <h1 class="page-heading">{{ page.title }}</h1>
     {%- endif -%}
     {{ content }}
-    <div>
+</section>
+{% include line-break.html direction="right" %}
+<section>
+    <div class="wrapper no-width">
         <h2>Related Experience</h2>
         {%- include projects.html tag=page.title -%}
     </div>

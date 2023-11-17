@@ -1,0 +1,20 @@
+main section#tag {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 3rem;
+    justify-content: center;
+    width: 100%;
+
+    .wrapper {
+        align-items: center;
+    }
+
+    p {
+        max-width: 75%;
+    }
+}
+
+main > section#tag {
+    @extend %bg-primary;
+}
