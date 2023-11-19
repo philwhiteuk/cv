@@ -1,8 +1,8 @@
 <aside>
     {% include line-break.html direction="left" %}
     <div class="wrapper">
-        <div class="grid">
-            <section aria-label="career-history">
+        <div class="row">
+            <section class="column" aria-label="career-history">
                 <h2>Career</h2>
                 <ol>
                 {% assign career = site.data.career | sort: "from_date" | reverse %}
@@ -17,7 +17,7 @@
                 {% endfor %}
                 </ol>
             </section>
-            <div>
+            <div class="column">
                 <section aria-label="skills">
                     <h2>Skills / Expertise</h2>
                     <ol>

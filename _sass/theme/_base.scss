@@ -14,6 +14,10 @@ html {
   padding: 0;
 }
 
+body {
+  min-width: 365px;
+}
+
 body > * {
   display: flex;
   flex-flow: row wrap;
@@ -24,7 +28,7 @@ body > * .wrapper {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  padding: 2rem 3rem;
+  padding: 1rem 3rem 1rem 3rem;
   max-width: 1024px;
   width: 100%;
 }
@@ -43,31 +47,30 @@ body > * .no-width {
     color: $base_secondary_colour_100;
   }
 
-  .line-break {
-    background: $base_primary_colour_200;
+  .line-break-left {
+    background: -webkit-linear-gradient(88deg, $base_primary_colour_100 49%, $base_primary_colour_200 50%);
+  }
 
-    svg {
-      fill: $base_primary_colour_100;
-      stroke: $base_primary_colour_100;
-    }
+  .line-break-right {
+    background: -webkit-linear-gradient(-88deg, $base_primary_colour_100 49%, $base_primary_colour_200 50%);
   }
 }
 
 %bg-secondary {
   background-color: $base_primary_colour_200;
+
   color: $base_secondary_colour_200;
 
   a, a:visited {
     color: $base_secondary_colour_200;
   }
 
-  .line-break {
-    background: $base_primary_colour_100;
+  .line-break-left {
+    background: -webkit-linear-gradient(88deg, $base_primary_colour_100 49%, $base_primary_colour_200 50%);
+  }
 
-    svg {
-      fill: $base_primary_colour_200;
-      stroke: $base_primary_colour_200;
-    }
+  .line-break-right {
+    background: -webkit-linear-gradient(-88deg, $base_primary_colour_100 49%, $base_primary_colour_200 50%);
   }
 }
 
@@ -79,16 +82,6 @@ main:nth-child(odd)
 main:nth-child(even)
 {
   @extend %bg-secondary;
-}
-
-.line-break {
-  width: 100%;
-
-  svg {
-    display: block;
-    stroke-width: 0.1;
-    width: 100%;
-  }
 }
 
 a {
@@ -124,3 +117,29 @@ h3 { font-size: 1em * ($base_heading_modifier * 3) + 1 }
 h4 { font-size: 1em * ($base_heading_modifier * 2) + 1 }
 h5 { font-size: 1em * ($base_heading_modifier * 1) + 1 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0 2em;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-right: 2em;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 3.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
+.line-break {
+  display: block;
+  height: 7em;
+  width: 100%;
+}

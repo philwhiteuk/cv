@@ -1,28 +1,22 @@
 aside {
     @extend %bg-primary;
+    font-size: 0.9em;
 
-    .grid {
-        display: grid !important;
-        grid-gap: 1rem 3rem;
-        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-        width: 100%;
-    }
-
-    .wrapper {
-        padding: 1rem 3rem;
+    .column {
+        min-width: 25em;
     }
 
     [aria-label=career-history] {
         li {
             background: url("/cv/assets/branch-sprite.png") no-repeat 0 0;
-            padding: 10px 0 10px 100px;
+            padding: 8px 0 8px 100px;
         }
 
         li.root  { background-position: 0 -530px; }
         li.trunk  { background-position: 0 -457px; }
-        li.open-branch  { background-position: 0 -296px; padding-bottom: 40px; }
+        li.open-branch  { background-position: 0 -303px; padding-bottom: 37px; }
         li.branch  { background-position: 0 -217px; }
-        li.close-branch  { background-position: 0 -104px; padding-top: 40px; }
+        li.close-branch  { background-position: 0 -104px; padding-top: 30px; }
         li.top  { background-position: 0 15px; }
     }
 
