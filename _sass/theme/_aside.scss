@@ -2,6 +2,7 @@ aside {
     @extend %bg-primary;
     font-size: 0.9em;
 
+    .wrapper { margin-top: 0; }
 
     @media (max-width: 850px) {
         .column {
@@ -72,6 +73,4 @@ aside {
             }
         }
     }
-
-
 }

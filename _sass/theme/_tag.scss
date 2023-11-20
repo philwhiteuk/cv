@@ -1,20 +1,19 @@
 main section#tag {
-    align-items: center;
+    @extend %bg-primary;
+
     display: flex;
     flex-flow: row wrap;
-    gap: 3rem;
     justify-content: center;
     width: 100%;
 
     .wrapper {
         align-items: center;
+        gap: 3rem;
+        justify-content: center !important;
+        margin-bottom: 0;
     }
 
     p {
-        max-width: 75%;
+        margin-bottom: 3rem;
     }
-}
-
-main > section#tag {
-    @extend %bg-primary;
 }

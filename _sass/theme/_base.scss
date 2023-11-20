@@ -20,15 +20,6 @@ body > * {
   justify-content: center;
 }
 
-body > * .wrapper {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  padding: 1rem 3rem 1rem 3rem;
-  max-width: 1024px;
-  width: 100%;
-}
-
 body > * .no-width {
   width: initial;
 }
@@ -36,8 +27,6 @@ body > * .no-width {
 %bg-primary {
   background-color: $base_primary_colour_100;
   color: $base_secondary_colour_100;
-
-  font-weight: 200;
 
   a, a:visited {
     color: $base_secondary_colour_100;
@@ -137,5 +126,14 @@ h5 { font-size: 1em * ($base_heading_modifier * 1) + 1 }
 .line-break {
   display: block;
   height: 7em;
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 3rem;
+  max-width: 1024px;
   width: 100%;
 }
