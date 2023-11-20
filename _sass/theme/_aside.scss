@@ -2,11 +2,25 @@ aside {
     @extend %bg-primary;
     font-size: 0.9em;
 
-    .column {
-        min-width: 25em;
+
+    @media (max-width: 850px) {
+        .column {
+            flex: initial;
+        }
     }
 
     [aria-label=career-history] {
+        @media (max-width: 515px) {
+            li {
+                background: none !important;
+                padding: 5px 0 !important;
+            }
+            li.open-branch, li.close-branch {
+                padding: 5px 0 !important;
+            }
+        }
+
+
         li {
             background: url("/cv/assets/branch-sprite.png") no-repeat 0 0;
             padding: 8px 0 8px 100px;
