@@ -25,7 +25,12 @@ article.project {
     font-style: italic;
   }
 
+  ul.tags:before {
+    content: 'Tags: ';
+  }
+
   ul.tags {
+    align-items: center;
     display: flex;
     flex-flow: row wrap;
     gap: 0.3em;

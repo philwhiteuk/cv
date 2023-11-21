@@ -24,6 +24,39 @@ body > * .no-width {
   width: initial;
 }
 
+a {
+  color: $base_anchor_text_colour_normal;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:visited {
+  color: $base_anchor_text_colour_visited;
+}
+
+a:hover {
+  color: $base_anchor_text_colour_hovered;
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+
+h1, h2 {
+  margin: 2rem 0;
+}
+
+h3, h4, h5, h6 {
+  margin: 0.5rem 0;
+}
+
+h1 { font-size: 1em * ($base_heading_modifier * 6) + 1 }
+h2 { font-size: 1em * ($base_heading_modifier * 5.5) + 1 }
+h3 { font-size: 1em * ($base_heading_modifier * 3) + 1 }
+h4 { font-size: 1em * ($base_heading_modifier * 2) + 1 }
+h5 { font-size: 1em * ($base_heading_modifier * 1) + 1 }
+
 %bg-primary {
   background-color: $base_primary_colour_100;
   color: $base_secondary_colour_100;
@@ -69,38 +102,18 @@ main:nth-child(even)
   @extend %bg-secondary;
 }
 
-a {
-  color: $base_anchor_text_colour_normal;
-  cursor: pointer;
-  text-decoration: none;
-}
+main > section {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
 
-a:visited {
-  color: $base_anchor_text_colour_visited;
+    .wrapper {
+      align-items: center;
+      gap: 0 3rem;
+      margin-top: 1rem;
+    }
 }
-
-a:hover {
-  color: $base_anchor_text_colour_hovered;
-  text-decoration: underline;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 500;
-}
-
-h1, h2 {
-  margin: 2rem 0;
-}
-
-h3, h4, h5, h6 {
-  margin: 0.5rem 0;
-}
-
-h1 { font-size: 1em * ($base_heading_modifier * 6) + 1 }
-h2 { font-size: 1em * ($base_heading_modifier * 5) + 1 }
-h3 { font-size: 1em * ($base_heading_modifier * 3) + 1 }
-h4 { font-size: 1em * ($base_heading_modifier * 2) + 1 }
-h5 { font-size: 1em * ($base_heading_modifier * 1) + 1 }
 
 .row {
   display: flex;
@@ -132,6 +145,7 @@ h5 { font-size: 1em * ($base_heading_modifier * 1) + 1 }
 .wrapper {
   display: flex;
   flex-flow: row wrap;
+  gap: 1em;
   justify-content: space-between;
   margin: 3rem;
   max-width: 1024px;
