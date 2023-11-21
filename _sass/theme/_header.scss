@@ -7,6 +7,11 @@ body > header {
     margin: 0 3rem;
   }
 
+  h1 {
+    flex: 1;
+    margin-left: 1em;
+  }
+
   nav ul {
     display: flex;
     flex-direction: row;
@@ -15,4 +20,18 @@ body > header {
     padding: 1rem 0;
     width: 75%;
   }
+}
+
+#badge {
+  border: solid 1px transparent;
+  border-radius: 50%;
+  //filter: drop-shadow(0.2em 0.5em 1.5em #fff) opacity(0.9);
+  overflow: hidden;
+  width: 3rem;
+}
+
+#badge img {
+  display: block;
+  width: 100%;
+  height: auto;
 }

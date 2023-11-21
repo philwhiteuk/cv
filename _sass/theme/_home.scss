@@ -13,21 +13,36 @@ main section#home {
         margin-bottom: 0;
     }
 
-    p {
-        margin-bottom: 3rem;
+    .row {
+        gap: 2rem;
+    }
+
+    .column {
+        align-items: center;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    dt {
+        font-size: 1.1em;
+        font-weight: 600;
+        margin-bottom: 0.5em;
+    }
+
+    dd {
+        text-align: justify;
+    }
+
+    [aria-label="devops"] {
+        img { width: 8.5em }
+    }
+
+    [aria-label="software-development"] {
+        img { width: 10em }
+    }
+
+    [aria-label="teams"] {
+        img { margin: 1.7em 0; width: 6.5em }
     }
 }
 
-#badge {
-    border: solid 1px transparent;
-    border-radius: 50%;
-    filter: drop-shadow(0.2em 0.5em 1.5em $base_primary_colour_110) opacity(0.9);
-    overflow: hidden;
-    width: 8rem;
-}
-
-#badge img {
-    display: block;
-    width: 100%;
-    height: auto;
-}

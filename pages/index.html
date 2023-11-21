@@ -9,10 +9,25 @@ permalink: /
 
 <section id="home">
     <div class="wrapper">
-        <div id="badge">
-            <img src="{{ '/assets/profile.jpeg' | relative_url }}" alt="my profile photo"/>
-        </div>
-        <p>I am an all-round engineer with leadership experience and a passion for delivering working software, fast. I am always open to and on the look out for new and exciting projects.</p>
+
+<!--        <p>I am an all-round engineer with leadership experience and a passion for delivering working software, fast. I am always open to and on the look out for new and exciting projects.</p>-->
+        <dl class="row">
+            <div aria-label="devops" class="column">
+                <img src='/cv/assets/devops.svg' alt='Devops' />
+                <dt>Devops</dt>
+                <dd>I have experience as a Devops practitioner in both direct engineering and management roles as well as coaching multiple teams.</dd>
+            </div>
+            <div aria-label="software-development" class="column">
+                <img src='/cv/assets/software-development.svg' alt='Software Development' />
+                <dt>Software Development</dt>
+                <dd>I have been involved with and interested in the fast and efficient delivery of quality software for over 10 years now.</dd>
+            </div>
+            <div aria-label="teams" class="column">
+                <img src='/cv/assets/teams.svg' alt='Teams' />
+                <dt>Teams</dt>
+                <dd>I am interested in the psychology of teams and what makes a great team. I have plenty of great ideas and advice to help teams grow.</dd>
+            </div>
+        </dl>
     </div>
 </section>
 {% include line-break.html direction="right" %}
