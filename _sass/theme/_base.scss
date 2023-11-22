@@ -24,18 +24,28 @@ body > * .no-width {
   width: initial;
 }
 
-a {
+a, button {
+  background: none;
+  border: none;
   color: $base_anchor_text_colour_normal;
   cursor: pointer;
+  display: inline;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
   text-decoration: none;
 }
 
+button {
+  padding: 0.5em 1em;
+}
+
 a:visited {
-  color: $base_anchor_text_colour_visited;
+  color: inherit;
 }
 
 a:hover {
-  color: $base_anchor_text_colour_hovered;
   text-decoration: underline;
 }
 
@@ -61,8 +71,13 @@ h5 { font-size: 1em * ($base_heading_modifier * 1) + 1 }
   background-color: $base_primary_colour_100;
   color: $base_secondary_colour_100;
 
-  a, a:visited {
+  a, button {
     color: $base_secondary_colour_100;
+  }
+
+  button {
+    background: $base_primary_colour_110;
+    color: $base_anchor_text_colour_normal;
   }
 
   .line-break-left {
@@ -79,8 +94,13 @@ h5 { font-size: 1em * ($base_heading_modifier * 1) + 1 }
 
   color: $base_secondary_colour_200;
 
-  a, a:visited {
+  a, button {
     color: $base_secondary_colour_200;
+  }
+
+  button {
+    background: $base_primary_colour_210;
+    color: $base_anchor_text_colour_normal;
   }
 
   .line-break-left {
