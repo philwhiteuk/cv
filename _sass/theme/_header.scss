@@ -1,6 +1,6 @@
 body > header {
   @extend  %bg-secondary;
-  border-top: 0.2rem solid $base_primary_colour_110;
+  border-top: 0.2rem solid $primary_highlight;
 
   .wrapper {
     align-items: center;

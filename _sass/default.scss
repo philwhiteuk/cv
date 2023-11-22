@@ -4,6 +4,7 @@
 
 $base_font_family: 'Poppins', serif;
 $base_font_size: 16px;
+$base_font_weight: 300;
 $base_letter_spacing: 0.05em;
 $base_line_height: 1.5em;
 $base_heading_modifier: 0.1;
@@ -13,13 +14,15 @@ $base_anchor_text_colour_normal: #fff;
 $base_anchor_text_colour_visited: 'inherit';
 $base_anchor_text_colour_hovered: #fff;
 
-$base_primary_colour_100: navy;
-$base_primary_colour_110: blue;
-$base_secondary_colour_100: white;
+$primary_bg: navy;
+$primary_fg: #fff;
+$primary_highlight: blue;
+$primary_emphasis: #fff;
 
-$base_primary_colour_200: white;
-$base_primary_colour_210: grey;
-$base_secondary_colour_200: black;
+$secondary_bg: white;
+$secondary_fg: black;
+$secondary_highlight: grey;
+$secondary_emphasis: black;
 
 
 @import

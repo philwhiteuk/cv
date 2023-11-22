@@ -12,6 +12,6 @@ tags:
     - Software Development
 start_date: "2021-09-12"
 ---
-On-demand, _browserless solution for web scraping >40rps_. 
-_Stateless architecture running on "spot VMs" autoscaled using custom metrics_. 
-Websocket connections _load balanced via HAProxy_.
+On-demand, browserless solution for _web scraping >40rps_. 
+Stateless architecture running on "spot VMs" autoscaled using custom metrics. 
+Websocket connections load balanced via HAProxy.

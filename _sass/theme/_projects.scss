@@ -42,10 +42,10 @@ article.project {
 
     li a,
     li span {
-      background: $base_secondary_colour_100;
+      background: $primary_fg;
       border: solid 0.5px gray;
       border-radius: 0.1em;
-      color: $base_primary_colour_110;
+      color: $primary_highlight;
       font-weight: 400;
       padding: 0 0.3em;
       width: 100%;
@@ -56,8 +56,8 @@ article.project {
     }
 
     li a:hover {
-        background: $base_primary_colour_110;
-        color: $base_secondary_colour_100;
+        background: $primary_highlight;
+        color: $primary_fg;
         opacity: 1;
         text-decoration: none;
     }

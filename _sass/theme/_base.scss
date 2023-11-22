@@ -3,7 +3,7 @@ html {
   font-size: $base_font_size;
   font-style: normal;
   font-variant-ligatures: common-ligatures;
-  font-weight: 300;
+  font-weight: $base_font_weight;
   letter-spacing: $base_letter_spacing;
   line-height: $base_line_height;
 }
@@ -38,6 +38,7 @@ a, button {
 }
 
 button {
+  color: $base_anchor_text_colour_normal;
   padding: 0.5em 1em;
 }
 
@@ -67,48 +68,60 @@ h3 { font-size: 1em * ($base_heading_modifier * 3) + 1 }
 h4 { font-size: 1em * ($base_heading_modifier * 2) + 1 }
 h5 { font-size: 1em * ($base_heading_modifier * 1) + 1 }
 
-%bg-primary {
-  background-color: $base_primary_colour_100;
-  color: $base_secondary_colour_100;
+em {
+  font-style: normal;
+  font-weight: $base_font_weight + 100;
+  padding: 0 0.1em;
+}
 
-  a, button {
-    color: $base_secondary_colour_100;
+%bg-primary {
+  background-color: $primary_bg;
+  color: $primary_fg;
+
+  a {
+    color: $primary_fg;
   }
 
   button {
-    background: $base_primary_colour_110;
-    color: $base_anchor_text_colour_normal;
+    background: rgba($primary_highlight, 1);
+  }
+
+  em {
+    color: $primary_emphasis;
   }
 
   .line-break-left {
-    background: -webkit-linear-gradient(88deg, $base_primary_colour_100 49%, $base_primary_colour_200 50%);
+    background: -webkit-linear-gradient(88deg, $primary_bg 49%, $secondary_bg 50%);
   }
 
   .line-break-right {
-    background: -webkit-linear-gradient(-88deg, $base_primary_colour_100 49%, $base_primary_colour_200 50%);
+    background: -webkit-linear-gradient(-88deg, $primary_bg 49%, $secondary_bg 50%);
   }
 }
 
 %bg-secondary {
-  background-color: $base_primary_colour_200;
+  background-color: $secondary_bg;
 
-  color: $base_secondary_colour_200;
+  color: $secondary_fg;
 
-  a, button {
-    color: $base_secondary_colour_200;
+  a {
+    color: $secondary_fg;
   }
 
   button {
-    background: $base_primary_colour_210;
-    color: $base_anchor_text_colour_normal;
+    background: $secondary_highlight;
+  }
+
+  em {
+    color: $secondary_emphasis;
   }
 
   .line-break-left {
-    background: -webkit-linear-gradient(88deg, $base_primary_colour_100 49%, $base_primary_colour_200 50%);
+    background: -webkit-linear-gradient(88deg, $primary_bg 49%, $secondary_bg 50%);
   }
 
   .line-break-right {
-    background: -webkit-linear-gradient(-88deg, $base_primary_colour_100 49%, $base_primary_colour_200 50%);
+    background: -webkit-linear-gradient(-88deg, $primary_bg 49%, $secondary_bg 50%);
   }
 }
 
@@ -147,7 +160,6 @@ main > section {
   display: flex;
   flex-direction: column;
   flex: 1;
-  margin-right: 2em;
 }
 
 .grid {

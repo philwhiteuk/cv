@@ -18,6 +18,12 @@ aside {
         padding: 1em 0 1em 2.5em;
     }
 
+    em {
+        background: none !important;
+        color: inherit !important;
+        font-style: italic;
+    }
+
     [aria-label=career-history] {
         @media (max-width: 515px) {
             li {
