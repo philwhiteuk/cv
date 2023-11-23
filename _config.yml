@@ -43,6 +43,8 @@ baseurl: "/cv" # the subpath of your site, e.g. /blog
 url: "https://philwhite.uk" # the base hostname & protocol for your site, e.g. http://example.com
 
 collections:
+  interests:
+    output: false
   projects:
     output: false
   tags:

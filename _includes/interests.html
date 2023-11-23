@@ -1,0 +1,9 @@
+<dl class="row">
+    {% for interest in site.interests %}
+    <div aria-label="{{ interest.title | slugify }}" class="column">
+        <img src='/cv/assets/{{ interest.image }}' alt='{{ interest.title }}' />
+        <dt>{{ interest.title }}</dt>
+        <dd>{{ interest.content }}</dd>
+    </div>
+    {% endfor %}
+</dl>

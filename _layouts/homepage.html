@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<section id="welcome">
+    <div class="wrapper">
+        {{ content }}
+    </div>
+</section>
+<section id="home">
+    <div class="wrapper">
+        <h2>What makes me tick?</h2>
+        {%- include interests.html -%}
+    </div>
+</section>
+{% include line-break.html direction="right" %}
+<section>
+    <div class="wrapper">
+        <h2>What have I been up to?</h2>
+        {%- include projects.html -%}
+    </div>
+</section>
