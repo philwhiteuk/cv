@@ -3,7 +3,7 @@ title: "Inventory Data Feed"
 role: "Senior Software Engineer"
 org: "Triptease"
 tags:
-    - Typescript
+    - NodeJS / Typescript
     - GraphQL
     - Postgres
     - Terraform

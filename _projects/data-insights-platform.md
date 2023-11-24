@@ -4,7 +4,7 @@ role: "Senior Software Engineer"
 org: "Triptease"
 tags:
     - SQL
-    - Typescript
+    - NodeJS / Typescript
     - Shell
     - BigQuery
     - Cloud Storage

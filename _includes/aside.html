@@ -21,7 +21,7 @@
                 <section aria-label="skills">
                     <h2>Skills / Expertise</h2>
                     <ol>
-                        {% assign site_tags = site.tags | sort: "level" | reverse %}
+                        {% assign site_tags = site.tags | slice: 0, 5 | sort: "level" | reverse %}
                         {% for tag in site_tags %}
                         <li>
                             <a href="{{ tag.url | relative_url }}" target="_self">
