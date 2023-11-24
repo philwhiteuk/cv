@@ -180,3 +180,15 @@ main > section {
   max-width: 1024px;
   width: 100%;
 }
+
+.hide {
+  display: none !important;
+}
+@media (max-width: 515px) { .hide-sm { display: inherit !important; } }
+@media (max-width: 850px) { .hide-md { display: none !important; } }
+@media (min-width: 851px) { .hide-lg { display: none !important; } }
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+}

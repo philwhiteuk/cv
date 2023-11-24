@@ -1,11 +1,14 @@
 <header class="secondary" role="banner">
     <div class="wrapper">
-        <div id="badge">
-            <img src="{{ '/assets/profile.jpeg' | relative_url }}" alt="my profile photo"/>
-        </div>
-        <h1><a class="site-title" rel="author" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a></h1>
-        <nav onclick="javascript:(()=>this.classList.add('show'))()">
-            <ul>
+        <nav>
+            <div class="profile-photo">
+                <img src="{{ '/assets/profile.jpeg' | relative_url }}" alt="my profile photo"/>
+            </div>
+            <h1><a class="site-title" rel="author" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a></h1>
+            <input class="hide" id="menu-toggle" type="checkbox" />
+            <label for="menu-toggle" class="hide-lg" aria-label="menu toggle"></label>
+            <div class="hide-lg break"></div>
+            <ul class="hide-sm hide-md">
                 {%- assign pages = site.pages | sort: 'order' -%}
                 {% for page in pages %}
                 {% if page.title %}

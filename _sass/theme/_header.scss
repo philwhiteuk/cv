@@ -8,48 +8,63 @@ body > header {
     margin: 0 3rem;
   }
 
-  h1 {
-    flex: 1;
-    margin-left: 0.4em;
-  }
-
   nav {
-    @media (max-width: 850px) {
-      background: url("/cv/assets/hamburger.svg") no-repeat;
-      background-size: 3rem;
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 0 1rem;
+    justify-content: space-between;
+    width: 100%;
+
+    .profile-photo {
+      border: solid 1px transparent;
+      border-radius: 50%;
+      overflow: hidden;
       width: 3rem;
-      height: 3rem;
-      ul { display: none !important; }
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    h1 { flex: 1 }
+
+    label[for="menu-toggle"] {
+      background: url("/cv/assets/hamburger.svg") no-repeat;
+      background-size: 2rem;
+      display: block;
+      width: 2rem;
+      height: 2rem;
     }
 
     ul {
+      align-items: center;
       display: flex;
       flex-direction: row;
       gap: 2rem;
-      justify-content: space-between;
-      padding: 1rem 0;
-      width: 75%;
+      justify-content: flex-end;
+    }
 
-      li {
+    @media (max-width: 850px) {
+      flex-flow: row wrap;
+      #menu-toggle:checked ~ ul {
         align-items: center;
-        display: flex;
+        display: inherit !important;
+        flex-direction: column;
+        gap: 0.2em 0;
+        width: 100%;
+
+        li { width: 100% }
+        li a, li button {
+          display: inline-block;
+          padding: 1em 0;
+          text-align: center;
+          width: 100%;
+        }
       }
     }
   }
-
-
 }
 
-#badge {
-  border: solid 1px transparent;
-  border-radius: 50%;
-  //filter: drop-shadow(0.2em 0.5em 1.5em #fff) opacity(0.9);
-  overflow: hidden;
-  width: 3rem;
-}
-
-#badge img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
