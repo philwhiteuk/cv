@@ -1,5 +1,7 @@
 ---
 layout: homepage
+title: Home
+order: -1
 permalink: /
 ---
 ## Who am I?

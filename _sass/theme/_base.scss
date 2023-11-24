@@ -121,12 +121,12 @@ em {
   }
 }
 
-main:nth-child(odd)
+main:nth-child(odd), .primary
 {
   @extend %bg-primary;
 }
 
-main:nth-child(even)
+main:nth-child(even), .secondary
 {
   @extend %bg-secondary;
 }

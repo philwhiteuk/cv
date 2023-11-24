@@ -1,9 +1,10 @@
 body > header {
-  @extend  %bg-secondary;
   border-top: 0.2rem solid $primary_highlight;
 
   .wrapper {
     align-items: center;
+    gap: 0.5em;
+    flex-flow: row nowrap;
     margin: 0 3rem;
   }
 
@@ -12,19 +13,31 @@ body > header {
     margin-left: 0.4em;
   }
 
-  nav ul {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    justify-content: space-between;
-    padding: 1rem 0;
-    width: 75%;
+  nav {
+    @media (max-width: 850px) {
+      background: url("/cv/assets/hamburger.svg") no-repeat;
+      background-size: 3rem;
+      width: 3rem;
+      height: 3rem;
+      ul { display: none !important; }
+    }
 
-    li {
-      align-items: center;
+    ul {
       display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      justify-content: space-between;
+      padding: 1rem 0;
+      width: 75%;
+
+      li {
+        align-items: center;
+        display: flex;
+      }
     }
   }
+
+
 }
 
 #badge {

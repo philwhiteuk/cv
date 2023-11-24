@@ -1,14 +1,17 @@
-<header role="banner">
+<header class="secondary" role="banner">
     <div class="wrapper">
         <div id="badge">
             <img src="{{ '/assets/profile.jpeg' | relative_url }}" alt="my profile photo"/>
         </div>
         <h1><a class="site-title" rel="author" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a></h1>
-        <nav>
+        <nav onclick="javascript:(()=>this.classList.add('show'))()">
             <ul>
-                <li><a href="{{ '/' | relative_url }}">Home</a></li>
-<!--                <li><a href="{{ '/about' | relative_url }}">About</a></li>-->
-<!--                <li><a href="{{ '/projects' | relative_url }}">Projects</a></li>-->
+                {%- assign pages = site.pages | sort: 'order' -%}
+                {% for page in pages %}
+                {% if page.title %}
+                <li><a href="{{ page.permalink | relative_url }}">{{ page.title }}</a></li>
+                {% endif %}
+                {% endfor %}
                 <li><button aria-label="contact" name="contact" onclick="javascript:(() => alert('Coming Soon!'))()" type="button">Contact</button></li>
             </ul>
         </nav>
