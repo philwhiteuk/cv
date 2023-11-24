@@ -140,7 +140,6 @@ main > section {
     .wrapper {
       align-items: center;
       gap: 0 3rem;
-      margin-top: 1rem;
     }
 }
 
@@ -164,19 +163,20 @@ main > section {
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
 
-.line-break {
+.line-break, .line-break-md, .line-break-lg {
   display: block;
-  height: 7em;
-  margin: -2rem 0;
   width: 100%;
 }
+
+.line-break-md { height: 3em; }
+.line-break-lg { height: 7em; }
 
 .wrapper {
   display: flex;
   flex-flow: row wrap;
   gap: 1em;
   justify-content: space-between;
-  margin: 3rem;
+  margin: 1rem 3rem;
   max-width: 1024px;
   width: 100%;
 }
