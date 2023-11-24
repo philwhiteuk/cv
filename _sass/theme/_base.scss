@@ -82,6 +82,10 @@ em {
     background: rgba($primary_highlight, 1);
   }
 
+  svg {
+    fill: rgba($primary_highlight, 0.8);
+  }
+
   em {
     color: $primary_emphasis;
   }
@@ -106,6 +110,10 @@ em {
 
   button {
     background: $secondary_highlight;
+  }
+
+  svg {
+    fill: rgba($secondary_highlight, 1);
   }
 
   em {
