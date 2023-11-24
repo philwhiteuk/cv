@@ -1,5 +1,6 @@
 <dl id="interests" class="row">
-    {% for interest in site.interests %}
+    {% assign interests = site.interests | sort: 'order' %}
+    {% for interest in interests %}
     <div aria-label="{{ interest.title | slugify }}" class="column">
         <img src='/cv/assets/{{ interest.image }}' alt='{{ interest.title }}' />
         <dt>{{ interest.title }}</dt>
