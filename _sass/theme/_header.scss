@@ -49,11 +49,13 @@ body > header {
 
     @media (max-width: 850px) {
       flex-flow: row wrap;
+
       #menu-toggle:checked ~ ul {
         align-items: center;
         display: inherit !important;
         flex-direction: column;
         gap: 0.2em 0;
+        margin-bottom: 2rem;
         width: 100%;
 
         li { width: 100% }
