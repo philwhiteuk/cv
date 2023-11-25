@@ -1,16 +1,6 @@
 body > footer {
     padding: 1rem 0;
 
-    @media (max-width: 515px) {
-        .wrapper {
-            justify-content: space-around;
-        }
-    }
-
-    #social:before {
-        content: "Follow me:";
-        font-size: 0.9rem;
-    }
     #social {
         align-items: center;
         display: flex;
