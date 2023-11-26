@@ -156,15 +156,7 @@ main > section {
   flex-flow: row wrap;
   gap: 2em 3.5em;
 
-  @media (max-width: 850px) { flex-flow: column wrap; }
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 0 2em;
-  width: 100%;
+  @media (max-width: $breakpoint_md) { flex-flow: column wrap; }
 }
 
 .column {
@@ -199,7 +191,7 @@ main > section {
 .hide {
   display: none !important;
 }
-@media (max-width: 515px) { .hide-sm { display: inherit !important; } }
-@media (max-width: 850px) { .hide-md { display: none !important; } }
-@media (min-width: 851px) { .hide-lg { display: none !important; } }
+@media (max-width: $breakpoint_sm) { .hide-sm { display: inherit !important; } }
+@media (max-width: $breakpoint_md) { .hide-md { display: none !important; } }
+@media (min-width: $breakpoint_md) { .hide-lg { display: none !important; } }
 

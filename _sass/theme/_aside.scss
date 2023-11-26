@@ -18,7 +18,7 @@ aside {
     }
 
     [aria-label=career-history] {
-        @media (max-width: 515px) {
+        @media (max-width: $breakpoint_sm) {
             li {
                 background: none !important;
                 padding: 5px 0 !important;

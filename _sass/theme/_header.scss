@@ -47,7 +47,7 @@ body > header {
       justify-content: flex-end;
     }
 
-    @media (max-width: 850px) {
+    @media (max-width: $breakpoint_md) {
       flex-flow: row wrap;
 
       #menu-toggle:checked ~ ul {
