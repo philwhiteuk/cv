@@ -1,17 +1,6 @@
 #interests {
-    gap: 2rem;
-
-    .column {
-        align-items: center;
-        display: flex;
-        flex-flow: column nowrap;
-    }
-
-    @media (max-width: 850px) {
-        .column {
-            flex: initial;
-        }
-    }
+    .column { align-items: center; }
+    text-align: justify;
 
     dt {
         font-size: 1.1em;
@@ -19,17 +8,7 @@
         margin-bottom: 0.5em;
     }
 
-    dd {
-        text-align: justify;
-    }
-
-    [aria-label="devops"] {
-        img { width: 10em }
-    }
-
-    [aria-label="software-development"] {
-        img { width: 10em }
-    }
+    img { width: 10em }
 
     [aria-label="teams"] {
         img { margin: 1.5em 0; width: 6.5em }

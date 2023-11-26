@@ -1,4 +1,4 @@
-<dl id="interests" class="row">
+<dl id="interests" class="flex">
     {% assign interests = site.interests | sort: 'order' %}
     {% for interest in interests %}
     <div aria-label="{{ interest.title | slugify }}" class="column">

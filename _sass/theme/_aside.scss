@@ -3,12 +3,6 @@ aside {
 
     .wrapper { margin-top: 0; }
 
-    @media (max-width: 850px) {
-        .column {
-            flex: initial;
-        }
-    }
-
     h2 {
         background-repeat: no-repeat;
         background-size: 2.2em;
@@ -45,9 +39,15 @@ aside {
 
         li.root  { background-position: 0 -530px; }
         li.trunk  { background-position: 0 -457px; }
-        li.open-branch  { background-position: 0 -303px; padding-bottom: 37px; }
+        li.open-branch  {
+            background-position: 0 -303px;
+            padding-bottom: 37px;
+        }
         li.branch  { background-position: 0 -217px; }
-        li.close-branch  { background-position: 0 -104px; padding-top: 30px; }
+        li.close-branch  {
+            background-position: 0 -104px;
+            padding-top: 30px;
+        }
         li.top  { background-position: 0 15px; }
     }
 

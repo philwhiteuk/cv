@@ -1,8 +1,8 @@
 {% assign projects_by_date = site.projects | sort: "start_date" | reverse %}
-<section id="projects" class="grid">
-    {% for project in projects_by_date %}
+<section class="flex">
+    {% for project in projects_by_date limit: 4 %}
     {% if include.tag == nil or project.tags contains include.tag %}
-    <article class="project">
+    <article class="project column">
         <h3>{{ project.title }}</h3>
         <span>
             <h4>{{ project.role }}</h4>
@@ -25,6 +25,12 @@
             {% endfor %}
         </ul>
     </article>
+
+    {% assign remainingColumns = forloop.index | modulo: 2 %}
+    {% if remainingColumns == 0 %}
+    <div class="break hide-md hide-sm"></div>
+    {% endif %}
+
     {% endif %}
     {% endfor %}
 </section>
