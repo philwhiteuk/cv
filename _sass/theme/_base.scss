@@ -14,7 +14,7 @@ html {
   padding: 0;
 }
 
-body > * {
+body > *:not(dialog) {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;

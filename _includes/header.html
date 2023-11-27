@@ -15,7 +15,7 @@
                 <li><a href="{{ page.permalink | relative_url }}">{{ page.title }}</a></li>
                 {% endif %}
                 {% endfor %}
-                <li><button aria-label="contact" name="contact" onclick="javascript:(() => alert('Coming Soon!'))()" type="button">Contact</button></li>
+                <li><button aria-label="contact" name="contact" onclick="javascript:(() => document.querySelector('dialog')?.showModal())()" type="button">Contact</button></li>
             </ul>
         </nav>
     </div>

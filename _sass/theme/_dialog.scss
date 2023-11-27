@@ -1,0 +1,58 @@
+dialog {
+    @extend %bg-primary;
+    border: 0;
+    border-radius: 0.2em;
+    margin: auto auto;
+    padding: 1em 1.5em;
+
+    &[open] {
+        animation: fade-in 0.5s ease-in-out;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1em;
+    }
+
+    header {
+        align-items: flex-start;
+        flex-flow: row nowrap !important;
+        justify-content: space-between;
+
+        h3 { margin: 0; }
+    }
+
+    button.close {
+        background: none;
+        display: flex;
+        justify-content: flex-end;
+        padding: 0;
+
+        i {
+            background: url("/cv/assets/close.svg") no-repeat center center;
+            display: inline-block;
+            width: 1.5em;
+            height: 1.5em;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1em;
+
+        input, textarea {
+            background: adjust-color($primary_fg, $alpha: -0.1);
+            border: 1px solid #ccc;
+            border-radius: 0.2em;
+            padding: 0.5em;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 10em;
+        }
+    }
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
