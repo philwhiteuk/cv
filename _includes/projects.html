@@ -1,7 +1,13 @@
 {% assign projects_by_date = site.projects | sort: "start_date" | reverse %}
+
+{% if include.tag == nil %}
+{% assign projects = projects_by_date | slice: 0,4 %}
+{% else %}
+{% assign projects = projects_by_date | where_exp: "project", "project.tags contains include.tag" %}
+{% endif %}
+
 <section class="flex">
-    {% for project in projects_by_date limit: 4 %}
-    {% if include.tag == nil or project.tags contains include.tag %}
+    {% for project in projects %}
     <article class="project column">
         <h3>{{ project.title }}</h3>
         <span>
@@ -29,8 +35,10 @@
     {% assign remainingColumns = forloop.index | modulo: 2 %}
     {% if remainingColumns == 0 %}
     <div class="break hide-md hide-sm"></div>
+    {% elsif forloop.last %}
+    <article class="project column"></article>
+    <div class="break hide-md hide-sm"></div>
     {% endif %}
 
-    {% endif %}
     {% endfor %}
 </section>
