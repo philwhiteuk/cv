@@ -9,8 +9,8 @@
                 {% for position in career %}
                     <li class="{{ position.class }}">
                         <div>
-                            <span>{{ position.role }}</span>
                             <span><em>{{ position.org }}</em></span>
+                            <span>{{ position.role }}</span>
                         </div>
                         <div>{{ position.from_date | date: "%Y" }} - {{ position.to_date | date: "%Y" | default: 'Now' }}</div>
                     </li>
