@@ -12,6 +12,10 @@ body > footer {
             align-items: center;
         }
 
+        li a:hover svg {
+            fill: $secondary_fg;
+        }
+
         svg {
             height: 16px;
             width: 16px;
