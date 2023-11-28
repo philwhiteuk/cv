@@ -1,5 +1,5 @@
 dialog {
-    @extend %bg-primary;
+    @extend %bg-secondary;
     border: 0;
     border-radius: 0.2em;
     margin: auto auto;
@@ -28,6 +28,7 @@ dialog {
 
         i {
             background: url("/cv/assets/close.svg") no-repeat center center;
+            background-color: $secondary_highlight;
             display: inline-block;
             width: 1.5em;
             height: 1.5em;
@@ -40,7 +41,6 @@ dialog {
         gap: 1em;
 
         input, textarea {
-            background: adjust-color($primary_fg, $alpha: -0.1);
             border: 1px solid #ccc;
             border-radius: 0.2em;
             padding: 0.5em;
