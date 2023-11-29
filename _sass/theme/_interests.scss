@@ -1,4 +1,5 @@
 #interests {
+    text-align: center;
     .column { align-items: center; }
 
     dt {
@@ -7,9 +8,9 @@
         margin-bottom: 0.5em;
     }
 
-    img { width: 10em }
-
-    [aria-label="teams"] {
-        img { margin: 1.5em 0; width: 6.5em }
+    img {
+        margin: 1em;
+        width: 9em
     }
+
 }

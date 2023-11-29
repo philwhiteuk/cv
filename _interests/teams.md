@@ -1,5 +1,5 @@
 ---
-image: teams.svg
+image: assets/images/icons.svg#icon-teams-view
 title: Teams
 order: 1
 ---

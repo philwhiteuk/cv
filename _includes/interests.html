@@ -2,7 +2,7 @@
     {% assign interests = site.interests | sort: 'order' %}
     {% for interest in interests %}
     <div aria-label="{{ interest.title | slugify }}" class="column">
-        <img src='/cv/assets/{{ interest.image }}' alt='{{ interest.title }}' />
+        <img src='{{ interest.image }}' alt='{{ interest.title }}' />
         <dt>{{ interest.title }}</dt>
         <dd>{{ interest.content }}</dd>
     </div>

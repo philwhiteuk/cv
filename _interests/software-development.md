@@ -1,5 +1,5 @@
 ---
-image: software-development.svg
+image: assets/images/icons.svg#icon-software-development-view
 title: Software Development
 order: 2
 ---

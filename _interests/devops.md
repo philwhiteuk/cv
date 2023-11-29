@@ -1,5 +1,5 @@
 ---
-image: devops.svg
+image: assets/images/icons.svg#icon-devops-view
 title: Devops
 order: 3
 ---
