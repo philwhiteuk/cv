@@ -70,6 +70,13 @@ em {
   padding: 0 0.1em;
 }
 
+input, textarea {
+  font-family: $base_font_family;
+  font-size: $base_font_size;
+  font-style: normal;
+  font-variant-ligatures: common-ligatures;
+}
+
 %bg-primary {
   background-color: $primary_bg;
   color: $primary_fg;
