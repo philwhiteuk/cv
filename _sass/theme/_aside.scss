@@ -86,6 +86,7 @@ aside {
             }
 
             li span {
+                background: $primary_fg;
                 border: $primary_fg solid 0.4em;
                 display: inline-block;
             }
