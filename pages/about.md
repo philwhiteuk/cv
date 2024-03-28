@@ -1,7 +1,7 @@
 ---
 layout: subpage
 title: About
-order: 1
+order: 2
 permalink: /about
 ---
 

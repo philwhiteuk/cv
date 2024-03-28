@@ -1,9 +1,11 @@
 {% assign projects_by_date = site.projects | sort: "start_date" | reverse %}
 
-{% if include.tag == nil %}
+{% if include.shortlist == true %}
 {% assign projects = projects_by_date | where_exp: "project", "project.hide_homepage != true" | slice: 0,4 %}
-{% else %}
+{% elsif include.tag != nil %}
 {% assign projects = projects_by_date | where_exp: "project", "project.tags contains include.tag" %}
+{% else %}
+{% assign projects = projects_by_date %}
 {% endif %}
 
 <section class="flex">
