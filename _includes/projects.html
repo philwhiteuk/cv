@@ -17,6 +17,9 @@
             <h4>{{ project.role }}</h4>
             <h5>{{ project.org }}</h5>
         {% endif %}
+        {% if project.external_link %}
+            <a class="external-link" target="_blank" href="{{ project.external_link }}" title="External link">{{ project.external_link }}</a>
+        {% endif %}
         </span>
         <div class="content">
             {{ project.content | markdownify }}

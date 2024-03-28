@@ -16,6 +16,11 @@ article.project {
 
   h5 { font-style: italic; }
 
+  a.external-link {
+    display: block;
+    font-size: 0.85em;
+  }
+
   ul.tags:before {
     content: 'Tags: ';
   }
