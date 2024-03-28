@@ -1,7 +1,7 @@
 {% assign projects_by_date = site.projects | sort: "start_date" | reverse %}
 
 {% if include.tag == nil %}
-{% assign projects = projects_by_date | slice: 0,4 %}
+{% assign projects = projects_by_date | where_exp: "project", "project.hide_homepage != true" | slice: 0,4 %}
 {% else %}
 {% assign projects = projects_by_date | where_exp: "project", "project.tags contains include.tag" %}
 {% endif %}
@@ -11,8 +11,10 @@
     <article class="project column">
         <h3>{{ project.title }}</h3>
         <span>
+        {% if project.role and project.org %}
             <h4>{{ project.role }}</h4>
             <h5>{{ project.org }}</h5>
+        {% endif %}
         </span>
         <div class="content">
             {{ project.content | markdownify }}
