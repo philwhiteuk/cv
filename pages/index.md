@@ -4,7 +4,7 @@ title: Home
 order: -1
 permalink: /
 ---
-## 👋 Hi there,
+## 👋 Hi there<span class="caret" />
 
 Thanks for taking an interest in my career profile!
 
