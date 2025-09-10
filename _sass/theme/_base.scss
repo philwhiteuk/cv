@@ -107,13 +107,6 @@ input, textarea {
     color: $primary_emphasis;
   }
 
-  .line-break-left {
-    background: -webkit-linear-gradient(88deg, $primary_bg 49%, $secondary_bg 50%);
-  }
-
-  .line-break-right {
-    background: -webkit-linear-gradient(-88deg, $primary_bg 49%, $secondary_bg 50%);
-  }
 }
 
 %bg-secondary {
@@ -135,14 +128,6 @@ input, textarea {
 
   em {
     color: $secondary_emphasis;
-  }
-
-  .line-break-left {
-    background: -webkit-linear-gradient(88deg, $primary_bg 49%, $secondary_bg 50%);
-  }
-
-  .line-break-right {
-    background: -webkit-linear-gradient(-88deg, $primary_bg 49%, $secondary_bg 50%);
   }
 }
 
@@ -194,6 +179,14 @@ main > section {
 
 .line-break-md { height: 3em; }
 .line-break-lg { height: 7em; }
+
+.line-break-left {
+  background: -webkit-linear-gradient(88deg, $primary_bg 49%, $secondary_bg 50%);
+}
+
+.line-break-right {
+  background: -webkit-linear-gradient(-88deg, $primary_bg 49%, $secondary_bg 50%);
+}
 
 .wrapper {
   display: flex;
