@@ -1,8 +1,12 @@
+- role: Engineering Lead
+  org: Proda
+  from_date: 2024-04-16
+  to_date:
+  class: top
 - role: Contractor
   org: Apple
   from_date: 2023-12-04
-  to_date:
-  class: top
+  to_date: 2024-03-29
 - role: Senior Software Engineer
   org: Triptease
   from_date: 2019-01-01
