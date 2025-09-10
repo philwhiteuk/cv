@@ -1,5 +1,5 @@
 ---
-image: assets/images/icons.svg#icon-software-development-view
+image: assets/images/icons.svg#icon-ai-view
 title: Product Development
 order: 2
 ---
