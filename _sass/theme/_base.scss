@@ -205,3 +205,16 @@ main > section {
 @media (max-width: $breakpoint_md) { .hide-md { display: none !important; } }
 @media (min-width: $breakpoint_md) { .hide-lg { display: none !important; } }
 
+@keyframes slow-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.term-caret {
+  animation: slow-blink 1s linear infinite;
+}
+
+.term-caret::before {
+  content: '_';
+}
