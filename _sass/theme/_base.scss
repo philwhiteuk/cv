@@ -181,11 +181,11 @@ main > section {
 .line-break-lg { height: 7em; }
 
 .line-break-left {
-  background: -webkit-linear-gradient(88deg, $primary_bg 49%, $secondary_bg 50%);
+  background: -webkit-linear-gradient(88deg, $primary_bg_gradient 49%, $secondary_bg 50%);
 }
 
 .line-break-right {
-  background: -webkit-linear-gradient(-88deg, $primary_bg 49%, $secondary_bg 50%);
+  background: -webkit-linear-gradient(-88deg, $primary_bg_gradient 49%, $secondary_bg 50%);
 }
 
 .wrapper {
