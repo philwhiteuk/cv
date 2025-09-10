@@ -4,8 +4,10 @@ title: Home
 order: -1
 permalink: /
 ---
-## Who am I?
+## 👋 Hi there,
 
-👋 Hi there, thank you for viewing my career profile!
+Thanks for taking an interest in my career profile!
 
-I am an all-round engineer with leadership experience and I have a passion for delivering working software, fast. I am always open to and on the look out for new and exciting projects.
+I am an all-round software engineer and coach, with leadership experience and a passion for delivering value, fast. Take a look at my [Projects](/projects) to get a better understanding of the kinds of development I've been involved with and use the tags if you are interested in a particular area or skill.
+
+I am always open to and on the look out for new and exciting projects - please reach out via [LinkedIn](https://www.linkedin.com/in/philwhiteuk) or clicking the Contact button in the header.
