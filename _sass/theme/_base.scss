@@ -86,7 +86,9 @@ input, textarea {
 }
 
 %bg-primary {
-  background-color: $primary_bg;
+  background: $primary_bg;
+  background: linear-gradient(180deg, $primary_bg 0%, $primary_bg_gradient 100%);
+  
   color: $primary_fg;
 
   a {
