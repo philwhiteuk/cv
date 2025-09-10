@@ -21,10 +21,6 @@ article.project {
     font-size: 0.85em;
   }
 
-  ul.tags:before {
-    content: 'Tags: ';
-  }
-
   ul.tags {
     align-items: center;
     display: flex;
