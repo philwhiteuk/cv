@@ -34,7 +34,7 @@ a, button {
 }
 
 button {
-  color: $primary_highlight;
+  color: $base_anchor_text_colour_normal;
   padding: 0.5em 1em;
 }
 
@@ -119,7 +119,7 @@ input, textarea {
   }
 
   button {
-    background: $secondary_highlight;
+    background: rgba($primary_highlight, 1);
   }
 
   svg {
