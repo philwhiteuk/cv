@@ -72,18 +72,6 @@ h3 { font-size: 1em * ($base_heading_modifier * 3) + 1 }
 h4 { font-size: 1em * ($base_heading_modifier * 2) + 1 }
 h5 { font-size: 1em * ($base_heading_modifier * 1) + 1 }
 
-h1.typing-effect {
-  overflow: hidden;
-  margin: 0 auto;
-  animation: 
-    typing 3.5s steps(40, end);
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
 em {
   font-style: normal;
   font-weight: $base_font_weight + 100;
@@ -229,4 +217,16 @@ main > section {
 
 .term-caret::before {
   content: '_';
+}
+
+.typing-effect {
+  overflow: hidden;
+  margin: 0 auto;
+  animation: 
+    typing 3.5s steps(40, end);
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
