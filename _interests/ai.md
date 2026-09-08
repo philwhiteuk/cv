@@ -1,6 +1,8 @@
 ---
 image: assets/images/icons.svg#icon-ai-view
-title: AI/LLMs
+title: Agentic
 order: 4
 ---
-I am following AI news closely and keen to learn and adopt techniques to enhance and augment myself with the use of AI, e.g. LLMs
+Agentic Engineering
+
+AI agents now write ~90% of the code I ship. I've restructured how I work around agent-driven development — using them to plan, test, review, and operate across the full SDLC, with human judgement focused on architecture, review discipline, and knowing when to trust vs. verify agent output.
