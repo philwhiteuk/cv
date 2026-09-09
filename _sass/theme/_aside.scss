@@ -62,14 +62,16 @@ aside {
         .tag-cloud {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.4em;
+            gap: 0.3em;
             justify-content: center;
             list-style: none;
             padding: 0;
             margin: 0;
+            width: 100%;
 
             &__item {
                 margin: 0;
+                flex: 0 0 auto;
 
                 a {
                     border: transparent solid 0.05em;
@@ -90,12 +92,6 @@ aside {
                 &--lg a { font-size: 1.2em; }
                 &--md a { font-size: 1em; }
                 &--sm a { font-size: 0.8em; }
-            }
-
-            &__count {
-                font-size: 0.6em;
-                opacity: 0.7;
-                margin-left: 0.3em;
             }
         }
     }

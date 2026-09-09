@@ -42,10 +42,8 @@
                         {% endif %}
 
                         <li class="tag-cloud__item tag-cloud__item--{{ tier }}">
-                          <a href="{{ tag.url | relative_url }}"
-                             aria-label="{{ tag_name }} — appears in {{ count }} of {{ total }} projects">
+                          <a href="{{ tag.url | relative_url }}">
                             {{ tag_name }}
-                            <span class="tag-cloud__count">{{ count }}/{{ total }}</span>
                           </a>
                         </li>
                       {% endfor %}
