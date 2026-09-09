@@ -5,4 +5,4 @@ order: 4
 ---
 Agentic Engineering
 
-AI agents now write ~90% of the code I ship. I focus human judgement on architecture, review discipline and knowing when to trust vs. verify.
+AI agents now write ~90% of the code I ship. Leaving me to focus on architecture, review and knowing when to trust vs. verify.
