@@ -6,8 +6,8 @@
 - role: Platform Engineer
   org: Proda
   from_date: 2024-04-16
-  to_date:
-  class: branch
+  to_date: 2025-05-30
+  class: open-branch
 - role: Contractor
   org: Apple
   from_date: 2023-12-04
