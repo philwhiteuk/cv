@@ -2,7 +2,7 @@
 title: Multi-Region Platform Hosting
 role: Engineering Lead
 company: Proda
-date: 2026-01-01
+start_date: 2026-01-01
 tags:
   - Terraform
   - ArgoCD
