@@ -1,11 +1,11 @@
 ---
-title: Approval Service
-role: Engineering Lead
-company: Proda
+title: "Approval Service"
+role: "Engineering Lead"
+company: "Proda"
 start_date: 2024-10-01
 tags:
   - NestJS
-  - Workflow.js
+  - "Workflow.js"
   - Postgres
   - Webpack
   - Module Federation
@@ -21,4 +21,4 @@ Built as add-on to the existing legacy monolith. Features included: automated ap
 
 Built on NestJS and Workflow.js, backed by Postgres, with federated micro-frontend components (Webpack Module Federation) for the review UI, deployed via Terraform and Kubernetes.
 
-*2x ROI* in year one. By year 2, *~200 quarterly active users*, processing *1,200 approval requests* and making *1,800 decisions* to date.
+*2x ROI* in year 1. By year 2, *~200 quarterly active users*, processing *1,200 approval requests* and making *1,800 decisions* to date.
