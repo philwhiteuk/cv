@@ -4,15 +4,15 @@ role: "Engineering Lead"
 company: "Proda"
 start_date: 2024-10-01
 tags:
-  - NestJS
-  - "Workflow.js"
-  - Postgres
-  - Webpack
-  - Module Federation
-  - Terraform
-  - Kubernetes
-  - Leadership
-  - Software Development
+    - NestJS
+    - "Workflow.js"
+    - Postgres
+    - Webpack
+    - Module Federation
+    - Terraform
+    - Kubernetes
+    - Leadership
+    - Software Development
 ---
 
 6-month project taken from alpha through to beta. Led the team and helped establish the ways of working. 
