@@ -1,4 +1,4 @@
-# AGENTS.md
+# 🤖 AGENTS.md
 
 ## Quick Start
 
@@ -26,4 +26,4 @@ Jekyll static site. Ruby. Liquid templates. SASS for styles.
 
 ## When in doubt
 
-Match existing patterns. Keep it simple. Ship it.
+Match existing patterns. Keep it simple. Ship it. 🦾
