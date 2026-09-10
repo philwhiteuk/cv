@@ -3,4 +3,4 @@ layout: tag
 title: "Devops"
 level: 85
 ---
-I ❤️ Devops.
+I have extensive experience with Devops practices and culture.
