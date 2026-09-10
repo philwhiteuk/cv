@@ -1,8 +1,13 @@
 - role: Engineering Lead
   org: Proda
+  from_date: 2025-06-01
+  to_date:
+  class: close-branch
+- role: Platform Engineer
+  org: Proda
   from_date: 2024-04-16
   to_date:
-  class: top
+  class: branch
 - role: Contractor
   org: Apple
   from_date: 2023-12-04
