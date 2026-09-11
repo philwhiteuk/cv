@@ -9,6 +9,7 @@ tags:
     - Security
     - Devops
     - SFTPGo
+hide_homepage: true
 ---
 
 2-week project delivering a secure, self-service SFTP solution — using SFTPGo on Kubernetes — for bulk client data import/export. Initially built for bulk export, later extended to support bulk import as client needs evolved.
