@@ -4,11 +4,15 @@ role: "Senior Software Engineer"
 org: "Triptease"
 tags:
     - Puppeteer.js
+    - Typescript
     - Kustomization
+    - Kubernetes
     - Helm
     - Terraform
     - Prometheus
     - Devops
+    - GCP
+    - CI/CD
     - Software Development
 start_date: "2021-09-12"
 ---
