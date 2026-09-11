@@ -23,7 +23,7 @@
         </span>
         <div class="content">
             {% if include.shortlist == true %}
-            {{ project.content | truncatewords: 30 | markdownify }}
+            {{ project.content | truncatewords: 60 | markdownify }}
             {% else %}
             {{ project.content | markdownify }}
             {% endif %}
