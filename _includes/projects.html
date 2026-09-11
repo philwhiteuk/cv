@@ -23,7 +23,11 @@
         </span>
         <div class="content">
             {% if include.shortlist == true %}
-            {{ project.content | truncatewords: 60 | markdownify }}
+            {% assign truncated_content = project.content | truncatewords: 60 %}
+            {{ truncated_content | markdownify }}
+            {% if truncated_content != project.content %}
+            <p><a href="{{ project.url | relative_url }}" title="Read more about {{ project.title }}">Read more...</a></p>
+            {% endif %}
             {% else %}
             {{ project.content | markdownify }}
             {% endif %}
