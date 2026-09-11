@@ -1,7 +1,7 @@
 ---
 title: "Approval Service"
 role: "Engineering Lead"
-company: "Proda"
+org: "Proda"
 tags:
     - NestJS
     - "Workflow.js"
