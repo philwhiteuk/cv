@@ -1,6 +1,6 @@
 ---
 title: "Platform SFTP Solution"
-role: "Engineering Lead"
+role: "Platform Engineer"
 org: "Proda"
 start_date: "2024-10-01"
 tags:
