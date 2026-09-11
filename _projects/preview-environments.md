@@ -1,6 +1,6 @@
 ---
 title: "Preview Environments"
-role: "Engineering Lead"
+role: "Platform Engineer"
 org: "Proda"
 start_date: "2024-04-01"
 tags:
