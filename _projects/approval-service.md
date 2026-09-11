@@ -4,14 +4,18 @@ role: "Engineering Lead"
 org: "Proda"
 tags:
     - NestJS
-    - "Workflow.js"
     - Postgres
     - Webpack
-    - Module Federation
+    - React
     - Terraform
+    - GCP
+    - CI/CD
+    - Datadog
+    - Nginx
     - Kubernetes
     - Leadership
     - Software Development
+    - Typescript
 start_date: "2024-10-01"
 ---
 
