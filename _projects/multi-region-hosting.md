@@ -1,7 +1,7 @@
 ---
 title: "Multi-Region Platform Hosting"
 role: "Engineering Lead"
-company: "Proda"
+org: "Proda"
 tags:
     - Terraform
     - ArgoCD
