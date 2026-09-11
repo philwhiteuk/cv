@@ -1,14 +1,14 @@
 ---
-title: Preview Environments
-role: Engineering Lead
-org: Proda
-start_date: 2024-04-01
+title: "Preview Environments"
+role: "Engineering Lead"
+org: "Proda"
+start_date: "2024-04-01"
 tags:
-  - Kubernetes
-  - Nginx Ingress
-  - CI/CD
-  - Devops
-  - Github
+    - Kubernetes
+    - Nginx Ingress
+    - CI/CD
+    - Devops
+    - Github
 ---
 
 CI-automated, on-demand PR preview environments running on Kubernetes — namespaced per PR. Using nginx ingress controller, cert-manager, external-dns and external-secrets to provision a fully isolated, routable, TLS-secured environment for every change.
