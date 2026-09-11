@@ -26,7 +26,7 @@
             {% assign truncated_content = project.content | truncatewords: 60 %}
             {{ truncated_content | markdownify }}
             {% if truncated_content != project.content %}
-            <p><a href="{{ project.url | relative_url }}" title="Read more about {{ project.title }}">Read more...</a></p>
+            <p><a href="{{ '/projects' | relative_url }}" title="View all projects">Read more...</a></p>
             {% endif %}
             {% else %}
             {{ project.content | markdownify }}
