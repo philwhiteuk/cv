@@ -22,7 +22,11 @@
         {% endif %}
         </span>
         <div class="content">
+            {% if include.shortlist == true %}
+            {{ project.content | truncatewords: 60 | markdownify }}
+            {% else %}
             {{ project.content | markdownify }}
+            {% endif %}
         </div>
         <ul class="tags">
             {% assign tags_by_title = project.tags | sort %}
