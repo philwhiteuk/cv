@@ -37,7 +37,7 @@ body.parallax-page > header {
   width: 100%;
   scroll-snap-align: start;
   position: relative;
-  
+
   // Add padding to account for sticky header
   padding-top: 80px; // Header height + some margin
   padding-bottom: 100px; // Extra space at bottom for readability
@@ -46,7 +46,6 @@ body.parallax-page > header {
   transition: all 0.3s ease;
 
   .parallax-content {
-    position: relative;
     z-index: 2;
     width: 100%;
     padding: 2rem 0;
@@ -73,7 +72,7 @@ body.parallax-page > header {
 // Section 1 - Welcome (gradient background)
 .parallax-section.section-1 {
   @extend %bg-primary;
-  
+
   .wrapper {
     align-items: flex-start;
     flex-flow: column wrap;
@@ -111,6 +110,7 @@ body.parallax-page > header {
       width: 100%;
       
       img {
+        background: linear-gradient(180deg, #d16f00 0%, #5105a7 100%);
         width: 80px;
         height: 80px;
         border-radius: 50%;
@@ -193,12 +193,20 @@ body.parallax-page > header {
         font-size: 0.85rem;
         
         a {
+          background: none;
+          border: none;
           color: $primary_fg;
           text-decoration: none;
           
           &:hover {
             text-decoration: underline;
           }
+        }
+
+        span {
+          background: none;
+          border: none;
+          color: $primary_fg;
         }
       }
     }
