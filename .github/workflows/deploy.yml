@@ -14,6 +14,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -34,9 +38,13 @@ jobs:
       - name: Build Jekyll site
         run: bundle exec jekyll build --baseurl "/cv"
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
-          keep_files: false
+          path: ./_site
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
