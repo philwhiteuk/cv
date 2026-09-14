@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<div class="parallax-container">
+  <section id="welcome" class="parallax-section section-1">
+    <div class="parallax-content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </div>
+  </section>
+
+  <section class="parallax-section section-2">
+    <div class="parallax-content">
+      <div class="wrapper">
+        <h2>What makes me tick?</h2>
+        {%- include interests.html -%}
+      </div>
+    </div>
+  </section>
+
+  <section class="parallax-section section-3">
+    <div class="parallax-content">
+      <div class="wrapper">
+        <h2>What have I been working on?</h2>
+        <a href="{{ 'projects' | relative_url }}" title="View all projects"><em>View All Projects ></em></a>
+        {%- include projects.html shortlist=true -%}
+      </div>
+    </div>
+  </section>
+</div>
