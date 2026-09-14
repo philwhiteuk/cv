@@ -4,7 +4,9 @@
   <body class="parallax-page">
     {%- include header.html -%}
 
-    {{ content }}
+    <main aria-label="Content" style="height: 100%;">
+      {{ content }}
+    </main>
 
     {%- include dialog.html -%}
     {%- include aside.html -%}
