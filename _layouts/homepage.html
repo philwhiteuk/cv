@@ -3,20 +3,20 @@ layout: default
 ---
 
 <section id="welcome">
-    <div class="wrapper">
+    <div class="wrapper reveal">
         {{ content }}
     </div>
 </section>
 <div class="line-break-md"></div>
 <section class="primary">
     <div class="wrapper">
-        <h2>What makes me tick?</h2>
+        <h2 class="reveal">What makes me tick?</h2>
         {%- include interests.html -%}
     </div>
 </section>
 {% include line-break.html direction="right" %}
 <section>
-    <div class="wrapper">
+    <div class="wrapper reveal">
         <h2>What have I been working on?</h2>
         <a href="{{ 'projects' | relative_url }}" title="View all projects"><em>View All Projects ></em></a>
         {%- include projects.html shortlist=true -%}

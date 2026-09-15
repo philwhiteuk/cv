@@ -85,6 +85,22 @@ input, textarea {
   font-variant-ligatures: common-ligatures;
 }
 
+.reveal {
+  animation: reveal linear both;
+  animation-timeline: view();
+  animation-range: entry 10% cover 35%;
+}
+
+@keyframes reveal {
+  from { opacity: 0.6; transform: translateY(5rem) scale(0.97); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card { animation: none; }
+}
+
+
 %bg-primary {
   background: $primary_bg;
   background: linear-gradient(180deg, $primary_bg 0%, $primary_bg_gradient 100%);
