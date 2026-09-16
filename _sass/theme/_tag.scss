@@ -1,3 +1,5 @@
-main section#tag {
+main#tag > section {
     @extend %bg-primary;
+    justify-items: center;
+    width: 100%;
 }

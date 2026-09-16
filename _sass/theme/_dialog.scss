@@ -2,12 +2,13 @@ dialog {
     @extend %bg-secondary;
     border: 0;
     border-radius: 0.2em;
-    margin: 25vh auto;
+    margin: 25vh 1.5rem;
     padding: 1em 1.5em;
 
     &[open] {
         animation: fade-in 0.5s ease-in-out;
         display: flex;
+        justify-self: center;
         flex-flow: column nowrap;
         gap: 1em;
     }
@@ -54,5 +55,5 @@ dialog {
 }
 
 dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.85);
 }

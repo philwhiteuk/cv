@@ -6,6 +6,8 @@ html {
   font-weight: $base_font_weight;
   letter-spacing: $base_letter_spacing;
   line-height: $base_line_height;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory !important;
 }
 
 * {
@@ -18,6 +20,7 @@ body > *:not(dialog) {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  overflow: clip;
 }
 
 a, button {
@@ -47,7 +50,8 @@ a:hover {
 }
 
 a[href^="https:"] {
-  color: $primary_highlight !important;
+  background: rgba($primary_highlight, 0.5);
+  text-decoration: underline;
 }
 
 a[href^="https:"]:hover::after {
@@ -66,7 +70,10 @@ h3, h4, h5, h6 {
   margin: 0.5rem 0;
 }
 
-h1 { font-size: 1em * ($base_heading_modifier * 6) + 1 }
+h1 { 
+  font-size: 1em * ($base_heading_modifier * 6) + 1; 
+  white-space: nowrap; 
+}
 h2 { font-size: 1em * ($base_heading_modifier * 5.5) + 1 }
 h3 { font-size: 1em * ($base_heading_modifier * 3) + 1 }
 h4 { font-size: 1em * ($base_heading_modifier * 2) + 1 }
@@ -88,11 +95,11 @@ input, textarea {
 .reveal {
   animation: reveal linear both;
   animation-timeline: view();
-  animation-range: entry 10% cover 35%;
+  animation-range: entry 0% cover 20%;
 }
 
 @keyframes reveal {
-  from { opacity: 0.6; transform: translateY(5rem) scale(0.97); }
+  from { opacity: 0.1; transform: translateZ(8rem) translateY(4rem) scale(0.97); }
   to   { opacity: 1; transform: none; }
 }
 
@@ -126,6 +133,7 @@ input, textarea {
 }
 
 %bg-secondary {
+  background: none;
   background-color: $secondary_bg;
 
   color: $secondary_fg;
@@ -147,26 +155,16 @@ input, textarea {
   }
 }
 
-main:nth-child(odd), .primary
+.primary
 {
   @extend %bg-primary;
+  background-attachment: fixed;
 }
 
-main:nth-child(even), .secondary
+.secondary
 {
   @extend %bg-secondary;
-}
-
-main > section {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    width: 100%;
-
-    .wrapper {
-      align-items: center;
-      gap: 0 3rem;
-    }
+  background-attachment: fixed;
 }
 
 .flex {
@@ -181,6 +179,11 @@ main > section {
   display: flex;
   flex-direction: column;
   flex: 1;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
 }
 
 .break {
@@ -205,12 +208,14 @@ main > section {
 }
 
 .wrapper {
+  box-sizing: border-box;
   display: flex;
   flex-flow: row wrap;
   gap: 1em;
   justify-content: space-between;
-  margin: 1em 3em;
   max-width: 1024px;
+  padding: 0 3em;
+  margin: 2em 0;
   width: 100%;
 }
 

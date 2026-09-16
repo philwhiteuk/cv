@@ -8,12 +8,17 @@ body > footer {
         gap: 0.5rem;
 
         li a {
+            background: none;
             display: flex;
             align-items: center;
         }
 
         li a:hover svg {
             fill: $secondary_fg;
+        }
+
+        li a:hover:after {
+            content: none;
         }
 
         svg {

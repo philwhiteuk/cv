@@ -1,6 +1,14 @@
 aside {
+    &.primary {
+        background-attachment: initial;
+    }
+    &.secondary {
+        background-attachment: initial;
+    }
     font-size: 0.9em;
+    justify-items: center;
     min-height: 20vh;
+    width: 100%;
 
     .wrapper { margin-top: 0; }
 

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<section id="tag">
+<section>
     <div class="wrapper">
         {%- if page.title -%}
         <h1 class="page-heading">{{ page.title }}</h1>
@@ -10,11 +10,7 @@ layout: default
         <div class="break"></div>
         {{ content }}
     </div>
-</section>
-{% include line-break.html direction="right" %}
-<section>
     <div class="wrapper">
-        <h2>Related Experience</h2>
         {%- include projects.html tag=page.title -%}
     </div>
 </section>

@@ -4,12 +4,11 @@
   <body>
     {%- include header.html -%}
 
-    <main aria-label="Content">
+    <main aria-label="Content" id="{{ page.layout }}">
       {{ content }}
     </main>
 
     {%- include dialog.html -%}
-    {%- include aside.html -%}
     {%- include footer.html -%}
   </body>
 </html>

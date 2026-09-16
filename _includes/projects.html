@@ -8,7 +8,7 @@
 {% assign projects = projects_by_date %}
 {% endif %}
 
-<section class="flex">
+<section class="flex column">
     {% for project in projects %}
     <article class="project column reveal">
         <h3>{{ project.title }}</h3>
@@ -47,13 +47,9 @@
         </ul>
     </article>
 
-    {% assign remainingColumns = forloop.index | modulo: 2 %}
-    {% if remainingColumns == 0 %}
-    <div class="break hide-md hide-sm"></div>
-    {% elsif forloop.last %}
-    <article class="project column"></article>
-    <div class="break hide-md hide-sm"></div>
-    {% endif %}
-
     {% endfor %}
 </section>
+
+{% if include.shortlist == true %}
+<a id="view-all" href="{{ 'projects' | relative_url }}" title="View all projects"><em>View All Projects ></em></a>
+{% endif %}
