@@ -13,6 +13,7 @@ body.parallax-page {
 
 // Sticky header for parallax pages
 body.parallax-page > header {
+  min-height: 7vh;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -31,16 +32,12 @@ body.parallax-page > header {
 .parallax-section {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: center;
-  min-height: 100vh;
+  min-height: 93vh;
   width: 100%;
   scroll-snap-align: start;
   position: relative;
-
-  // Add padding to account for sticky header
-  padding-top: 80px; // Header height + some margin
-  padding-bottom: 100px; // Extra space at bottom for readability
   
   // Smooth transitions
   transition: all 0.3s ease;
@@ -227,7 +224,7 @@ body.parallax-page > header {
 
 // Add scroll hint - show part of next section
 .parallax-section {
-  margin-bottom: -5vh; // Overlap slightly to show hint of next section
+  margin-bottom: -0.2vh; // Overlap slightly to show hint of next section
   
   // Add a subtle indicator at the bottom
   &::after {
@@ -236,8 +233,8 @@ body.parallax-page > header {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.3);
     opacity: 0.5;
@@ -258,7 +255,7 @@ body.parallax-page > header {
     transform: translateX(-50%) translateY(0);
   }
   40% {
-    transform: translateX(-50%) translateY(-10px);
+    transform: translateX(-50%) translateY(-20px);
   }
   60% {
     transform: translateX(-50%) translateY(-5px);
