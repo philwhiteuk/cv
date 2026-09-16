@@ -1,5 +1,12 @@
 main#homepage {
+    
+    section#interests {
+        @extend %bg-secondary;
+    }
+
     &> section {
+        @extend %bg-primary;
+
         align-items: center;
         display: flex;
         flex-flow: row wrap;
@@ -21,7 +28,7 @@ main#homepage {
             flex-flow: column wrap;
             gap: 1em 3em;
             width: 100%;
-            padding: 0 2rem;
+            // padding: 0 2rem;
             padding-bottom: 2rem;
             text-align: left;
             z-index: 2;
@@ -58,14 +65,8 @@ main#homepage {
           animation: bounce 2s infinite;
         }
     }
-    
-    section#welcome {
-        @extend %bg-primary;
-    }
 
     section#interests {
-        @extend %bg-secondary;
-
         dl {
             gap: 4em;
             text-align: left;
@@ -80,7 +81,7 @@ main#homepage {
                 background: linear-gradient(180deg, #d16f00 0%, #5105a7 100%);
                 border-radius: 50%;
                 height: 5em;
-                margin-right: 1em;
+                margin: 0 1em;
                 object-fit: cover;
                 width: 5em;
             }
@@ -88,11 +89,13 @@ main#homepage {
 
         // zip animation
         .row {
-            --from-x: -50vh;
+            --from-x: 50vw;
         }
     
         .row:nth-child(even) {
-            --from-x: 50vw;
+            // flex-direction: row-reverse;
+            // text-align: right;
+            --from-x: -50vw;
         }
     
         @supports (animation-timeline: view()) {
@@ -119,7 +122,4 @@ main#homepage {
         }
     }
 
-    section#recent-projects {
-        @extend %bg-primary;
-    }
 }

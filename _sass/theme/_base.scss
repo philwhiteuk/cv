@@ -19,6 +19,7 @@ body > *:not(dialog) {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  overflow: clip;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
@@ -69,7 +70,10 @@ h3, h4, h5, h6 {
   margin: 0.5rem 0;
 }
 
-h1 { font-size: 1em * ($base_heading_modifier * 6) + 1 }
+h1 { 
+  font-size: 1em * ($base_heading_modifier * 6) + 1; 
+  white-space: nowrap; 
+}
 h2 { font-size: 1em * ($base_heading_modifier * 5.5) + 1 }
 h3 { font-size: 1em * ($base_heading_modifier * 3) + 1 }
 h4 { font-size: 1em * ($base_heading_modifier * 2) + 1 }
@@ -129,6 +133,7 @@ input, textarea {
 }
 
 %bg-secondary {
+  background: none;
   background-color: $secondary_bg;
 
   color: $secondary_fg;
@@ -201,12 +206,13 @@ main:nth-child(even), .secondary
 }
 
 .wrapper {
+  box-sizing: border-box;
   display: flex;
   flex-flow: row wrap;
   gap: 1em;
   justify-content: space-between;
-  margin: 1em 3em;
   max-width: 1024px;
+  padding: 1em 3em;
   width: 100%;
 }
 
