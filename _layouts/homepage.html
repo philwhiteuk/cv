@@ -2,22 +2,30 @@
 layout: default
 ---
 
-<section id="welcome">
-    <div class="wrapper reveal">
+<main aria-label="Content" class="parallax-container">
+  <section id="welcome" class="parallax-section section-1">
+    <div class="parallax-content">
+      <div class="wrapper reveal">
         {{ content }}
+      </div>
     </div>
-</section>
-<div class="line-break-md"></div>
-<section class="primary">
-    <div class="wrapper">
-        <h2 class="reveal">What makes me tick?</h2>
+  </section>
+
+  <section class="parallax-section section-2">
+    <div class="parallax-content">
+      <div class="wrapper">
+        <h2>What makes me tick?</h2>
         {%- include interests.html -%}
+      </div>
     </div>
-</section>
-{% include line-break.html direction="right" %}
-<section>
-    <div class="wrapper reveal">
+  </section>
+
+  <section class="parallax-section section-3">
+    <div class="parallax-content">
+      <div class="wrapper">
         <h2>What have I been working on?</h2>
         {%- include projects.html shortlist=true -%}
+      </div>
     </div>
-</section>
+  </section>
+</main>

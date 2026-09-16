@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
   {%- include head.html -%}
-  <body>
+  <body class="parallax-page">
     {%- include header.html -%}
 
-    <main aria-label="Content">
-      {{ content }}
-    </main>
+    {{ content }}
 
     {%- include dialog.html -%}
-    {%- include aside.html -%}
     {%- include footer.html -%}
   </body>
 </html>

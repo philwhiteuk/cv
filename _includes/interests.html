@@ -1,10 +1,12 @@
 <dl id="interests" class="flex">
     {% assign interests = site.interests | sort: 'order' %}
     {% for interest in interests %}
-    <div aria-label="{{ interest.title | slugify }}" class="column reveal">
-        <img src='{{ interest.image }}' alt='{{ interest.title }}' />
-        <dt>{{ interest.title }}</dt>
-        <dd>{{ interest.content }}</dd>
+    <div aria-label="{{ interest.title | slugify }}" class="row reveal">
+        <img src='{{ interest.image | relative_url }}' alt='{{ interest.title }}' />
+        <div class="column">
+            <dt>{{ interest.title }}</dt>
+            <dd>{{ interest.content }}</dd>
+        </div>
     </div>
     {% endfor %}
 </dl>
