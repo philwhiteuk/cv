@@ -51,7 +51,8 @@ a:hover {
 }
 
 a[href^="https:"] {
-  color: $primary_highlight !important;
+  background: rgba($primary_highlight, 0.5);
+  text-decoration: underline;
 }
 
 a[href^="https:"]:hover::after {
@@ -95,11 +96,11 @@ input, textarea {
 .reveal {
   animation: reveal linear both;
   animation-timeline: view();
-  animation-range: entry 10% cover 35%;
+  animation-range: entry 0% cover 20%;
 }
 
 @keyframes reveal {
-  from { opacity: 0.6; transform: translateY(5rem) scale(0.97); }
+  from { opacity: 0.1; transform: translateZ(8rem) translateY(4rem) scale(0.97); }
   to   { opacity: 1; transform: none; }
 }
 
@@ -155,14 +156,16 @@ input, textarea {
   }
 }
 
-main:nth-child(odd), .primary
+.primary
 {
   @extend %bg-primary;
+  background-attachment: fixed;
 }
 
-main:nth-child(even), .secondary
+.secondary
 {
   @extend %bg-secondary;
+  background-attachment: fixed;
 }
 
 .flex {
@@ -212,7 +215,8 @@ main:nth-child(even), .secondary
   gap: 1em;
   justify-content: space-between;
   max-width: 1024px;
-  padding: 1em 3em;
+  padding: 0 3em;
+  margin: 2em 0;
   width: 100%;
 }
 

@@ -1,36 +1,33 @@
 ---
 layout: default
 ---
+<section id="welcome">
+  <div class="wrapper reveal">
+    {{ content }}
+  </div>
+</section>
 
-<main aria-label="Content" id="homepage">
-  <section id="welcome">
-    <div class="wrapper reveal">
-      {{ content }}
-    </div>
-  </section>
+<section id="interests" class="alternate">
+  <div class="wrapper">
+    <h2>What makes me tick?</h2>
+    <dl id="interests" class="flex">
+      {% assign interests = site.interests | sort: 'order' %}
+      {% for interest in interests %}
+      <div aria-label="{{ interest.title | slugify }}" class="row reveal">
+          <img src='{{ interest.image | relative_url }}' alt='{{ interest.title }}' />
+          <div class="column">
+              <dt>{{ interest.title }}</dt>
+              <dd>{{ interest.content }}</dd>
+          </div>
+      </div>
+      {% endfor %}
+    </dl>
+  </div>
+</section>
 
-  <section id="interests" class="alternate">
-    <div class="wrapper">
-      <h2>What makes me tick?</h2>
-      <dl id="interests" class="flex">
-        {% assign interests = site.interests | sort: 'order' %}
-        {% for interest in interests %}
-        <div aria-label="{{ interest.title | slugify }}" class="row reveal">
-            <img src='{{ interest.image | relative_url }}' alt='{{ interest.title }}' />
-            <div class="column">
-                <dt>{{ interest.title }}</dt>
-                <dd>{{ interest.content }}</dd>
-            </div>
-        </div>
-        {% endfor %}
-      </dl>
-    </div>
-  </section>
-
-  <section id="recent-projects">
-    <div class="wrapper">
-      <h2>What have I been working on?</h2>
-      {%- include projects.html shortlist=true -%}
-    </div>
-  </section>
-</main>
+<section id="recent-projects">
+  <div class="wrapper">
+    <h2>What have I been working on?</h2>
+    {%- include projects.html shortlist=true -%}
+  </div>
+</section>

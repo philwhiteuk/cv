@@ -1,13 +1,17 @@
 body > header {
   border-top: 0.2rem solid $primary_highlight;
-
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   min-height: 7vh;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
 
   .wrapper {
     align-items: center;
     gap: 0.5em;
     flex-flow: row nowrap;
+    margin: 0.5rem 0;
   }
 
   nav {
@@ -47,6 +51,10 @@ body > header {
       flex-direction: row;
       gap: 2rem;
       justify-content: flex-end;
+
+      li.active a {
+        text-decoration: underline;
+      }
     }
 
     @media (max-width: $breakpoint_md) {
@@ -72,10 +80,6 @@ body > header {
   }
 }
 
-body > header.sticky {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  width: 100%;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+body > header {
+
 }

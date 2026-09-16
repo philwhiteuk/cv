@@ -13,22 +13,21 @@ article.project {
   }
 
   h4 {
-    font-size: 1.1rem;
     margin: 0.25rem 0;
   }
 
   h5 {
-    font-size: 1rem;
-    font-style: italic; 
     margin: 0.25rem 0;
     opacity: 0.8;
   }
 
   h5:before {
     content: '@';
+    margin-left: -0.25em;
   }
 
   h4, h5 {
+    font-size: 1rem;
     display: inline;
   }
 
@@ -44,7 +43,7 @@ article.project {
     flex-flow: row wrap;
     flex-wrap: wrap;
     gap: 0.5rem;
-    justify-content: flex-start;
+    justify-content: right;
     margin-top: 1rem;
     
     li {
@@ -80,6 +79,6 @@ article.project {
 }
 
 #view-all {
-  align-self: center;
+  align-self: flex-end;
   margin-top: 1rem;
 }
