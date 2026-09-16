@@ -2,30 +2,35 @@
 layout: default
 ---
 
-<main aria-label="Content" class="parallax-container">
-  <section id="welcome" class="parallax-section section-1">
-    <div class="parallax-content">
-      <div class="wrapper reveal">
-        {{ content }}
-      </div>
+<main aria-label="Content" id="homepage">
+  <section id="welcome">
+    <div class="wrapper reveal">
+      {{ content }}
     </div>
   </section>
 
-  <section class="parallax-section section-2">
-    <div class="parallax-content">
-      <div class="wrapper">
-        <h2>What makes me tick?</h2>
-        {%- include interests.html -%}
-      </div>
+  <section id="interests">
+    <div class="wrapper">
+      <h2>What makes me tick?</h2>
+      <dl id="interests" class="flex">
+        {% assign interests = site.interests | sort: 'order' %}
+        {% for interest in interests %}
+        <div aria-label="{{ interest.title | slugify }}" class="row reveal">
+            <img src='{{ interest.image | relative_url }}' alt='{{ interest.title }}' />
+            <div class="column">
+                <dt>{{ interest.title }}</dt>
+                <dd>{{ interest.content }}</dd>
+            </div>
+        </div>
+        {% endfor %}
+      </dl>
     </div>
   </section>
 
-  <section class="parallax-section section-3">
-    <div class="parallax-content">
-      <div class="wrapper">
-        <h2>What have I been working on?</h2>
-        {%- include projects.html shortlist=true -%}
-      </div>
+  <section id="recent-projects">
+    <div class="wrapper">
+      <h2>What have I been working on?</h2>
+      {%- include projects.html shortlist=true -%}
     </div>
   </section>
 </main>
