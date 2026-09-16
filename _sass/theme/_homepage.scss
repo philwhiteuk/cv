@@ -13,8 +13,10 @@ main#homepage {
         flex-flow: row wrap;
         flex-direction: column;
         justify-content: space-around;
-        min-height: 93vh;
+        min-height: 94vh;
         position: relative;
+        scroll-margin-top: 7vh;
+        scroll-margin-bottom: 8em;
         scroll-snap-align: start;
         scroll-snap-stop: always;
         width: 100%;
@@ -48,20 +50,20 @@ main#homepage {
         }
     }
 
-    &> section:not(:last-child) {
-        margin-bottom: -0.2vh; // overlap slightly to show hint of next section
+    &> section:not(:last-of-type) {
+        margin-bottom: -1vh; // overlap slightly to show hint of next section
   
         // Add a subtle indicator at the bottom
         &::after {
           content: '';
           position: absolute;
-          bottom: 3vh;
+          bottom: 6vh;
           left: 50%;
           transform: translateX(-50%);
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          background: rgba(0, 0, 0, 0.1);
+          width: 8rem;
+          height: 0px;
+          border: 1px solid $primary_highlight;
+          opacity: 0.5;
           animation: bounce 2s infinite;
         }
     }
@@ -87,31 +89,24 @@ main#homepage {
             }
         }
 
-        // zip animation
-        .row {
-            --from-x: 50vw;
-        }
-    
-        .row:nth-child(even) {
-            // flex-direction: row-reverse;
-            // text-align: right;
-            --from-x: -50vw;
+        .slide-in {
+            --from-x: -10vw;
         }
     
         @supports (animation-timeline: view()) {
-            .row {
-                animation: zip-in linear both;
-                animation-timeline: view();
-                animation-range: entry 130% entry 230%;
+            .slide-in {
+                animation: slide-in linear both;
+                animation-delay: 0.1s;
+                animation-duration: 0.5s;
             }
         }
     
-        @keyframes zip-in {
-            from {
+        @keyframes slide-in {
+            0% {
                 opacity: 0;
                 transform: translateX(var(--from-x));
             }
-            to {
+            100% {
                 opacity: 1;
                 transform: translateX(0);
             }

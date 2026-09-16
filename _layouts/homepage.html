@@ -31,3 +31,15 @@ layout: default
     {%- include projects.html shortlist=true -%}
   </div>
 </section>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      entry.target.classList.toggle("slide-in", entry.isIntersecting);
+    }
+  });
+
+  document.querySelectorAll("#interests .row").forEach(interest => {
+    observer.observe(interest);
+  });
+</script>

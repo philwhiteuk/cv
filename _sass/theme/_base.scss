@@ -7,6 +7,7 @@ html {
   letter-spacing: $base_letter_spacing;
   line-height: $base_line_height;
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory !important;
 }
 
 * {
@@ -20,8 +21,6 @@ body > *:not(dialog) {
   flex-flow: row wrap;
   justify-content: center;
   overflow: clip;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
 }
 
 a, button {

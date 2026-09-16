@@ -4,6 +4,9 @@ article.project {
   box-sizing: border-box;
   gap: 1rem;
   padding: 1.5rem;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+
   text-align: left;
   width: 100%;
 
@@ -75,6 +78,10 @@ article.project {
   .content {
     font-size: 0.95rem;
     line-height: 1.6;
+
+    p {
+      margin: 1em 0;
+    }
   }
 }
 
