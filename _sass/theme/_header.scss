@@ -1,7 +1,7 @@
 body > header {
   border-top: 0.2rem solid $primary_highlight;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  min-height: 7vh;
+  min-height: 5vh;
   position: sticky;
   top: 0;
   width: 100%;
@@ -11,7 +11,7 @@ body > header {
     align-items: center;
     gap: 0.5em;
     flex-flow: row nowrap;
-    margin: 0.5rem 0;
+    margin: 0;
   }
 
   nav {
@@ -26,7 +26,7 @@ body > header {
       border: solid 1px transparent;
       border-radius: 50%;
       overflow: hidden;
-      width: 3rem;
+      width: 4vh;
 
       img {
         display: block;

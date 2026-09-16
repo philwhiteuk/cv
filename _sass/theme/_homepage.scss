@@ -13,10 +13,10 @@ main#homepage {
         flex-flow: row wrap;
         flex-direction: column;
         justify-content: space-around;
-        min-height: 94vh;
+        min-height: 95vh;
         position: relative;
-        scroll-margin-top: 7vh;
-        scroll-margin-bottom: 8em;
+        scroll-margin-top: 5vh;
+        scroll-margin-bottom: 5vh;
         scroll-snap-align: start;
         scroll-snap-stop: always;
         width: 100%;
