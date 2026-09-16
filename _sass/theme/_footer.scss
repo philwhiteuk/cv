@@ -1,6 +1,5 @@
 body > footer {
-    padding: 1rem 0;
-
+    padding: var(--fluid-gutter-sm) 0;
     scroll-snap-align: start;
     scroll-snap-stop: always;
 
@@ -8,7 +7,7 @@ body > footer {
         align-items: center;
         display: flex;
         flex-flow: row nowrap;
-        gap: 0.5rem;
+        gap: calc(var(--fluid-gutter-sm) * 0.5);
 
         li a {
             background: none;
@@ -16,17 +15,14 @@ body > footer {
             align-items: center;
         }
 
-        li a:hover svg {
-            fill: $secondary_fg;
-        }
-
         li a:hover:after {
             content: none;
         }
 
         svg {
-            height: 16px;
-            width: 16px;
+            height: clamp(14px, 2vw, 24px);
+            width: clamp(14px, 2vw, 24px);
+            fill: $secondary_fg;
         }
     }
 }

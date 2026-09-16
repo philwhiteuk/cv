@@ -38,7 +38,7 @@ a, button {
 
 button {
   color: $base_anchor_text_colour_normal;
-  padding: 0.5em 1em;
+  padding: calc(var(--fluid-gutter-sm) * 0.5) var(--fluid-gutter-sm);
 }
 
 a:visited {
@@ -55,38 +55,41 @@ a[href^="https:"] {
 }
 
 a[href^="https:"]:hover::after {
-  content: ' ↗'
+  content: ' \2197'
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
 }
 
 h1 {
-  margin: 0.5rem 0;
+  margin: var(--fluid-gutter-sm) 0;
 }
 
 h2 {
-  margin: 2rem 0;
+  margin: var(--fluid-gutter-sm) 0;
 }
 
 h3, h4, h5, h6 {
-  margin: 0.5rem 0;
+  margin: calc(var(--fluid-gutter-sm) * 0.5) 0;
 }
 
 h1 { 
-  font-size: 1em * ($base_heading_modifier * 6) + 1; 
+  font-size: var(--fluid-step-4); 
   white-space: nowrap; 
 }
-h2 { font-size: 1em * ($base_heading_modifier * 5.5) + 1 }
-h3 { font-size: 1em * ($base_heading_modifier * 3) + 1 }
-h4 { font-size: 1em * ($base_heading_modifier * 2) + 1 }
-h5 { font-size: 1em * ($base_heading_modifier * 1) + 1 }
+h2 { font-size: var(--fluid-step-3); }
+h3 { font-size: var(--fluid-step-2); }
+h4 { font-size: var(--fluid-step-1); }
+h5 { font-size: var(--fluid-step-0); }
+h6 { font-size: var(--fluid-step-0); }
 
 em {
   font-style: normal;
   font-weight: $base_font_weight + 100;
-  padding: 0 0.1em;
+  padding: 0 calc(var(--fluid-gutter-sm) * 0.1);
 }
 
 input, textarea {
@@ -180,9 +183,12 @@ main > section {
 .flex {
   display: flex;
   flex-flow: row wrap;
-  gap: 2em 3.5em;
-
-  @media (max-width: $breakpoint_md) { flex-flow: column wrap; }
+  gap: calc(var(--fluid-gutter-sm) * 2) calc(var(--fluid-gutter) * 1.5);
+  
+  @media (max-width: 60rem) { 
+    flex-flow: column wrap;
+    gap: calc(var(--fluid-gutter-sm) * 1.5);
+  }
 }
 
 .column {
@@ -206,8 +212,8 @@ main > section {
   width: 100%;
 }
 
-.line-break-md { height: 3em; }
-.line-break-lg { height: 7em; }
+.line-break-md { height: calc(var(--fluid-gutter) * 1.5); }
+.line-break-lg { height: calc(var(--fluid-gutter) * 3.5); }
 
 .line-break-left {
   background: -webkit-linear-gradient(88deg, $primary_bg 49%, $secondary_bg 50%);
@@ -221,20 +227,21 @@ main > section {
   box-sizing: border-box;
   display: flex;
   flex-flow: row wrap;
-  gap: 1em;
+  gap: var(--fluid-gutter-sm);
   justify-content: space-between;
   max-width: 1024px;
-  padding: 0 3em;
-  margin: 2em 0;
+  padding: 0 var(--fluid-gutter);
+  margin: var(--fluid-gutter-sm) 0;
   width: 100%;
 }
 
 .hide {
   display: none !important;
 }
-@media (max-width: $breakpoint_sm) { .hide-sm { display: inherit !important; } }
-@media (max-width: $breakpoint_md) { .hide-md { display: none !important; } }
-@media (min-width: $breakpoint_md) { .hide-lg { display: none !important; } }
+// Legacy hide classes - can be replaced with container queries or removed
+@media (max-width: 32rem) { .hide-sm { display: inherit !important; } }
+@media (max-width: 53.125rem) { .hide-md { display: none !important; } }
+@media (min-width: 53.125rem) { .hide-lg { display: none !important; } }
 
 @keyframes slow-blink {
   50% {

@@ -1,7 +1,7 @@
 body > header {
   border-top: 0.2rem solid $primary_highlight;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  min-height: 5vh;
+  min-height: 7vh;
   position: sticky;
   top: 0;
   width: 100%;
@@ -9,9 +9,9 @@ body > header {
 
   .wrapper {
     align-items: center;
-    gap: 0.5em;
+    gap: calc(var(--fluid-gutter-sm) * 0.5);
     flex-flow: row nowrap;
-    margin: 0;
+    margin: calc(var(--fluid-gutter-sm) * 0.5) 0;
   }
 
   nav {
@@ -26,7 +26,7 @@ body > header {
       border: solid 1px transparent;
       border-radius: 50%;
       overflow: hidden;
-      width: 4vh;
+      width: clamp(2.5rem, 4vw, 4.5rem);
 
       img {
         display: block;
@@ -39,17 +39,17 @@ body > header {
 
     label[for="menu-toggle"] {
       background: url("/cv/assets/images/icons.svg#icon-menu-view") no-repeat;
-      background-size: 2rem;
+      background-size: clamp(1.5rem, 3vw, 2.5rem);
       display: block;
-      width: 2rem;
-      height: 2rem;
+      width: clamp(1.5rem, 3vw, 2.5rem);
+      height: clamp(1.5rem, 3vw, 2.5rem);
     }
 
     ul {
       align-items: center;
       display: flex;
       flex-direction: row;
-      gap: 2rem;
+      gap: var(--fluid-gutter);
       justify-content: flex-end;
 
       li.active a {
@@ -57,21 +57,21 @@ body > header {
       }
     }
 
-    @media (max-width: $breakpoint_md) {
+    @media (max-width: 53.125rem) {
       flex-flow: row wrap;
 
       #menu-toggle:checked ~ ul {
         align-items: center;
         display: inherit !important;
         flex-direction: column;
-        gap: 0.2em 0;
-        margin-bottom: 2rem;
+        gap: calc(var(--fluid-gutter-sm) * 0.2);
+        margin-bottom: var(--fluid-gutter);
         width: 100%;
 
         li { width: 100% }
         li a, li button {
           display: inline-block;
-          padding: 1em 0;
+          padding: var(--fluid-gutter-sm) 0;
           text-align: center;
           width: 100%;
         }
