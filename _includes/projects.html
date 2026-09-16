@@ -57,3 +57,7 @@
 
     {% endfor %}
 </section>
+
+{% if include.shortlist == true %}
+<a href="{{ 'projects' | relative_url }}" title="View all projects"><em>View All Projects ></em></a>
+{% endif %}
