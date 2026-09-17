@@ -8,17 +8,16 @@ aside {
     font-size: clamp(0.8em, calc(0.75em + 0.25vw), 0.95em);
     justify-items: center;
     min-height: 20vh;
-    padding-inline: var(--fluid-gutter);
     width: 100%;
 
     .wrapper { margin-top: 0; }
 
     h2 {
         background-repeat: no-repeat;
-        background-size: clamp(30px, 6vw, 50px);
+        background-size: 50px 50px;
         background-position: -4px center;
-        margin: calc(var(--fluid-gutter-sm) * 0.8) 0;
-        padding: var(--fluid-gutter-sm) 0 var(--fluid-gutter-sm) calc(var(--fluid-gutter-sm) * 2.5);
+        margin: 0.8em 0;
+        padding: 1em 0 1em 2.5em;
     }
 
     em {
@@ -31,10 +30,10 @@ aside {
         @media (max-width: 32rem) {
             li {
                 background: none !important;
-                padding: calc(var(--fluid-gutter-sm) * 0.3125) 0 !important;
+                padding: 5px 0 !important;
             }
             li.open-branch, li.close-branch {
-                padding: calc(var(--fluid-gutter-sm) * 0.3125) 0 !important;
+                padding: 5px 0 !important;
             }
         }
 
@@ -45,19 +44,19 @@ aside {
 
         li {
             background: url("/cv/assets/images/branch-sprite.png") no-repeat 0 0;
-            padding: calc(var(--fluid-gutter-sm) * 0.5) 0 calc(var(--fluid-gutter-sm) * 0.5) calc(var(--fluid-gutter) * 2.5);
+            padding: 8px 0 8px 100px;
         }
 
         li.root  { background-position: 0 -530px; }
         li.trunk  { background-position: 0 -457px; }
         li.open-branch  {
             background-position: 0 -303px;
-            padding-bottom: calc(var(--fluid-gutter) * 2.3125);
+            padding-bottom: 37px;
         }
         li.branch  { background-position: 0 -217px; }
         li.close-branch  {
             background-position: 0 -104px;
-            padding-top: calc(var(--fluid-gutter) * 1.875);
+            padding-top: 30px;
         }
         li.top  { background-position: 0 15px; }
     }
@@ -65,7 +64,7 @@ aside {
     [aria-label=skills] {
         h2 {
             background-image: url("/cv/assets/images/icons.svg#icon-skills-view");
-            background-size: clamp(30px, 6vw, 50px) clamp(45px, 7vw, 75px);
+            background-size: 50px 75px;
         }
 
         .tag-cloud {
@@ -86,7 +85,7 @@ aside {
                     border: transparent solid 0.05em;
                     border-radius: 0.3em;
                     display: inline-block;
-                    padding: calc(var(--fluid-gutter-sm) * 0.2) calc(var(--fluid-gutter-sm) * 0.4);
+                    padding: 0.2em 0.4em;
                     text-decoration: none;
                     color: inherit;
                     transition: all 0.2s ease;
@@ -111,7 +110,7 @@ aside {
         }
 
         ol li {
-            margin-left: calc(var(--fluid-gutter-sm) * 0.5);
+            margin-left: 0.5em;
         }
     }
 
@@ -121,7 +120,7 @@ aside {
         }
 
         ul li {
-            margin-left: calc(var(--fluid-gutter) * 1.5);
+            margin-left: 1.5em;
             list-style: circle;
         }
     }
