@@ -99,7 +99,7 @@ input, textarea {
   font-variant-ligatures: common-ligatures;
 }
 
-main > section {
+main > section, main > aside {
   scroll-margin-top: 5rem;
   scroll-snap-align: start;
   scroll-snap-stop: always;

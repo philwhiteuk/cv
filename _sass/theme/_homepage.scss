@@ -57,7 +57,7 @@ main#homepage {
         &::after {
           content: '';
           position: absolute;
-          bottom: 6vh;
+          bottom: 9vh;
           left: 50%;
           transform: translateX(-50%);
           width: clamp(5rem, 15vw, 10rem);
