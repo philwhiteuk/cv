@@ -96,6 +96,11 @@ input, textarea {
   font-variant-ligatures: common-ligatures;
 }
 
+main > section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
 .reveal {
   animation: reveal linear both;
   animation-timeline: view();

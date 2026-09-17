@@ -5,6 +5,10 @@ article.project {
   gap: 1rem;
   padding: 1.5rem;
 
+  scroll-margin-top: 5rem;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+
   text-align: left;
   width: 100%;
 
@@ -86,10 +90,4 @@ article.project {
 #view-all {
   align-self: flex-end;
   margin-top: 1rem;
-}
-
-main#default article.project, 
-main#tag article.project {
-  scroll-snap-align: center;
-  scroll-snap-stop: always;
 }
