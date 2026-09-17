@@ -112,8 +112,8 @@ article.project {
         }
       }
 
-      &[open] summary::after {
-        content: '';
+      &[open] summary {
+        display: none;
       }
 
       .full {
