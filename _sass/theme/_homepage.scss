@@ -62,9 +62,22 @@ main#homepage {
           transform: translateX(-50%);
           width: 8rem;
           height: 0px;
-          border: 1px solid $primary_highlight;
+          border-width: 1px;
+          border-style: solid;
           opacity: 0.5;
           animation: bounce 2s infinite;
+        }
+
+        &:nth-of-type(odd) {
+            &::after {
+                border-color: $secondary_highlight;
+            }
+        }
+
+        &:nth-of-type(even) {
+            &::after {
+                border-color: $primary_highlight;
+            }
         }
     }
 
