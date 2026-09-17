@@ -97,6 +97,7 @@ input, textarea {
 }
 
 main > section {
+  scroll-margin-top: 5rem;
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
