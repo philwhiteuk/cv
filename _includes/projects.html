@@ -24,9 +24,9 @@
         <div class="content">
             {% assign truncated_content = project.content | truncatewords: 60 %}
             {% if truncated_content != project.content %}
-            <details>
-                <summary>{{ truncated_content | markdownify }} +</summary>
-                <div>{{ project.content | markdownify }}</div>
+            <details class="expandable">
+                <summary>{{ truncated_content | markdownify }}</summary>
+                <span class="full">{{ project.content | markdownify }}</span>
             </details>
             {% else %}
             {{ project.content | markdownify }}

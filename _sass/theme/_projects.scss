@@ -81,6 +81,45 @@ article.project {
     p {
       margin: var(--fluid-gutter-sm) 0;
     }
+
+    .expandable {
+      display: inline;
+      cursor: pointer;
+
+      summary {
+        display: inline;
+        cursor: pointer;
+        list-style: none;
+        padding: 0;
+        
+        &::-webkit-details-marker {
+          display: none;
+        }
+        
+        &::marker {
+          content: '';
+        }
+        
+        &::after {
+          content: '+ ';
+          color: inherit;
+          opacity: 0.7;
+        }
+        
+        &:focus,
+        &:hover {
+          outline: none;
+        }
+      }
+
+      &[open] summary::after {
+        content: '';
+      }
+
+      .full {
+        display: inline;
+      }
+    }
   }
 }
 
