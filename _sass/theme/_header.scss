@@ -11,9 +11,11 @@ body > header {
     align-items: center;
     gap: calc(var(--fluid-gutter-sm) * 0.5);
     flex-flow: row nowrap;
-    margin: calc(var(--fluid-gutter-sm) * 0.5) 0;
+    margin: 0;
   }
 
+  h1 { font-size: var(--fluid-step-3); }
+  
   nav {
     align-items: center;
     display: flex;
@@ -26,7 +28,7 @@ body > header {
       border: solid 1px transparent;
       border-radius: 50%;
       overflow: hidden;
-      width: clamp(2.5rem, 4vw, 4.5rem);
+      width: clamp(2.5rem, 2.5vw, 4.5rem);
 
       img {
         display: block;
@@ -78,8 +80,4 @@ body > header {
       }
     }
   }
-}
-
-body > header {
-
 }
