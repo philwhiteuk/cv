@@ -100,12 +100,6 @@ article.project {
           content: '';
         }
         
-        &::after {
-          content: '+ ';
-          color: inherit;
-          opacity: 0.7;
-        }
-        
         &:focus,
         &:hover {
           outline: none;
@@ -118,6 +112,11 @@ article.project {
 
       .full {
         display: inline;
+        cursor: default;
+      }
+
+      .read-more {
+        text-decoration: underline;
       }
     }
   }
