@@ -22,12 +22,12 @@
         {% endif %}
         </span>
         <div class="content">
-            {% if include.shortlist == true %}
             {% assign truncated_content = project.content | truncatewords: 60 %}
-            {{ truncated_content | markdownify }}
             {% if truncated_content != project.content %}
-            <p><a href="{{ '/projects' | relative_url }}" title="View all projects">Read more...</a></p>
-            {% endif %}
+            <details>
+                <summary>{{ truncated_content | markdownify }} +</summary>
+                <div>{{ project.content | markdownify }}</div>
+            </details>
             {% else %}
             {{ project.content | markdownify }}
             {% endif %}
