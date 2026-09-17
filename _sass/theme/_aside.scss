@@ -5,7 +5,7 @@ aside {
     &.secondary {
         background-attachment: initial;
     }
-    font-size: 0.9em;
+    font-size: clamp(0.8em, calc(0.75em + 0.25vw), 0.95em);
     justify-items: center;
     min-height: 20vh;
     width: 100%;
@@ -27,7 +27,7 @@ aside {
     }
 
     [aria-label=career-history] {
-        @media (max-width: $breakpoint_sm) {
+        @media (max-width: 32rem) {
             li {
                 background: none !important;
                 padding: 5px 0 !important;
@@ -70,7 +70,7 @@ aside {
         .tag-cloud {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.3em;
+            gap: calc(var(--fluid-gutter-sm) * 0.3);
             justify-content: space-evenly;
             list-style: none;
             padding: 0;
@@ -96,10 +96,10 @@ aside {
                     }
                 }
 
-                &--xl a { font-size: 1.5em; }
-                &--lg a { font-size: 1.2em; }
-                &--md a { font-size: 1em; }
-                &--sm a { font-size: 0.8em; }
+                &--xl a { font-size: clamp(1.2em, calc(1.1em + 0.5vw), 1.5em); }
+                &--lg a { font-size: clamp(1em, calc(0.95em + 0.25vw), 1.2em); }
+                &--md a { font-size: clamp(0.875em, calc(0.85em + 0.125vw), 1em); }
+                &--sm a { font-size: clamp(0.75em, calc(0.7em + 0.25vw), 0.8em); }
             }
         }
     }

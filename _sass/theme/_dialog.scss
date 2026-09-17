@@ -2,15 +2,15 @@ dialog {
     @extend %bg-secondary;
     border: 0;
     border-radius: 0.2em;
-    margin: 25vh 1.5rem;
-    padding: 1em 1.5em;
+    margin: 25vh clamp(1rem, 5vw, 2rem);
+    padding: var(--fluid-gutter) calc(var(--fluid-gutter) * 1.5);
 
     &[open] {
         animation: fade-in 0.5s ease-in-out;
         display: flex;
         justify-self: center;
         flex-flow: column nowrap;
-        gap: 1em;
+        gap: var(--fluid-gutter-sm);
     }
 
     header {
@@ -31,25 +31,25 @@ dialog {
             background: url("/cv/assets/images/close.svg") no-repeat center center;
             background-color: $secondary_highlight;
             display: inline-block;
-            width: 1.5em;
-            height: 1.5em;
+            width: clamp(1.25em, 2vw, 1.75em);
+            height: clamp(1.25em, 2vw, 1.75em);
         }
     }
 
     form {
         display: flex;
         flex-flow: column nowrap;
-        gap: 1em;
+        gap: var(--fluid-gutter-sm);
 
         input, textarea {
             border: 1px solid #ccc;
             border-radius: 0.2em;
-            padding: 0.5em;
+            padding: calc(var(--fluid-gutter-sm) * 0.5);
         }
 
         textarea {
             resize: vertical;
-            height: 10em;
+            height: clamp(8em, 15vh, 12em);
         }
     }
 }
