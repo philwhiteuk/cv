@@ -6,7 +6,7 @@ body > footer {
         align-items: center;
         display: flex;
         flex-flow: row nowrap;
-        gap: calc(var(--fluid-gutter-sm) * 0.5);
+        gap: calc(var(--fluid-gutter-sm) * 0.25);
 
         li a {
             background: none;
@@ -19,8 +19,8 @@ body > footer {
         }
 
         svg {
-            height: clamp(14px, 2vw, 24px);
-            width: clamp(14px, 2vw, 24px);
+            height: clamp(16px, 2vw, 24px);
+            width: clamp(16px, 2vw, 24px);
             fill: $secondary_fg;
         }
     }
