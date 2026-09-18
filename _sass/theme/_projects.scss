@@ -125,8 +125,9 @@ article.project {
   margin-top: var(--fluid-gutter-sm);
 }
 
-main:not(#homepage) {
+main {
   article.project {
+    scroll-margin-top: 10vh;
     scroll-snap-align: start;
     scroll-snap-stop: always;
   }
