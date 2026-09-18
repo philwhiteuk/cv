@@ -5,6 +5,21 @@ section.subpage {
     .wrapper {
         align-items: flex-start;
         flex-flow: column wrap;
-        gap: 1em 3em;
+        gap: var(--fluid-gutter-sm) calc(var(--fluid-gutter) * 3);
+        margin: 0;
+        padding: 0 var(--fluid-gutter);
+        padding-bottom: var(--fluid-gutter);
+        text-align: left;
+        width: 100%;
+    }
+
+    &.primary {
+        @extend %bg-primary;
+        background-attachment: fixed;
+    }
+
+    &.secondary {
+        @extend %bg-secondary;
+        background-attachment: fixed;
     }
 }
