@@ -18,6 +18,30 @@
   --fluid-gutter: clamp(1rem, 5vw, 4rem);
   --fluid-gutter-sm: clamp(0.25rem, 3vw, 2rem);
   --fluid-gutter-lg: clamp(1.5rem, 6vw, 5rem);
+
+  // OKLCH color system - one brand hue, all colors derived
+  --brand: oklch(62% 0.19 264);
+  --surface: color-mix(in oklch, var(--brand) 6%, white);
+  --border: color-mix(in oklch, var(--brand) 18%, transparent);
+  --hover: color-mix(in oklch, var(--brand) 85%, black);
+  
+  --primary-bg: var(--brand);
+  --primary-bg-gradient: color-mix(in oklch, var(--brand) 20%, black);
+  --primary-fg: color-mix(in oklch, var(--brand) 85%, white);
+  --primary-highlight: var(--hover);
+  --primary-emphasis: var(--primary-fg);
+  
+  --secondary-bg: var(--surface);
+  --secondary-fg: color-mix(in oklch, var(--brand) 30%, black);
+  --secondary-highlight: color-mix(in oklch, var(--brand) 10%, white);
+  --secondary-emphasis: var(--secondary-fg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: color-mix(in oklch, var(--brand) 12%, #0b0b0f);
+    --secondary-bg: var(--surface);
+  }
 }
 
 $base_font_family: 'Poppins', serif;
@@ -26,26 +50,26 @@ $base_font_weight: 300;
 $base_letter_spacing: 0.05em;
 $base_line_height: 1.5em;
 $base_heading_modifier: 0.1;
-$base_text_colour: #000000;
-
-$base_anchor_text_colour_normal: #fff;
-$base_anchor_text_colour_visited: 'inherit';
-$base_anchor_text_colour_hovered: #fff;
 
 // Legacy breakpoints (kept for reference but will be removed)
 $breakpoint_sm: 515px;
 $breakpoint_md: 850px;
 
-$primary_bg: #d16f00;
-$primary_bg_gradient: #5105a7;
-$primary_fg: #fff;
-$primary_highlight: #7700ff;
-$primary_emphasis: #fff;
+// Sass variables for backwards compatibility with existing SCSS
+$primary_bg: var(--primary-bg);
+$primary_bg_gradient: var(--primary-bg-gradient);
+$primary_fg: var(--primary-fg);
+$primary_highlight: var(--primary-highlight);
+$primary_emphasis: var(--primary-emphasis);
 
-$secondary_bg: white;
-$secondary_fg: black;
-$secondary_highlight: white;
-$secondary_emphasis: black;
+$secondary_bg: var(--secondary-bg);
+$secondary_fg: var(--secondary-fg);
+$secondary_highlight: var(--secondary-highlight);
+$secondary_emphasis: var(--secondary-emphasis);
+
+$base_anchor_text_colour_normal: var(--primary-fg);
+$base_anchor_text_colour_visited: 'inherit';
+$base_anchor_text_colour_hovered: var(--primary-fg);
 
 
 @import

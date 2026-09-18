@@ -21,7 +21,7 @@ body > footer {
         svg {
             height: clamp(16px, 2vw, 24px);
             width: clamp(16px, 2vw, 24px);
-            fill: $secondary_fg;
+            fill: var(--secondary-fg);
         }
     }
 }

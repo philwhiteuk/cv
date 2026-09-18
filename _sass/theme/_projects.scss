@@ -1,5 +1,6 @@
 article.project {
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--secondary-bg);
+  border: 1px solid var(--border);
   border-radius: 8px;
   box-sizing: border-box;
   padding: var(--fluid-gutter-sm);
@@ -47,7 +48,7 @@ article.project {
     margin-top: var(--fluid-gutter-sm);
     
     li {
-      background: rgba(255, 255, 255, 0.2);
+      background: var(--surface);
       padding: calc(var(--fluid-gutter-sm) * 0.05) calc(var(--fluid-gutter-sm) * 0.5);
       border-radius: 20px;
       font-size: clamp(0.75rem, calc(0.7rem + 0.25vw), 0.95rem);
@@ -55,7 +56,7 @@ article.project {
       a {
         background: none;
         border: none;
-        color: $primary_fg;
+        color: var(--secondary-fg);
         text-decoration: none;
         
         &:hover {
@@ -66,7 +67,7 @@ article.project {
       span {
         background: none;
         border: none;
-        color: $primary_fg;
+        color: var(--secondary-fg);
       }
     }
 

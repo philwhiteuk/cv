@@ -82,7 +82,7 @@ aside {
                 flex: 0 0 auto;
 
                 a {
-                    border: transparent solid 0.05em;
+                    border: var(--border) solid 0.05em;
                     border-radius: 0.3em;
                     display: inline-block;
                     padding: 0.2em 0.4em;
@@ -91,8 +91,9 @@ aside {
                     transition: all 0.2s ease;
 
                     &:hover {
-                        border-color: $primary_fg !important;
-                        background: rgba($primary_fg, 0.1);
+                        border-color: var(--primary-fg) !important;
+                        background: var(--primary-fg);
+                        opacity: 0.1;
                     }
                 }
 

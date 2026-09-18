@@ -5,7 +5,7 @@ main#homepage {
     }
 
     &> section {
-        @extend %bg-primary;
+        @extend %bg-secondary;
         background-attachment: fixed;
         
         align-items: center;
@@ -20,6 +20,10 @@ main#homepage {
         scroll-snap-align: start;
         scroll-snap-stop: always;
         width: 100%;
+
+        &:first-of-type {
+            @extend %bg-primary;
+        }
 
         // Smooth transitions
         transition: all 0.3s ease;
@@ -69,16 +73,8 @@ main#homepage {
           animation: bounce 2s infinite;
         }
 
-        &:nth-of-type(odd) {
-            &::after {
-                border-color: $secondary_highlight;
-            }
-        }
-
-        &:nth-of-type(even) {
-            &::after {
-                border-color: $primary_highlight;
-            }
+        &::after {
+            border-color: var(--primary-highlight);
         }
     }
 
@@ -93,7 +89,7 @@ main#homepage {
             }
         
             img {
-                background: linear-gradient(180deg, $primary_bg 0%, $primary_bg_gradient 100%);
+                background: var(--primary-bg);
                 border-radius: 50%;
                 height: clamp(3em, 6vw, 6em);
                 margin: 0 var(--fluid-gutter-sm);

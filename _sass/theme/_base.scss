@@ -50,7 +50,8 @@ a:hover {
 }
 
 a[href^="https:"] {
-  background: rgba($primary_highlight, 0.5);
+  background: var(--primary-highlight);
+  opacity: 0.5;
   text-decoration: underline;
 }
 
@@ -122,49 +123,50 @@ main > section, main > aside {
 
 
 %bg-primary {
-  background: $primary_bg;
-  background: linear-gradient(180deg, $primary_bg 0%, $primary_bg_gradient 100%);
+  background: var(--primary-bg);
+  background: linear-gradient(180deg, var(--primary-bg) 0%, var(--primary-bg-gradient) 100%);
   
-  color: $primary_fg;
+  color: var(--primary-fg);
 
   a {
-    color: $primary_fg;
+    color: var(--primary-fg);
   }
 
   button {
-    background: rgba($primary_highlight, 1);
+    background: var(--primary-highlight);
   }
 
   svg {
-    fill: rgba($primary_highlight, 0.8);
+    fill: var(--primary-highlight);
+    opacity: 0.8;
   }
 
   em {
-    color: $primary_emphasis;
+    color: var(--primary-emphasis);
   }
 
 }
 
 %bg-secondary {
   background: none;
-  background-color: $secondary_bg;
+  background-color: var(--secondary-bg);
 
-  color: $secondary_fg;
+  color: var(--secondary-fg);
 
   a {
-    color: $secondary_fg;
+    color: var(--secondary-fg);
   }
 
   button {
-    background: rgba($primary_highlight, 1);
+    background: var(--primary-highlight);
   }
 
   svg {
-    fill: rgba($secondary_highlight, 1);
+    fill: var(--secondary-highlight);
   }
 
   em {
-    color: $secondary_emphasis;
+    color: var(--secondary-emphasis);
   }
 }
 
@@ -215,13 +217,7 @@ main > section, main > aside {
 .line-break-md { height: calc(var(--fluid-gutter) * 1.5); }
 .line-break-lg { height: calc(var(--fluid-gutter) * 3.5); }
 
-.line-break-left {
-  background: -webkit-linear-gradient(88deg, $primary_bg 49%, $secondary_bg 50%);
-}
 
-.line-break-right {
-  background: -webkit-linear-gradient(-88deg, $primary_bg_gradient 49%, $secondary_bg 50%);
-}
 
 .wrapper {
   box-sizing: border-box;
