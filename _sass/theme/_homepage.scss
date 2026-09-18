@@ -94,6 +94,7 @@ main#homepage {
                 height: clamp(3em, 6vw, 6em);
                 margin: 0 var(--fluid-gutter-sm);
                 object-fit: cover;
+                opacity: 0.4;
                 width: clamp(3em, 6vw, 6em);
             }
         }

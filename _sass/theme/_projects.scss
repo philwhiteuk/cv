@@ -49,9 +49,9 @@ article.project {
     
     li {
       background: var(--surface);
-      border: 1px solid var(--border);
+      // border: 1px solid var(--border);
       padding: calc(var(--fluid-gutter-sm) * 0.05) calc(var(--fluid-gutter-sm) * 0.5);
-      border-radius: 20px;
+      // border-radius: 20px;
       font-size: clamp(0.75rem, calc(0.7rem + 0.25vw), 0.95rem);
       
       a {
@@ -61,7 +61,7 @@ article.project {
         text-decoration: underline;
         
         &:hover {
-          text-decoration: underline;
+          text-decoration: none;
         }
       }
 
