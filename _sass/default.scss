@@ -20,13 +20,13 @@
   --fluid-gutter-lg: clamp(1.5rem, 6vw, 5rem);
 
   // OKLCH color system - one brand hue, all colors derived
-  --brand: oklch(62% 0.19 264);
+  --brand: oklch(0.69 0.16 246.89);
   --surface: color-mix(in oklch, var(--brand) 6%, white);
   --border: color-mix(in oklch, var(--brand) 18%, transparent);
   --hover: color-mix(in oklch, var(--brand) 85%, black);
   
   --primary-bg: var(--brand);
-  --primary-bg-gradient: color-mix(in oklch, var(--brand) 20%, black);
+  --primary-bg-gradient: oklch(0.82 0 0);
   --primary-fg: white;
   --primary-highlight: var(--hover);
   --primary-emphasis: var(--primary-fg);
