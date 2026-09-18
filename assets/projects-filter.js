@@ -18,19 +18,14 @@
 
             this.tagLinks = this.filterContainer.querySelectorAll('.tag-cloud a');
             this.resetButton = this.filterContainer.querySelector('.reset-filters');
-            this.activeTagsDisplay = this.filterContainer.querySelector('.active-tags');
-            
-            // Show reset button when there are filters
-            if (this.resetButton) {
-                this.resetButton.style.display = 'inline-flex';
-            }
+
+
 
             // Parse URL params and initialize state
             this.currentFilters = this.parseUrlParams();
             this.activeTags = new Set(this.currentFilters);
 
-            // Update UI based on initial filters
-            this.updateActiveTagsDisplay();
+            // Update UI based on initial filters - just update tag link states
             this.updateTagLinkStates();
 
             // Bind events
@@ -93,7 +88,6 @@
             window.addEventListener('popstate', () => {
                 this.currentFilters = this.parseUrlParams();
                 this.activeTags = new Set(this.currentFilters);
-                this.updateActiveTagsDisplay();
                 this.updateTagLinkStates();
                 this.applyFilter();
             });
@@ -110,7 +104,6 @@
                 this.activeTags.add(tagName);
             }
 
-            this.updateActiveTagsDisplay();
             this.updateTagLinkStates();
             this.updateUrl();
             this.applyFilter();
@@ -121,46 +114,9 @@
          */
         resetFilters: function() {
             this.activeTags.clear();
-            this.updateActiveTagsDisplay();
             this.updateTagLinkStates();
             this.updateUrl();
             this.applyFilter();
-        },
-
-        /**
-         * Update the display of active tags
-         */
-        updateActiveTagsDisplay: function() {
-            if (!this.activeTagsDisplay) return;
-
-            const tags = Array.from(this.activeTags);
-            
-            if (tags.length === 0) {
-                this.activeTagsDisplay.innerHTML = '';
-                this.activeTagsDisplay.style.display = 'none';
-            } else {
-                const html = tags.map(tag => 
-                    `<span class="active-tag">
-                        ${tag}
-                        <button class="remove-tag" data-tag="${tag}" aria-label="Remove ${tag} filter">×</button>
-                    </span>`
-                ).join('');
-                this.activeTagsDisplay.innerHTML = html;
-                this.activeTagsDisplay.style.display = 'flex';
-
-                // Bind remove button events
-                this.activeTagsDisplay.querySelectorAll('.remove-tag').forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        const tagName = btn.dataset.tag;
-                        this.activeTags.delete(tagName);
-                        this.updateActiveTagsDisplay();
-                        this.updateTagLinkStates();
-                        this.updateUrl();
-                        this.applyFilter();
-                    });
-                });
-            }
         },
 
         /**
@@ -181,6 +137,7 @@
 
         /**
          * Apply the current filters to the projects
+         * Uses OR logic - project matches if it has ANY of the selected tags
          */
         applyFilter: function() {
             if (this.activeTags.size === 0) {
@@ -194,7 +151,8 @@
 
             projects.forEach(project => {
                 const projectTags = this.getProjectTags(project);
-                const matches = activeTags.every(tag => projectTags.includes(tag));
+                // OR logic: show if project has ANY of the active tags
+                const matches = activeTags.some(tag => projectTags.includes(tag));
                 project.style.display = matches ? '' : 'none';
             });
         },
