@@ -25,7 +25,7 @@
             {% assign truncated_content = project.content | truncatewords: 60 %}
             {% if truncated_content != project.content %}
             <details class="expandable">
-                <summary>{{ truncated_content | markdownify | replace: '...', '...' | append: ' <span class="read-more">+ read more</span>' }}</summary>
+                <summary>{{ truncated_content | markdownify | append: ' <span class="read-more">[read more]</span>' }}</summary>
                 <span class="full">{{ project.content | markdownify }}</span>
             </details>
             {% else %}
