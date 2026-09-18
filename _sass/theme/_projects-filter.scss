@@ -68,10 +68,11 @@
         display: flex;
         flex-wrap: wrap;
         gap: calc(var(--fluid-gutter-sm) * 0.3);
-        justify-content: flex-start;
+        justify-content: space-evenly;
         list-style: none;
         padding: 0;
         margin: 0;
+        width: 100%;
 
         &__item {
             margin: 0;
@@ -83,26 +84,23 @@
                 display: inline-block;
                 padding: 0.2em 0.4em;
                 text-decoration: none;
-                color: $primary_fg;
+                color: inherit;
                 transition: all 0.2s ease;
                 cursor: pointer;
-                background: rgba(255, 255, 255, 0.1);
 
                 &:hover {
                     border-color: $primary_fg !important;
-                    background: rgba($primary_fg, 0.2);
-                    transform: scale(1.05);
+                    background: rgba($primary_fg, 0.1);
                 }
 
                 &.active,
                 &[aria-pressed="true"] {
                     border-color: $primary_fg !important;
-                    background: rgba($primary_fg, 0.3);
+                    background: rgba($primary_fg, 0.2);
                     font-weight: 500;
-                    box-shadow: 0 0 8px rgba($primary_fg, 0.5);
 
                     &:hover {
-                        background: rgba($primary_fg, 0.4);
+                        background: rgba($primary_fg, 0.3);
                     }
                 }
 
