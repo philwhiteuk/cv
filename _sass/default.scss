@@ -23,12 +23,12 @@
   --brand: oklch(0.69 0.16 246.89);
   --surface: color-mix(in oklch, var(--brand) 6%, white);
   --border: color-mix(in oklch, var(--brand) 18%, transparent);
-  --hover: color-mix(in oklch, var(--brand) 85%, black);
+  --hover: white;
   
   --bg: var(--brand);
   --bg-gradient: oklch(0.82 0.08 219.03);
   --fg: white;
-  --highlight: var(--hover);
+  --highlight: color-mix(in oklch, var(--brand) 40%, white);
   --emphasis: var(--fg);
 }
 

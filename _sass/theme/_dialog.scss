@@ -1,5 +1,4 @@
 dialog {
-    @extend %bg-secondary;
     border: 0;
     border-radius: 0.2em;
     margin: 25vh clamp(1rem, 5vw, 2rem);
@@ -29,7 +28,7 @@ dialog {
 
         i {
             background: url("/cv/assets/images/close.svg") no-repeat center center;
-            background-color: $secondary_highlight;
+            background-color: var(--hover);
             display: inline-block;
             width: clamp(1.25em, 2vw, 1.75em);
             height: clamp(1.25em, 2vw, 1.75em);

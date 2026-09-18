@@ -37,6 +37,7 @@ a, button {
 }
 
 button {
+  background: var(--highlight);
   color: $base_anchor_text_colour_normal;
   padding: calc(var(--fluid-gutter-sm) * 0.3) var(--fluid-gutter-sm);
 }
