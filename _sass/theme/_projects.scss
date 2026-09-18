@@ -3,8 +3,6 @@ article.project {
   border-radius: 8px;
   box-sizing: border-box;
   padding: var(--fluid-gutter-sm);
-  scroll-snap-align: center;
-  scroll-snap-stop: always;
 
   text-align: left;
   width: 100%;
@@ -125,4 +123,11 @@ article.project {
 #view-all {
   align-self: flex-end;
   margin-top: var(--fluid-gutter-sm);
+}
+
+main:not(#homepage) {
+  article.project {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
 }
