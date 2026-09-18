@@ -25,7 +25,7 @@
             padding: calc(var(--fluid-gutter-sm) * 0.25) calc(var(--fluid-gutter-sm) * 0.5);
             border-radius: 20px;
             font-size: clamp(0.75rem, calc(0.7rem + 0.25vw), 0.95rem);
-            color: var(--secondary-fg);
+            color: black;
 
             .remove-tag {
                 display: flex;
@@ -33,7 +33,7 @@
                 justify-content: center;
                 background: none;
                 border: none;
-                color: var(--secondary-fg);
+                color: black;
                 cursor: pointer;
                 font-size: 0.8em;
                 padding: 0 0 calc(var(--fluid-gutter-sm) * 0.1) calc(var(--fluid-gutter-sm) * 0.25);
@@ -47,7 +47,7 @@
                 }
 
                 &:focus {
-                    outline: 2px solid var(--secondary-fg);
+                    outline: 2px solid black;
                     outline-offset: 2px;
                 }
             }
@@ -60,7 +60,7 @@
         h3 {
             font-size: clamp(1rem, calc(0.95rem + 0.25vw), 1.25rem);
             margin-bottom: calc(var(--fluid-gutter-sm) * 0.5);
-            color: var(--secondary-fg);
+            color: black;
         }
     }
 
@@ -84,18 +84,18 @@
                 display: inline-block;
                 padding: 0.2em 0.4em;
                 text-decoration: none;
-                color: var(--secondary-fg);
+                color: black;
                 transition: all 0.2s ease;
                 cursor: pointer;
 
                 &:hover {
-                    border-color: var(--primary-highlight) !important;
+                    border-color: var(--highlight) !important;
                     background: var(--surface);
                 }
 
                 &.active,
                 &[aria-pressed="true"] {
-                    border-color: var(--primary-highlight) !important;
+                    border-color: var(--highlight) !important;
                     background: var(--surface);
                     font-weight: 500;
 
@@ -105,7 +105,7 @@
                 }
 
                 &:focus {
-                    outline: 2px solid var(--secondary-fg);
+                    outline: 2px solid black;
                     outline-offset: 2px;
                 }
             }
@@ -130,7 +130,7 @@
         background: var(--surface);
         border: 1px solid var(--border);
         border-radius: 20px;
-        color: var(--secondary-fg);
+        color: black;
         cursor: pointer;
         font-size: clamp(0.75rem, calc(0.7rem + 0.25vw), 0.9rem);
         padding: calc(var(--fluid-gutter-sm) * 0.15) calc(var(--fluid-gutter-sm) * 0.5);
@@ -139,11 +139,11 @@
 
         &:hover {
             background: var(--border);
-            border-color: var(--primary-highlight);
+            border-color: var(--highlight);
         }
 
         &:focus {
-            outline: 2px solid var(--secondary-fg);
+            outline: 2px solid black;
             outline-offset: 2px;
         }
 

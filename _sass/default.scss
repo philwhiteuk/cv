@@ -25,22 +25,16 @@
   --border: color-mix(in oklch, var(--brand) 18%, transparent);
   --hover: color-mix(in oklch, var(--brand) 85%, black);
   
-  --primary-bg: var(--brand);
-  --primary-bg-gradient: oklch(0.82 0.08 219.03);
-  --primary-fg: white;
-  --primary-highlight: var(--hover);
-  --primary-emphasis: var(--primary-fg);
-  
-  --secondary-bg: var(--surface);
-  --secondary-fg: black;
-  --secondary-highlight: color-mix(in oklch, var(--brand) 10%, white);
-  --secondary-emphasis: var(--secondary-fg);
+  --bg: var(--brand);
+  --bg-gradient: oklch(0.82 0.08 219.03);
+  --fg: white;
+  --highlight: var(--hover);
+  --emphasis: var(--fg);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --surface: color-mix(in oklch, var(--brand) 12%, #0b0b0f);
-    --secondary-bg: var(--surface);
   }
 }
 
@@ -56,28 +50,18 @@ $breakpoint_sm: 515px;
 $breakpoint_md: 850px;
 
 // Sass variables for backwards compatibility with existing SCSS
-$primary_bg: var(--primary-bg);
-$primary_bg_gradient: var(--primary-bg-gradient);
-$primary_fg: var(--primary-fg);
-$primary_highlight: var(--primary-highlight);
-$primary_emphasis: var(--primary-emphasis);
+$bg: var(--bg);
+$bg_gradient: var(--bg-gradient);
+$fg: var(--fg);
+$highlight: var(--highlight);
+$emphasis: var(--emphasis);
+$surface: var(--surface);
+$border: var(--border);
+$brand: var(--brand);
 
-$secondary_bg: var(--secondary-bg);
-$secondary_fg: var(--secondary-fg);
-$secondary_highlight: var(--secondary-highlight);
-$secondary_emphasis: var(--secondary-emphasis);
-
-$base_anchor_text_colour_normal: var(--primary-fg);
+$base_anchor_text_colour_normal: var(--fg);
 $base_anchor_text_colour_visited: 'inherit';
-$base_anchor_text_colour_hovered: var(--primary-fg);
-
-// Ensure proper contrast: white on dark backgrounds, black on light
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary-fg: white;
-    --secondary-fg: color-mix(in oklch, var(--brand) 90%, white);
-  }
-}
+$base_anchor_text_colour_hovered: var(--fg);
 
 
 @import

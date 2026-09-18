@@ -18,8 +18,8 @@ section.subpage {
         background-attachment: fixed;
     }
 
-    &.secondary {
-        @extend %bg-secondary;
+    &.surface {
+        @extend %bg-surface;
         background-attachment: fixed;
     }
 }

@@ -1,11 +1,11 @@
 main#homepage {
     section#interests {
-        @extend %bg-secondary;
+        @extend %bg-surface;
         background-attachment: fixed;
     }
 
     &> section {
-        @extend %bg-secondary;
+        @extend %bg-surface;
         background-attachment: fixed;
         
         align-items: center;
@@ -74,7 +74,7 @@ main#homepage {
         }
 
         &::after {
-            border-color: var(--primary-highlight);
+            border-color: var(--highlight);
         }
     }
 
@@ -89,7 +89,7 @@ main#homepage {
             }
         
             img {
-                background: var(--primary-bg);
+                background: var(--bg);
                 border-radius: 50%;
                 height: clamp(3em, 6vw, 6em);
                 margin: 0 var(--fluid-gutter-sm);

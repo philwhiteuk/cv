@@ -1,5 +1,5 @@
 article.project {
-  background: var(--secondary-bg);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
   box-sizing: border-box;
@@ -57,7 +57,7 @@ article.project {
       a {
         background: none;
         border: none;
-        color: var(--secondary-fg);
+        color: black;
         text-decoration: underline;
         
         &:hover {
@@ -68,7 +68,7 @@ article.project {
       span {
         background: none;
         border: none;
-        color: var(--secondary-fg);
+        color: black;
       }
     }
 

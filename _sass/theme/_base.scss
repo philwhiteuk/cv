@@ -50,7 +50,7 @@ a:hover {
 }
 
 a[href^="https:"] {
-  background: var(--primary-highlight);
+  background: var(--highlight);
   opacity: 0.5;
   text-decoration: underline;
 }
@@ -123,50 +123,50 @@ main > section, main > aside {
 
 
 %bg-primary {
-  background: var(--primary-bg);
-  background: linear-gradient(180deg, var(--primary-bg) 0%, var(--primary-bg-gradient) 100%);
+  background: var(--bg);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-gradient) 100%);
   
-  color: var(--primary-fg);
+  color: var(--fg);
 
   a {
-    color: var(--primary-fg);
+    color: var(--fg);
   }
 
   button {
-    background: var(--primary-highlight);
+    background: var(--highlight);
   }
 
   svg {
-    fill: var(--primary-highlight);
+    fill: var(--highlight);
     opacity: 0.8;
   }
 
   em {
-    color: var(--primary-emphasis);
+    color: var(--emphasis);
   }
 
 }
 
-%bg-secondary {
+%bg-surface {
   background: none;
-  background-color: var(--secondary-bg);
+  background-color: var(--surface);
 
-  color: var(--secondary-fg);
+  color: black;
 
   a {
-    color: var(--secondary-fg);
+    color: black;
   }
 
   button {
-    background: var(--primary-highlight);
+    background: var(--highlight);
   }
 
   svg {
-    fill: var(--secondary-highlight);
+    fill: var(--border);
   }
 
   em {
-    color: var(--secondary-emphasis);
+    color: black;
   }
 }
 
@@ -176,9 +176,9 @@ main > section, main > aside {
   background-attachment: fixed;
 }
 
-.secondary
+.surface
 {
-  @extend %bg-secondary;
+  @extend %bg-surface;
   background-attachment: fixed;
 }
 
@@ -210,7 +210,7 @@ main > section, main > aside {
 }
 
 .line-break, .line-break-md, .line-break-lg {
-  background: var(--primary-fg);
+  background: var(--fg);
   display: block;
   width: 100%;
 }
