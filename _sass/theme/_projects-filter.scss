@@ -21,11 +21,11 @@
             display: flex;
             align-items: center;
             gap: calc(var(--fluid-gutter-sm) * 0.25);
-            background: rgba(255, 255, 255, 0.2);
+            background: var(--surface);
             padding: calc(var(--fluid-gutter-sm) * 0.25) calc(var(--fluid-gutter-sm) * 0.5);
             border-radius: 20px;
             font-size: clamp(0.75rem, calc(0.7rem + 0.25vw), 0.95rem);
-            color: $primary_fg;
+            color: var(--secondary-fg);
 
             .remove-tag {
                 display: flex;
@@ -33,7 +33,7 @@
                 justify-content: center;
                 background: none;
                 border: none;
-                color: $primary_fg;
+                color: var(--secondary-fg);
                 cursor: pointer;
                 font-size: 0.8em;
                 padding: 0 0 calc(var(--fluid-gutter-sm) * 0.1) calc(var(--fluid-gutter-sm) * 0.25);
@@ -42,12 +42,12 @@
                 transition: all 0.2s ease;
 
                 &:hover {
-                    background: rgba(255, 255, 255, 0.3);
+                    background: var(--surface);
                     transform: scale(1.1);
                 }
 
                 &:focus {
-                    outline: 2px solid $primary_fg;
+                    outline: 2px solid var(--secondary-fg);
                     outline-offset: 2px;
                 }
             }
@@ -60,7 +60,7 @@
         h3 {
             font-size: clamp(1rem, calc(0.95rem + 0.25vw), 1.25rem);
             margin-bottom: calc(var(--fluid-gutter-sm) * 0.5);
-            color: $primary_fg;
+            color: var(--secondary-fg);
         }
     }
 
@@ -79,33 +79,33 @@
             flex: 0 0 auto;
 
             a {
-                border: transparent solid 0.05em;
+                border: var(--border) solid 0.05em;
                 border-radius: 0.3em;
                 display: inline-block;
                 padding: 0.2em 0.4em;
                 text-decoration: none;
-                color: inherit;
+                color: var(--secondary-fg);
                 transition: all 0.2s ease;
                 cursor: pointer;
 
                 &:hover {
-                    border-color: $primary_fg !important;
-                    background: rgba($primary_fg, 0.1);
+                    border-color: var(--primary-highlight) !important;
+                    background: var(--surface);
                 }
 
                 &.active,
                 &[aria-pressed="true"] {
-                    border-color: $primary_fg !important;
-                    background: rgba($primary_fg, 0.2);
+                    border-color: var(--primary-highlight) !important;
+                    background: var(--surface);
                     font-weight: 500;
 
                     &:hover {
-                        background: rgba($primary_fg, 0.3);
+                        background: var(--border);
                     }
                 }
 
                 &:focus {
-                    outline: 2px solid $primary_fg;
+                    outline: 2px solid var(--secondary-fg);
                     outline-offset: 2px;
                 }
             }
@@ -127,10 +127,10 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        background: rgba(255, 255, 255, 0.2);
-        border: 1px solid rgba(255, 255, 255, 0.4);
+        background: var(--surface);
+        border: 1px solid var(--border);
         border-radius: 20px;
-        color: $primary_fg;
+        color: var(--secondary-fg);
         cursor: pointer;
         font-size: clamp(0.75rem, calc(0.7rem + 0.25vw), 0.9rem);
         padding: calc(var(--fluid-gutter-sm) * 0.15) calc(var(--fluid-gutter-sm) * 0.5);
@@ -138,12 +138,12 @@
         transition: all 0.2s ease;
 
         &:hover {
-            background: rgba(255, 255, 255, 0.3);
-            border-color: $primary_fg;
+            background: var(--border);
+            border-color: var(--primary-highlight);
         }
 
         &:focus {
-            outline: 2px solid $primary_fg;
+            outline: 2px solid var(--secondary-fg);
             outline-offset: 2px;
         }
 

@@ -1,6 +1,6 @@
 body > header {
-  border-top: 0.2rem solid var(--primary-highlight);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  border-top: 0.2rem solid var(--border);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   min-height: 7vh;
   position: sticky;
   top: 0;
