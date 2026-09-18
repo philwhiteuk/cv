@@ -27,12 +27,12 @@
   
   --primary-bg: var(--brand);
   --primary-bg-gradient: color-mix(in oklch, var(--brand) 20%, black);
-  --primary-fg: color-mix(in oklch, var(--brand) 85%, white);
+  --primary-fg: white;
   --primary-highlight: var(--hover);
   --primary-emphasis: var(--primary-fg);
   
   --secondary-bg: var(--surface);
-  --secondary-fg: color-mix(in oklch, var(--brand) 30%, black);
+  --secondary-fg: black;
   --secondary-highlight: color-mix(in oklch, var(--brand) 10%, white);
   --secondary-emphasis: var(--secondary-fg);
 }
@@ -70,6 +70,14 @@ $secondary_emphasis: var(--secondary-emphasis);
 $base_anchor_text_colour_normal: var(--primary-fg);
 $base_anchor_text_colour_visited: 'inherit';
 $base_anchor_text_colour_hovered: var(--primary-fg);
+
+// Ensure proper contrast: white on dark backgrounds, black on light
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-fg: white;
+    --secondary-fg: color-mix(in oklch, var(--brand) 90%, white);
+  }
+}
 
 
 @import

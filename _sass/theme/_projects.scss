@@ -57,7 +57,7 @@ article.project {
         background: none;
         border: none;
         color: var(--secondary-fg);
-        text-decoration: none;
+        text-decoration: underline;
         
         &:hover {
           text-decoration: underline;
