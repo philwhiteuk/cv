@@ -35,12 +35,21 @@ markdown: GFM
 # in the templates via {{ site.myvariable }}.
 title: Phil White
 email: email@philwhite.uk
-#description: >- # this means to ignore newlines until "baseurl:"
-#  Write an awesome description for your new site here. You can edit this
-#  line in _config.yml. It will appear in your document head meta (for
-#  Google search results) and in your feed.xml site description.
+description: "Phil White — engineering lead and product engineer specialising in DevOps, platform engineering and agentic development."
 baseurl: "/cv" # the subpath of your site, e.g. /blog
-url: "https://philwhite.uk" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://philwhiteuk.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+image: /assets/images/social-card.png
+twitter:
+  card: summary_large_image
+  username: philwhiteuk
+author:
+  name: Phil White
+  url: https://www.linkedin.com/in/philwhiteuk
+social:
+  name: Phil White
+  links:
+    - https://github.com/philwhiteuk
+    - https://www.linkedin.com/in/philwhiteuk
 
 collections:
   interests:
@@ -61,6 +70,8 @@ header_pages: ['']
 # Build settings
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Exclude from processing.
 # The following items will not be processed, by default.

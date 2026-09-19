@@ -1,6 +1,7 @@
 ---
 layout: subpage
-title: About
+title: "About | Phil White"
+description: "Background, career history and skills for Phil White — engineering leadership, DevOps coaching and full-stack product development since 2008."
 order: 2
 permalink: /about
 ---
