@@ -1,23 +1,17 @@
-<dialog class="backdrop:bg-black/50 rounded-lg p-0 m-0 max-w-md w-full shadow-xl">
-    <header class="flex flex-row items-center justify-between p-[var(--fluid-gutter-sm)]">
-        <h3 class="text-fluid-2 font-500 letter-spacing-[-0.03em] leading-[1.05] m-0">Contact</h3>
-        <button class="close bg-none border-none cursor-pointer p-[calc(var(--fluid-gutter-sm)*0.3)]" aria-label="close" autofocus onclick="javascript: (() => document.querySelector('dialog')?.close())()">
-          <svg class="w-[clamp(1.5rem,3vw,2.5rem)] h-[clamp(1.5rem,3vw,2.5rem)] fill-white" viewBox="0 0 24 24">
-            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          </svg>
-        </button>
+<dialog>
+    <header class="flex">
+        <h3>Contact</h3>
+        <button class="close" aria-label="close" autofocus onclick="javascript: (() => document.querySelector('dialog')?.close())()"><i></i></button>
     </header>
-    <div class="px-[var(--fluid-gutter)] py-0 pb-[var(--fluid-gutter)]">
-      <p class="text-fluid-1 my-[var(--fluid-gutter-sm)]">I'm always on the look out for and interested to hear about new opportunities.</p>
-      <p class="text-fluid-1 my-[var(--fluid-gutter-sm)]">Please fill in your name and email and I will try to respond within 24 hours.</p>
-      <form class="flex flex-col gap-[var(--fluid-gutter-sm)]" action="https://formkeep.com/f/f20b7c33521d"
-            accept-charset="UTF-8"
-            enctype="multipart/form-data"
-            method="POST">
-        <input class="w-full p-[var(--fluid-gutter-sm)] border border-gray-300 rounded-lg text-black placeholder-gray-500" name="full_name" type="text" placeholder="Name" required>
-        <input class="w-full p-[var(--fluid-gutter-sm)] border border-gray-300 rounded-lg text-black placeholder-gray-500" name="email" type="email" placeholder="Email" required>
-        <textarea class="w-full p-[var(--fluid-gutter-sm)] border border-gray-300 rounded-lg text-black placeholder-gray-500 min-h-[100px]" name="message" placeholder="Message"></textarea>
-        <button class="bg-primary-highlight text-white px-[var(--fluid-gutter)] py-[calc(var(--fluid-gutter-sm)*0.5)] rounded-lg cursor-pointer hover:bg-primary-fg transition-colors" type="submit">Send</button>
-      </form>
-    </div>
+    <p>I'm always on the look out for and interested to hear about new opportunities.</p>
+    <p>Please fill in your name and email and I will try to respond within 24 hours.</p>
+    <form action="https://formkeep.com/f/f20b7c33521d"
+          accept-charset="UTF-8"
+          enctype="multipart/form-data"
+          method="POST">
+        <input name="full_name" type="text" placeholder="Name" required>
+        <input name="email" type="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Message" ></textarea>
+        <button type="submit">Send</button>
+    </form>
 </dialog>

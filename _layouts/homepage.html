@@ -1,25 +1,23 @@
 ---
 layout: default
 ---
-<section id="welcome" class="primary scroll-snap-align-start scroll-snap-stop-always flex flex-col items-center justify-space-around min-h-[95vh] relative scroll-mt-[7vh] scroll-mb-[-1vh] w-full">
-  <div class="mx-auto max-w-content px-[var(--fluid-gutter)] py-0 my-[var(--fluid-gutter-sm)] w-full box-border flex flex-col items-start flex-wrap gap-[var(--fluid-gutter-sm)] [calc(var(--fluid-gutter)*3)] text-left z-10 reveal">
+<section id="welcome">
+  <div class="wrapper reveal">
     {{ content }}
   </div>
-  <div class="absolute bottom-[6vh] left-1/2 -translate-x-1/2 w-[clamp(5rem,15vw,10rem)] h-0 border-t border-solid opacity-50 animate-bounce-custom
-    {% if forloop.index0 %}border-secondary-fg{% else %}border-primary-highlight{% endif %}"></div>
 </section>
 
-<section id="interests" class="secondary scroll-snap-align-start scroll-snap-stop-always">
-  <div class="mx-auto max-w-content px-[var(--fluid-gutter)] py-0 my-[var(--fluid-gutter-sm)] w-full box-border flex flex-col items-start flex-wrap gap-[var(--fluid-gutter-sm)] [calc(var(--fluid-gutter)*3)] text-left">
-    <h2 class="text-fluid-3 font-500 letter-spacing-[-0.03em] leading-[1.05] my-[calc(var(--fluid-gutter-sm)*0.5)]">What makes me tick?</h2>
-    <dl id="interests" class="flex flex-row flex-wrap gap-[var(--fluid-gutter-sm)] [calc(var(--fluid-gutter)*3)]">
+<section id="interests" class="alternate">
+  <div class="wrapper">
+    <h2>What makes me tick?</h2>
+    <dl id="interests" class="flex">
       {% assign interests = site.interests | sort: 'order' %}
       {% for interest in interests %}
-      <div aria-label="{{ interest.title | slugify }}" class="flex flex-row items-center flex-wrap gap-[var(--fluid-gutter-sm)] [calc(var(--fluid-gutter)*3)] reveal slide-in" style="--from-x: -10vw;">
-          <img class="bg-gradient-primary rounded-full h-[clamp(3em,6vw,6em)] w-[clamp(3em,6vw,6em)] object-cover mx-[var(--fluid-gutter-sm)]" src='{{ interest.image | relative_url }}' alt='{{ interest.title }}' />
-          <div class="flex-1 min-w-[200px] flex flex-col gap-0">
-              <dt class="text-[clamp(1em,calc(0.95em+0.25vw),1.2em)] font-600 mb-[calc(var(--fluid-gutter-sm)*0.5)]">{{ interest.title }}</dt>
-              <dd class="text-fluid-1">{{ interest.content }}</dd>
+      <div aria-label="{{ interest.title | slugify }}" class="row reveal">
+          <img src='{{ interest.image | relative_url }}' alt='{{ interest.title }}' />
+          <div class="column">
+              <dt>{{ interest.title }}</dt>
+              <dd>{{ interest.content }}</dd>
           </div>
       </div>
       {% endfor %}
@@ -27,9 +25,9 @@ layout: default
   </div>
 </section>
 
-<section id="recent-projects" class="primary scroll-snap-align-start scroll-snap-stop-always">
-  <div class="mx-auto max-w-content px-[var(--fluid-gutter)] py-0 my-[var(--fluid-gutter-sm)] w-full box-border flex flex-col items-start flex-wrap gap-[var(--fluid-gutter-sm)] [calc(var(--fluid-gutter)*3)] text-left">
-    <h2 class="text-fluid-3 font-500 letter-spacing-[-0.03em] leading-[1.05] my-[calc(var(--fluid-gutter-sm)*0.5)]">What have I been working on?</h2>
+<section id="recent-projects">
+  <div class="wrapper">
+    <h2>What have I been working on?</h2>
     {%- include projects.html shortlist=true -%}
   </div>
 </section>
@@ -41,7 +39,7 @@ layout: default
     }
   });
 
-  document.querySelectorAll("#interests .row, #interests [aria-label]").forEach(interest => {
+  document.querySelectorAll("#interests .row").forEach(interest => {
     observer.observe(interest);
   });
 </script>

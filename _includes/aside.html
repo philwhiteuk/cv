@@ -1,18 +1,16 @@
-{%- include line-break.html direction="left" -%}
-<aside class="primary {% if page.url == '/' or page.url == '/about' %}min-h-[20vh] w-full{% endif %}">
+{% include line-break.html direction="left" %}
+<aside class="primary">
     {% if page.url == "/" or page.url == "/about"  %}
-    <div class="mx-auto max-w-content px-[var(--fluid-gutter)] py-0 my-[var(--fluid-gutter-sm)] w-full box-border flex flex-row flex-wrap justify-between gap-[var(--fluid-gutter-sm)] reveal">
-        <div class="flex flex-row flex-wrap gap-[calc(var(--fluid-gutter-sm)*2)] [calc(var(--fluid-gutter)*1.5)] md:flex-col md:gap-[var(--fluid-gutter-sm)]">
-            <section class="flex-1 min-w-[200px]" aria-label="career-history">
-                <h2 class="text-fluid-2 font-500 letter-spacing-[-0.03em] leading-[1.05] my-[calc(var(--fluid-gutter-sm)*0.8)] bg-[url('/cv/assets/images/icons.svg#icon-career-view')] bg-no-repeat bg-[50px_50px] bg-[length:50px_75px] pl-[2.5em] pb-0 pt-[1em]">Career</h2>
-                <ol class="list-none">
+    <div class="wrapper reveal">
+        <div class="flex">
+            <section class="column" aria-label="career-history">
+                <h2>Career</h2>
+                <ol>
                 {% assign career = site.data.career | sort: "from_date" | reverse %}
                 {% for position in career %}
-                    <li class="{{ position.class }} bg-[url('/cv/assets/images/branch-sprite.png')] bg-no-repeat bg-[0_0] pl-[100px] py-[8px]
-                        {% if position.class == 'open-branch' %}pb-[37px]{% endif %}
-                        {% if position.class == 'close-branch' %}pt-[30px]{% endif %}">
-                        <div class="flex flex-col">
-                            <span><em class="font-style-italic">{{ position.org }}</em></span>
+                    <li class="{{ position.class }}">
+                        <div>
+                            <span><em>{{ position.org }}</em></span>
                             <span>{{ position.role }}</span>
                         </div>
                         <div>{{ position.from_date | date: "%Y" }} - {{ position.to_date | date: "%Y" | default: 'Now' }}</div>
@@ -20,13 +18,13 @@
                 {% endfor %}
                 </ol>
             </section>
-            <div class="flex-1 min-w-[200px]">
+            <div class="column">
                 <section aria-label="skills">
-                    <h2 class="text-fluid-2 font-500 letter-spacing-[-0.03em] leading-[1.05] my-[calc(var(--fluid-gutter-sm)*0.8)] bg-[url('/cv/assets/images/icons.svg#icon-skills-view')] bg-no-repeat bg-[50px_50px] bg-[length:50px_75px] pl-[2.5em] pb-0 pt-[1em]">Skills / Expertise</h2>
+                    <h2>Skills / Expertise</h2>
                     {% assign all_projects = site.projects %}
                     {% assign total = all_projects.size %}
 
-                    <ul class="tag-cloud flex flex-wrap gap-[calc(var(--fluid-gutter-sm)*0.3)] justify-evenly list-none p-0 m-0 w-full">
+                    <ul class="tag-cloud">
                       {% for tag in site.tags %}
                         {% assign tag_name = tag.title %}
                         {% assign tag_projects = all_projects | where_exp: "project", "project.tags contains tag_name" %}
@@ -43,12 +41,8 @@
                           {% assign tier = "sm" %}
                         {% endif %}
 
-                        <li class="tag-cloud__item flex-0-0-auto m-0
-                            {% if tier == 'xl' %}text-[clamp(1.2em,calc(1.1em+0.5vw),1.5em)]{% endif %}
-                            {% if tier == 'lg' %}text-[clamp(1em,calc(0.95em+0.25vw),1.2em)]{% endif %}
-                            {% if tier == 'md' %}text-[clamp(0.875em,calc(0.85em+0.125vw),1em)]{% endif %}
-                            {% if tier == 'sm' %}text-[clamp(0.75em,calc(0.7em+0.25vw),0.8em)]{% endif %}">
-                          <a class="inline-block border border-solid border-[0.05em] rounded-[0.3em] px-[0.4em] py-[0.2em] text-inherit no-underline transition-all duration-200 ease-in-out hover:border-primary-fg hover:bg-[rgba(255,255,255,0.1)]" href="{{ tag.url | relative_url }}">
+                        <li class="tag-cloud__item tag-cloud__item--{{ tier }}">
+                          <a href="{{ tag.url | relative_url }}">
                             {{ tag_name }}
                           </a>
                         </li>
@@ -56,14 +50,14 @@
                     </ul>
                 </section>
                 <section aria-label="education">
-                    <h2 class="text-fluid-2 font-500 letter-spacing-[-0.03em] leading-[1.05] my-[calc(var(--fluid-gutter-sm)*0.8)] bg-[url('/cv/assets/images/icons.svg#icon-education-view')] bg-no-repeat bg-[left_center] bg-[length:50px_50px] pl-[2.5em] pb-0 pt-[1em]">Education</h2>
-                    <ol class="education list-none">
+                    <h2>Education</h2>
+                    <ol class="education">
                     {% assign education = site.data.education | sort: "from_date" | reverse %}
                     {% for period in education %}
-                        <li class="pl-[0.5em] ml-[0.5em]">
-                            <div class="flex flex-col">
+                        <li>
+                            <div>
                                 <span>{{ period.award }} {{ period.subject }}</span>
-                                <span><em class="font-style-italic">{{ period.institution }}</em></span>
+                                <span><em>{{ period.institution }}</em></span>
                             </div>
                             <div>{{ period.from_date | date: "%Y" }} - {{ period.to_date | date: "%Y" | default: 'Now' }}</div>
                         </li>
@@ -71,8 +65,8 @@
                     </ol>
                 </section>
                 <section aria-label="training">
-                    <h2 class="text-fluid-2 font-500 letter-spacing-[-0.03em] leading-[1.05] my-[calc(var(--fluid-gutter-sm)*0.8)] bg-[url('/cv/assets/images/icons.svg#icon-training-view')] bg-no-repeat bg-[left_center] bg-[length:50px_50px] pl-[2.5em] pb-0 pt-[1em]">Training</h2>
-                    <ul class="list-disc list-inside ml-[1.5em]">
+                    <h2>Training</h2>
+                    <ul>
                         <li>Linux Foundation Systems Administrator</li>
                         <li>ITIL Foundation in IT Service Management</li>
                         <li>Prince 2 Foundation</li>
@@ -81,6 +75,6 @@
             </div>
         </div>
     </div>
-    <div class="h-[calc(var(--fluid-gutter)*1.5)] w-full bg-[url('/cv/assets/images/icons.svg#icon-line-break-left')] bg-no-repeat bg-[left_center]"></div>
+    <div class="line-break-md"></div>
     {% endif %}
 </aside>
