@@ -18,4 +18,8 @@ RUN bundle install
 COPY package.json tailwind.config.js ./
 RUN npm install
 
-ENTRYPOINT ["bundle","exec","jekyll"]
+# Copy entrypoint script
+COPY entrypoint.sh /usr/src/entrypoint.sh
+RUN chmod +x /usr/src/entrypoint.sh
+
+ENTRYPOINT ["/usr/src/entrypoint.sh"]

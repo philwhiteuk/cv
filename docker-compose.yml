@@ -7,15 +7,5 @@ services:
       - "35729:35729"
     volumes:
       - .:/usr/src
-    command: ["serve", "--host", "0.0.0.0", "--port", "4000", "--livereload", "--livereload-port", "35729"]
     environment:
       - JEKYLL_ENV=development
-
-  tailwind:
-    build: .
-    volumes:
-      - .:/usr/src
-    command: ["npx", "tailwindcss", "-i", "./src/input.css", "-o", "./assets/css/main.css", "--watch"]
-    working_dir: /usr/src
-    profiles:
-      - dev
