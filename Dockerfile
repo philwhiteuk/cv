@@ -16,7 +16,7 @@ RUN bundle install
 
 # Install npm dependencies for Tailwind
 COPY package.json tailwind.config.js ./
-RUN npm install
+RUN npm ci
 
 # Copy entrypoint script
 COPY entrypoint.sh /usr/src/entrypoint.sh
