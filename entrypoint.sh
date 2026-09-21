@@ -6,13 +6,8 @@ if [ ! -f ./node_modules/.bin/tailwindcss ]; then
   npm install
 fi
 
-# Build Tailwind CSS initially
-echo "Building Tailwind CSS..."
-npx tailwindcss -i ./css/main.css -o ./assets/css/main.css --minify
-
-# Start Tailwind in watch mode in the background
 echo "Starting Tailwind in watch mode..."
-npx tailwindcss -i ./css/main.css -o ./assets/css/main.css --watch &
+npx tailwindcss -i ./css/main.css -o ./assets/css/main.css --watch=always &
 TAILWIND_PID=$!
 
 # Start Jekyll server in the foreground
