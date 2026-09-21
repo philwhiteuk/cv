@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "build:css": "tailwindcss -i ./css/main.css -o ./assets/css/main.css --minify",
+    "dev": "tailwindcss -i ./css/main.css -o ./assets/css/main.css --watch"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}

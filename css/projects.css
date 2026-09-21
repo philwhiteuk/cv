@@ -1,0 +1,131 @@
+article.project {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: var(--fluid-gutter-sm);
+  text-align: left;
+  width: 100%;
+}
+
+article.project h3 {
+  font-size: clamp(1.1rem, calc(1.05rem + 0.25vw), 1.5rem);
+  margin-bottom: calc(var(--fluid-gutter-sm) * 0.5);
+}
+
+article.project h4 {
+  margin: calc(var(--fluid-gutter-sm) * 0.25) 0;
+}
+
+article.project h5 {
+  margin: calc(var(--fluid-gutter-sm) * 0.25) 0;
+  opacity: 0.8;
+}
+
+article.project h5:before {
+  content: '@';
+  margin-left: -0.25em;
+}
+
+article.project h4,
+article.project h5 {
+  font-size: 1rem;
+  display: inline;
+}
+
+article.project .external-link {
+  font-size: clamp(0.75rem, calc(0.7rem + 0.25vw), 0.95rem);
+  opacity: 0.7;
+  word-break: break-all;
+}
+
+article.project .tags {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  flex-wrap: wrap;
+  gap: calc(var(--fluid-gutter-sm) * 0.5);
+  justify-content: right;
+  margin-top: var(--fluid-gutter-sm);
+}
+
+article.project .tags li {
+  background: rgba(255, 255, 255, 0.2);
+  padding: calc(var(--fluid-gutter-sm) * 0.05) calc(var(--fluid-gutter-sm) * 0.5);
+  border-radius: 20px;
+  font-size: clamp(0.75rem, calc(0.7rem + 0.25vw), 0.95rem);
+}
+
+article.project .tags li a {
+  background: none;
+  border: none;
+  color: #fff;
+  text-decoration: none;
+}
+
+article.project .tags li a:hover {
+  text-decoration: underline;
+}
+
+article.project .tags li span {
+  background: none;
+  border: none;
+  color: #fff;
+}
+
+article.project .content {
+  font-size: clamp(0.875rem, calc(0.85rem + 0.125vw), 1rem);
+  line-height: 1.6;
+}
+
+article.project .content p {
+  margin: var(--fluid-gutter-sm) 0;
+}
+
+article.project .content .expandable {
+  display: inline;
+  cursor: pointer;
+}
+
+article.project .content .expandable summary {
+  display: inline;
+  cursor: pointer;
+  list-style: none;
+  padding: 0;
+}
+
+article.project .content .expandable summary::-webkit-details-marker {
+  display: none;
+}
+
+article.project .content .expandable summary::marker {
+  content: '';
+}
+
+article.project .content .expandable summary:focus,
+article.project .content .expandable summary:hover {
+  outline: none;
+}
+
+article.project .content .expandable[open] summary {
+  display: none;
+}
+
+article.project .content .expandable .full {
+  display: inline;
+  cursor: default;
+}
+
+article.project .content .expandable .read-more {
+  text-decoration: underline;
+}
+
+#view-all {
+  align-self: flex-end;
+  margin-top: var(--fluid-gutter-sm);
+}
+
+main article.project {
+  scroll-margin-top: 10vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
