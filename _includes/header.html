@@ -1,21 +1,21 @@
-<header class="secondary {% if page.layout == 'homepage' %}sticky top-0 z-50{% endif %}" role="banner">
-    <div class="mx-auto max-w-content px-[var(--fluid-gutter)] py-[var(--fluid-gutter-sm)] w-full box-border flex flex-row flex-wrap justify-between gap-[var(--fluid-gutter-sm)]">
-        <nav class="flex flex-row flex-wrap items-center justify-between w-full gap-0 md:gap-[calc(var(--fluid-gutter-sm)*0.5)]">
-            <div class="profile-photo rounded-full overflow-hidden border border-transparent w-[clamp(2.5rem,2.5vw,4.5rem)]">
-                <img class="block w-full h-auto" src="{{ '/assets/images/profile.jpeg' | relative_url }}" alt="my profile photo"/>
+<header class="secondary{% if page.layout == 'homepage' %} sticky{% endif %}" role="banner">
+    <div class="wrapper">
+        <nav>
+            <div class="profile-photo">
+                <img src="{{ '/assets/images/profile.jpeg' | relative_url }}" alt="my profile photo"/>
             </div>
-            <h1 class="flex-1 text-fluid-3 font-500 letter-spacing-[-0.03em] leading-[1.05] my-[var(--fluid-gutter-sm)]"><a class="site-title text-secondary-fg hover:underline" rel="author" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a></h1>
-            <input class="hidden" id="menu-toggle" type="checkbox" />
-            <label for="menu-toggle" class="hidden lg:block bg-[url('/cv/assets/images/icons.svg#icon-menu-view')] bg-no-repeat bg-[length:clamp(1.5rem,3vw,2.5rem)] w-[clamp(1.5rem,3vw,2.5rem)] h-[clamp(1.5rem,3vw,2.5rem)]" aria-label="menu toggle"></label>
-            <div class="hidden lg:block basis-full h-0"></div>
-            <ul class="hidden sm:hidden md:block">
+            <h1><a class="site-title" rel="author" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a></h1>
+            <input class="hide" id="menu-toggle" type="checkbox" />
+            <label for="menu-toggle" class="hide-lg" aria-label="menu toggle"></label>
+            <div class="hide-lg break"></div>
+            <ul class="hide-sm hide-md">
                 {%- assign pages = site.pages | sort: 'order' -%}
                 {% for _page in pages %}
                 {% if _page.title %}
-                <li class="{% if _page.permalink == page.url %}underline{% endif %}"><a class="text-secondary-fg hover:underline" href="{{ _page.permalink | relative_url }}">{{ _page.title }}</a></li>
+                <li class="{% if _page.permalink == page.url %}active{% endif %}"><a href="{{ _page.permalink | relative_url }}">{{ _page.title }}</a></li>
                 {% endif %}
                 {% endfor %}
-                <li><button class="text-secondary-fg bg-primary-highlight px-[calc(var(--fluid-gutter-sm)*0.3)] py-[calc(var(--fluid-gutter-sm)*0.3)]" aria-label="contact" name="contact" onclick="javascript:(() => document.querySelector('dialog')?.showModal())()" type="button">Contact</button></li>
+                <li><button aria-label="contact" name="contact" onclick="javascript:(() => document.querySelector('dialog')?.showModal())()" type="button">Contact</button></li>
             </ul>
         </nav>
     </div>

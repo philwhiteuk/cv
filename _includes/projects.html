@@ -1,4 +1,4 @@
-{%- assign projects_by_date = site.projects | sort: "start_date" | reverse -%}
+{% assign projects_by_date = site.projects | sort: "start_date" | reverse %}
 
 {% if include.shortlist == true %}
 {% assign projects = projects_by_date | where_exp: "project", "project.hide_homepage != true" | slice: 0,4 %}
@@ -8,39 +8,39 @@
 {% assign projects = projects_by_date %}
 {% endif %}
 
-<section class="flex flex-col gap-[calc(var(--fluid-gutter-sm)*2)] [calc(var(--fluid-gutter)*1.5)]">
+<section class="flex column">
     {% for project in projects %}
-    <article class="project bg-black/20 rounded-lg p-[var(--fluid-gutter-sm)] box-border text-left w-full reveal">
-        <h3 class="text-[clamp(1.1rem,calc(1.05rem+0.25vw),1.5rem)] font-500 letter-spacing-[-0.03em] leading-[1.05] mb-[calc(var(--fluid-gutter-sm)*0.5)]">{{ project.title }}</h3>
-        <span class="flex flex-col gap-[calc(var(--fluid-gutter-sm)*0.25)]">
+    <article class="project column reveal">
+        <h3>{{ project.title }}</h3>
+        <span>
         {% if project.role and project.org %}
-            <h4 class="text-1rem font-500 my-[calc(var(--fluid-gutter-sm)*0.25)]">{{ project.role }}</h4>
-            <h5 class="text-1rem font-500 my-[calc(var(--fluid-gutter-sm)*0.25)] opacity-80">{{ project.org }}</h5>
+            <h4>{{ project.role }}</h4>
+            <h5>{{ project.org }}</h5>
         {% endif %}
         {% if project.external_link %}
-            <a class="external-link text-[clamp(0.75rem,calc(0.7rem+0.25vw),0.95rem)] opacity-70 break-all" target="_blank" href="{{ project.external_link }}" title="External link">{{ project.external_link }}</a>
+            <a class="external-link" target="_blank" href="{{ project.external_link }}" title="External link">{{ project.external_link }}</a>
         {% endif %}
         </span>
-        <div class="content text-[clamp(0.875rem,calc(0.85rem+0.125vw),1rem)] leading-6">
+        <div class="content">
             {% assign truncated_content = project.content | truncatewords: 60 %}
             {% if truncated_content != project.content %}
             <details class="expandable">
-                <summary class="inline cursor-pointer list-none p-0">{{ truncated_content | markdownify | append: ' <span class="read-more underline">[read more]</span>' }}</summary>
-                <span class="full inline cursor-default">{{ project.content | markdownify }}</span>
+                <summary>{{ truncated_content | markdownify | append: ' <span class="read-more">[read more]</span>' }}</summary>
+                <span class="full">{{ project.content | markdownify }}</span>
             </details>
             {% else %}
             {{ project.content | markdownify }}
             {% endif %}
         </div>
-        <ul class="tags flex flex-row flex-wrap items-center justify-end gap-[calc(var(--fluid-gutter-sm)*0.5)] mt-[var(--fluid-gutter-sm)]">
+        <ul class="tags">
             {% assign tags_by_title = project.tags | sort %}
             {% for tag in tags_by_title %}
             {% assign tag_data = site.tags | where: "title", tag | first %}
-            <li class="bg-white/20 px-[calc(var(--fluid-gutter-sm)*0.5)] py-[calc(var(--fluid-gutter-sm)*0.05)] rounded-20 text-[clamp(0.75rem,calc(0.7rem+0.25vw),0.95rem)]">
+            <li>
                 {% if tag_data %}
-                <a class="text-primary-fg no-underline hover:underline" href="{{ tag_data.url | relative_url }}">{{ tag }}</a>
+                <a href="{{ tag_data.url | relative_url }}">{{ tag }}</a>
                 {% else %}
-                <span class="text-primary-fg">{{ tag }}</span>
+                <span>{{ tag }}</span>
                 {% endif %}
             </li>
             {% endfor %}
@@ -51,5 +51,5 @@
 </section>
 
 {% if include.shortlist == true %}
-<a id="view-all" class="self-end mt-[var(--fluid-gutter-sm)]" href="{{ 'projects' | relative_url }}" title="View all projects"><em class="font-style-italic">View All Projects ></em></a>
+<a id="view-all" href="{{ 'projects' | relative_url }}" title="View all projects"><em>View All Projects ></em></a>
 {% endif %}

@@ -5,17 +5,17 @@ order: 1
 permalink: /projects
 ---
 
-<section class="subpage primary scroll-snap-align-start scroll-snap-stop-always">
-    <div class="mx-auto max-w-content px-[var(--fluid-gutter)] py-0 my-[var(--fluid-gutter-sm)] w-full box-border flex flex-row flex-wrap justify-between gap-[var(--fluid-gutter-sm)]">
-        <h2 class="text-fluid-3 font-500 letter-spacing-[-0.03em] leading-[1.05] my-[calc(var(--fluid-gutter-sm)*0.5)]">Projects</h2>
-        <p class="text-fluid-1 my-[var(--fluid-gutter-sm)]">This is a list of some of the projects I have worked on in the past.</p>
-        <small class="text-fluid-0">(Select tags to filter projects. Multiple tags will be combined with AND logic.)</small>
+<section class="subpage primary">
+    <div class="wrapper">
+        <h2>Projects</h2>
+        <p>This is a list of some of the projects I have worked on in the past.</p>
+        <small>(Select tags to filter projects. Multiple tags will be combined with AND logic.)</small>
     </div>
-    <div class="mx-auto max-w-content px-[var(--fluid-gutter)] py-0 my-[var(--fluid-gutter-sm)] w-full box-border flex flex-row flex-wrap justify-between gap-[var(--fluid-gutter-sm)]">
+    <div class="wrapper">
         <div id="project-filters" class="project-filters">
             <section aria-label="skills">
-                <h3 class="text-fluid-2 font-500 letter-spacing-[-0.03em] leading-[1.05] my-[calc(var(--fluid-gutter-sm)*0.5)]">Filter by Tag</h3>
-                <ul class="tag-cloud flex flex-wrap gap-[calc(var(--fluid-gutter-sm)*0.3)] justify-evenly list-none p-0 m-0 w-full">
+                <h3>Filter by Tag</h3>
+                <ul class="tag-cloud">
                   {% assign all_projects = site.projects %}
                   {% assign total = all_projects.size %}
 
@@ -35,22 +35,18 @@ permalink: /projects
                       {% assign tier = "sm" %}
                     {% endif %}
 
-                    <li class="tag-cloud__item flex-0-0-auto m-0
-                        {% if tier == 'xl' %}text-[clamp(1.2em,calc(1.1em+0.5vw),1.5em)]{% endif %}
-                        {% if tier == 'lg' %}text-[clamp(1em,calc(0.95em+0.25vw),1.2em)]{% endif %}
-                        {% if tier == 'md' %}text-[clamp(0.875em,calc(0.85em+0.125vw),1em)]{% endif %}
-                        {% if tier == 'sm' %}text-[clamp(0.75em,calc(0.7em+0.25vw),0.8em)]{% endif %}">
-                      <a class="inline-block border border-solid border-[0.05em] rounded-[0.3em] px-[0.4em] py-[0.2em] text-inherit no-underline transition-all duration-200 ease-in-out hover:border-primary-fg hover:bg-[rgba(255,255,255,0.1)]" href="#">{{ tag_name }}</a>
+                    <li class="tag-cloud__item tag-cloud__item--{{ tier }}">
+                      <a href="#">{{ tag_name }}</a>
                     </li>
                   {% endfor %}
                 </ul>
             </section>
-            <div class="reset-container mt-[var(--fluid-gutter-sm)]">
-                <button class="reset-filters bg-primary-highlight text-white px-[var(--fluid-gutter)] py-[calc(var(--fluid-gutter-sm)*0.5)] rounded-lg cursor-pointer hover:bg-primary-fg transition-colors">Reset</button>
+            <div class="reset-container">
+                <button class="reset-filters">Reset</button>
             </div>
         </div>
     </div>
-    <div class="mx-auto max-w-content px-[var(--fluid-gutter)] py-0 my-[var(--fluid-gutter-sm)] w-full box-border flex flex-row flex-wrap justify-between gap-[var(--fluid-gutter-sm)]">
+    <div class="wrapper">
         {% include projects.html %}
     </div>
 </section>

@@ -2,15 +2,15 @@
 layout: default
 ---
 
-<section class="primary scroll-snap-align-start scroll-snap-stop-always">
-    <div class="mx-auto max-w-content px-[var(--fluid-gutter)] py-0 my-[var(--fluid-gutter-sm)] w-full box-border flex flex-row flex-wrap justify-between gap-[var(--fluid-gutter-sm)]">
+<section>
+    <div class="wrapper">
         {%- if page.title -%}
-        <h1 class="page-heading text-fluid-4 font-500 letter-spacing-[-0.03em] leading-[1.05] my-[calc(var(--fluid-gutter-sm)*0.5)]">{{ page.title }}</h1>
+        <h1 class="page-heading">{{ page.title }}</h1>
         {%- endif -%}
-        <div class="basis-full h-0"></div>
+        <div class="break"></div>
         {{ content }}
     </div>
-    <div class="mx-auto max-w-content px-[var(--fluid-gutter)] py-0 my-[var(--fluid-gutter-sm)] w-full box-border flex flex-row flex-wrap justify-between gap-[var(--fluid-gutter-sm)]">
+    <div class="wrapper">
         {%- include projects.html tag=page.title -%}
     </div>
 </section>
