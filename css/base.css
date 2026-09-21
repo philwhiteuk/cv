@@ -250,8 +250,8 @@ main#homepage section#interests em {
 
 /* Legacy hide classes - can be replaced with container queries or removed */
 @media (max-width: 32rem) { .hide-sm { display: inherit !important; } }
-@media (max-width: 53.125rem) { .hide-md { display: none !important; } }
-@media (min-width: 53.125rem) { .hide-lg { display: none !important; } }
+@media (max-width: 48rem) { .hide-md { display: none !important; } }
+@media (min-width: 48rem) { .hide-lg { display: none !important; } }
 
 @keyframes slow-blink {
   50% {

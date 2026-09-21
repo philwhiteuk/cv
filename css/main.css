@@ -22,9 +22,11 @@
   --shadow-header: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
+@custom-variant menu-open (&:is(#menu-toggle:checked ~ ul, #menu-toggle:checked ~ ul *));
+
 @layer components {
   .menu-link {
-    @apply max-[53.125rem]:[#menu-toggle:checked~ul_&]:inline-block! max-[53.125rem]:[#menu-toggle:checked~ul_&]:px-0! max-[53.125rem]:[#menu-toggle:checked~ul_&]:py-(--fluid-gutter-sm)! max-[53.125rem]:[#menu-toggle:checked~ul_&]:text-center max-[53.125rem]:[#menu-toggle:checked~ul_&]:w-full;
+    @apply max-md:menu-open:inline-block! max-md:menu-open:px-0! max-md:menu-open:py-(--fluid-gutter-sm)! max-md:menu-open:text-center max-md:menu-open:w-full;
   }
 }
 
