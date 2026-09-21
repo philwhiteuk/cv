@@ -15,7 +15,7 @@ COPY Gemfile Gemfile.lock ./
 RUN bundle install
 
 # Install npm dependencies for Tailwind
-COPY package.json tailwind.config.js ./
+COPY package.json package-lock.json tailwind.config.js ./
 RUN npm ci
 
 # Copy entrypoint script

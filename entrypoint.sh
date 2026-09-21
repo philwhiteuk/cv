@@ -8,11 +8,11 @@ fi
 
 # Build Tailwind CSS initially
 echo "Building Tailwind CSS..."
-npx tailwindcss -i ./src/input.css -o ./assets/css/main.css --minify
+npx tailwindcss -i ./css/main.css -o ./assets/css/main.css --minify
 
 # Start Tailwind in watch mode in the background
 echo "Starting Tailwind in watch mode..."
-npx tailwindcss -i ./src/input.css -o ./assets/css/main.css --watch &
+npx tailwindcss -i ./css/main.css -o ./assets/css/main.css --watch &
 TAILWIND_PID=$!
 
 # Start Jekyll server in the foreground

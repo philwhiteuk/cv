@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
+
+:root {
+  /* Fluid type scale - step 0-6 */
+  --fluid-step-0: clamp(0.875rem, calc(0.8rem + 0.375vw), 1rem);
+  --fluid-step-1: clamp(1rem, calc(0.95rem + 0.25vw), 1.125rem);
+  --fluid-step-2: clamp(1.25rem, calc(1.15rem + 0.5vw), 1.5rem);
+  --fluid-step-3: clamp(1.5rem, calc(1.35rem + 0.75vw), 2rem);
+  --fluid-step-4: clamp(2rem, calc(1.6rem + 2vw), 3rem);
+  --fluid-step-5: clamp(2.5rem, calc(1.8rem + 3.5vw), 5rem);
+  --fluid-step-6: clamp(3rem, calc(2rem + 5vw), 6rem);
+  
+  /* Fluid spacing */
+  --fluid-gutter: clamp(1rem, 5vw, 4rem);
+  --fluid-gutter-sm: clamp(0.25rem, 3vw, 2rem);
+  --fluid-gutter-lg: clamp(1.5rem, 6vw, 5rem);
+}
+
+@import "./aside.css";
+@import "./base.css";
+@import "./dialog.css";
+@import "./footer.css";
+@import "./header.css";
+@import "./homepage.css";
+@import "./projects.css";
+@import "./subpage.css";
+@import "./tag.css";
