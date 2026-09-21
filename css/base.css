@@ -253,28 +253,4 @@ main#homepage section#interests em {
 @media (max-width: 48rem) { .hide-md { display: none !important; } }
 @media (min-width: 48rem) { .hide-lg { display: none !important; } }
 
-@keyframes slow-blink {
-  50% {
-    opacity: 0;
-  }
-}
 
-.term-caret {
-  animation: slow-blink 1s linear infinite;
-}
-
-.term-caret::before {
-  content: '_';
-}
-
-.typing-effect {
-  overflow: hidden;
-  margin: 0 auto;
-  animation:
-    typing 3.5s steps(40, end);
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}

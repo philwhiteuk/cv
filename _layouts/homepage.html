@@ -1,14 +1,14 @@
 ---
 layout: default
 ---
-<section id="welcome">
-  <div class="wrapper reveal">
+<section id="welcome" class="bg-fixed relative flex flex-col flex-wrap items-center justify-around w-full min-h-(--home-section-height) snap-start snap-always transition-all duration-300 ease-[ease] scroll-mt-(--home-section-scroll-offset) scroll-mb-(--home-section-overlap)">
+  <div class="wrapper reveal flex flex-col flex-wrap items-start gap-(--fluid-gutter-sm) gap-x-(--home-wrapper-gap) w-full m-0 px-(--fluid-gutter) pb-(--fluid-gutter) text-left z-2">
     {{ content }}
   </div>
 </section>
 
-<section id="interests">
-  <div class="wrapper">
+<section id="interests" class="bg-fixed relative flex flex-col flex-wrap items-center justify-around w-full min-h-(--home-section-height) snap-start snap-always transition-all duration-300 ease-[ease] scroll-mt-(--home-section-scroll-offset) scroll-mb-(--home-section-overlap)">
+  <div class="wrapper flex flex-col flex-wrap items-start gap-(--fluid-gutter-sm) gap-x-(--home-wrapper-gap) w-full m-0 px-(--fluid-gutter) pb-(--fluid-gutter) text-left z-2">
     <h2>What makes me tick?</h2>
     <dl id="interests" class="flex">
       {% assign interests = site.interests | sort: 'order' %}
@@ -25,8 +25,8 @@ layout: default
   </div>
 </section>
 
-<section id="recent-projects">
-  <div class="wrapper">
+<section id="recent-projects" class="bg-fixed relative flex flex-col flex-wrap items-center justify-around w-full min-h-(--home-section-height) snap-start snap-always transition-all duration-300 ease-[ease] scroll-mt-(--home-section-scroll-offset) scroll-mb-(--home-section-overlap)">
+  <div class="wrapper flex flex-col flex-wrap items-start gap-(--fluid-gutter-sm) gap-x-(--home-wrapper-gap) w-full m-0 px-(--fluid-gutter) pb-(--fluid-gutter) text-left z-2">
     <h2>What have I been working on?</h2>
     {%- include projects.html shortlist=true -%}
   </div>

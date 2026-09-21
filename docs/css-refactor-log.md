@@ -9,6 +9,7 @@ category. One component per commit so each pass is independently revertible.
 
 | Component | Status | Notes |
 |---|---|---|
+| Homepage Welcome section | ✅ migrated | `main#homepage > section` + `.wrapper` layout rules → utilities on all 3 homepage sections/wrappers (shared homepage layout, so also covers `#interests` + `#recent-projects` shells); `.term-caret` → `animate-caret-blink` (`@theme` token, keyframes renamed `slow-blink`→`caret-blink`) + `before:content-['\_']`; dead `.typing-effect` + `@keyframes typing` deleted; component imports moved into `layer(components)` so utilities reliably win |
 | Homepage interests section | ✅ migrated | `dl dt`, `dl img` rules → utilities; `.row` deleted (class kept in markup as JS / `prefers-reduced-motion` hook); dead `alternate` class removed; 2 redundant rules deleted (`background-attachment: fixed`, `dl text-align: left` — both already covered by broader rules) |
 | Layout primitives (`.flex`, `.column`, `.break`, line-breaks) | ⏳ partial | `.column` rule still needed by aside + projects include; `.flex` shared by dialog/aside/projects incl. `max-width: 60rem` restack |
 | Theme blocks (`.primary`/`.secondary` + a/button/svg/em descendants) | ⏳ partial | 3-way selector group with `dialog`; interests branches inert (its content has no a/button/svg/em). Future: `--color-accent` for `#7700ff` |
@@ -43,8 +44,17 @@ variables elsewhere; do not name them after appearance or value.
 | `--fluid-gutter-lg` | `clamp(1.5rem, 6vw, 5rem)` | Pre-existing. Large gutter step |
 | `--fluid-gutter-xs` | `calc(var(--fluid-gutter-sm) * 0.5)` | Half-step gutter (was an inline expression in interests `dt` + base h3–h6) |
 | `--from-x` | `-10vw` | Slide-in animation start offset (was declared inside `.slide-in` rule) |
+| `--home-section-height` | `95vh` | Homepage section min-height (was hard-coded in `main#homepage > section`) |
+| `--home-section-scroll-offset` | `7vh` | Homepage section scroll-margin-top (was hard-coded) |
+| `--home-section-overlap` | `-1vh` | Homepage section overlap/scroll-margin-bottom — one role, used by both the section utilities and the kept-custom scroll-hint rule (was hard-coded `-1vh` in two places) |
+| `--home-wrapper-gap` | `calc(var(--fluid-gutter) * 3)` | Homepage wrapper column-gap (was inline in `main#homepage > section .wrapper`) |
 
 ## Flagged for later passes
+- **`@keyframes bounce` name collision (pre-existing, live on `main`)**: the custom
+  scroll-hint keyframes in `css/homepage.css` share a name with Tailwind's
+  default `bounce`; the default wins, so the authored `translateX(-50%)`
+  centered bounce is currently not what renders. Fixing it is a behavior
+  change — needs an explicit decision (rename to e.g. `section-divider-bounce`).
 
 - `#7700ff` (accent links/buttons in base, tag) → use existing `--color-accent`
   token — belongs to the theme-block pass.
