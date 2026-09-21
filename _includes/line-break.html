@@ -1,2 +1,5 @@
-<div class="line-break-lg line-break-{{ include.direction }}">
+<div class="h-[calc(var(--fluid-gutter)*3.5)] w-full
+    {% if include.direction == 'left' %}bg-line-break-left
+    {% elsif include.direction == 'right' %}bg-line-break-right
+    {% else %}bg-line-break-left{% endif %} bg-no-repeat bg-[left_center]">
 </div>
