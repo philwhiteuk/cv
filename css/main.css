@@ -4,7 +4,6 @@
 @import "./base.css";
 @import "./dialog.css";
 @import "./footer.css";
-@import "./header.css";
 @import "./homepage.css";
 @import "./projects.css";
 @import "./projects-filter.css";
@@ -18,6 +17,13 @@
 
   /* Component type scale */
   --text-interest-term: clamp(1em, calc(0.95em + 0.25vw), 1.2em);
+}
+
+@layer components {
+  .menu-link {
+    @apply max-[53.125rem]:[#menu-toggle:checked~ul_&]:inline-block! max-[53.125rem]:[#menu-toggle:checked~ul_&]:px-0! max-[53.125rem]:[#menu-toggle:checked~ul_&]:py-(--fluid-gutter-sm)! max-[53.125rem]:[#menu-toggle:checked~ul_&]:text-center max-[53.125rem]:[#menu-toggle:checked~ul_&]:w-full;
+  }
+}
 }
 
 :root {
