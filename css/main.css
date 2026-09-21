@@ -17,13 +17,15 @@
 
   /* Component type scale */
   --text-interest-term: clamp(1em, calc(0.95em + 0.25vw), 1.2em);
+
+  --color-accent: #7700ff;
+  --shadow-header: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 @layer components {
   .menu-link {
     @apply max-[53.125rem]:[#menu-toggle:checked~ul_&]:inline-block! max-[53.125rem]:[#menu-toggle:checked~ul_&]:px-0! max-[53.125rem]:[#menu-toggle:checked~ul_&]:py-(--fluid-gutter-sm)! max-[53.125rem]:[#menu-toggle:checked~ul_&]:text-center max-[53.125rem]:[#menu-toggle:checked~ul_&]:w-full;
   }
-}
 }
 
 :root {
