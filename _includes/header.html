@@ -12,7 +12,7 @@
                 {%- assign pages = site.pages | sort: 'order' -%}
                 {% for _page in pages %}
                 {% if _page.title %}
-                <li class="{% if _page.permalink == page.url %}active{% endif %}"><a href="{{ _page.permalink | relative_url }}">{{ _page.title }}</a></li>
+                <li class="{% if _page.permalink == page.url %}active{% endif %}"><a href="{{ _page.permalink | relative_url }}">{{ _page.nav_title | default: _page.title }}</a></li>
                 {% endif %}
                 {% endfor %}
                 <li><button aria-label="contact" name="contact" onclick="javascript:(() => document.querySelector('dialog')?.showModal())()" type="button">Contact</button></li>
