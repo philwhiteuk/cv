@@ -7,16 +7,16 @@ layout: default
   </div>
 </section>
 
-<section id="interests" class="alternate">
+<section id="interests">
   <div class="wrapper">
     <h2>What makes me tick?</h2>
     <dl id="interests" class="flex">
       {% assign interests = site.interests | sort: 'order' %}
       {% for interest in interests %}
-      <div aria-label="{{ interest.title | slugify }}" class="row reveal">
-          <img src='{{ interest.image | relative_url }}' alt='{{ interest.title }}' />
-          <div class="column">
-              <dt>{{ interest.title }}</dt>
+      <div aria-label="{{ interest.title | slugify }}" class="row flex flex-row reveal">
+          <img src='{{ interest.image | relative_url }}' alt='{{ interest.title }}' class='mx-(--fluid-gutter-sm) size-[clamp(3em,6vw,6em)] rounded-full object-cover bg-[linear-gradient(180deg,var(--color-gradient-start)_0%,var(--color-gradient-end)_100%)]' />
+          <div class="column flex flex-1 flex-col">
+              <dt class="text-interest-term font-semibold mb-(--fluid-gutter-xs)">{{ interest.title }}</dt>
               <dd>{{ interest.content }}</dd>
           </div>
       </div>

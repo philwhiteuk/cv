@@ -11,6 +11,15 @@
 @import "./subpage.css";
 @import "./tag.css";
 
+@theme {
+  /* Brand gradient */
+  --color-gradient-start: #d16f00;
+  --color-gradient-end: #5105a7;
+
+  /* Component type scale */
+  --text-interest-term: clamp(1em, calc(0.95em + 0.25vw), 1.2em);
+}
+
 :root {
   /* Fluid type scale - step 0-6 */
   --fluid-step-0: clamp(0.875rem, calc(0.8rem + 0.375vw), 1rem);
@@ -25,4 +34,8 @@
   --fluid-gutter: clamp(1rem, 5vw, 4rem);
   --fluid-gutter-sm: clamp(0.25rem, 3vw, 2rem);
   --fluid-gutter-lg: clamp(1.5rem, 6vw, 5rem);
+  --fluid-gutter-xs: calc(var(--fluid-gutter-sm) * 0.5);
+
+  /* Animation */
+  --from-x: -10vw;
 }

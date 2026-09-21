@@ -30,10 +30,6 @@ main#homepage > section .wrapper {
   z-index: 2;
 }
 
-main#homepage section#interests {
-  background-attachment: fixed;
-}
-
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
     transform: translateX(-50%) translateY(0);
@@ -70,29 +66,6 @@ main#homepage > section:not(:last-of-type):nth-of-type(odd)::after {
 
 main#homepage > section:not(:last-of-type):nth-of-type(even)::after {
   border-color: #7700ff;
-}
-
-main#homepage section#interests dl {
-  text-align: left;
-}
-
-main#homepage section#interests dl dt {
-  font-size: clamp(1em, calc(0.95em + 0.25vw), 1.2em);
-  font-weight: 600;
-  margin-bottom: calc(var(--fluid-gutter-sm) * 0.5);
-}
-
-main#homepage section#interests dl img {
-  background: linear-gradient(180deg, #d16f00 0%, #5105a7 100%);
-  border-radius: 50%;
-  height: clamp(3em, 6vw, 6em);
-  margin: 0 var(--fluid-gutter-sm);
-  object-fit: cover;
-  width: clamp(3em, 6vw, 6em);
-}
-
-main#homepage section#interests .slide-in {
-  --from-x: -10vw;
 }
 
 @supports (animation-timeline: view()) {
