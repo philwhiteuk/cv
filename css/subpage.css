@@ -1,10 +1,10 @@
 section.subpage {
-    justify-items: center;
-    width: 100%;
-    
-    .wrapper {
-        align-items: flex-start;
-        flex-flow: column wrap;
-        gap: 1em 3em;
-    }
+  justify-items: center;
+  width: 100%;
+}
+
+section.subpage .wrapper {
+  align-items: flex-start;
+  flex-flow: column wrap;
+  gap: 1em 3em;
 }

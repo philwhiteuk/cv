@@ -1,11 +1,11 @@
 html {
-  font-family: $base_font_family;
-  font-size: $base_font_size;
+  font-family: 'Poppins', serif;
+  font-size: 16px;
   font-style: normal;
   font-variant-ligatures: common-ligatures;
-  font-weight: $base_font_weight;
-  letter-spacing: $base_letter_spacing;
-  line-height: $base_line_height;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  line-height: 1.5em;
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory !important;
 }
@@ -26,7 +26,7 @@ body > *:not(dialog) {
 a, button {
   background: none;
   border: none;
-  color: $base_anchor_text_colour_normal;
+  color: #fff;
   cursor: pointer;
   display: inline;
   font-family: inherit;
@@ -37,7 +37,7 @@ a, button {
 }
 
 button {
-  color: $base_anchor_text_colour_normal;
+  color: #fff;
   padding: calc(var(--fluid-gutter-sm) * 0.3) var(--fluid-gutter-sm);
 }
 
@@ -50,7 +50,7 @@ a:hover {
 }
 
 a[href^="https:"] {
-  background: rgba($primary_highlight, 0.5);
+  background: rgba(119, 0, 255, 0.5);
   text-decoration: underline;
 }
 
@@ -76,9 +76,9 @@ h3, h4, h5, h6 {
   margin: calc(var(--fluid-gutter-sm) * 0.5) 0;
 }
 
-h1 { 
-  font-size: var(--fluid-step-4); 
-  white-space: nowrap; 
+h1 {
+  font-size: var(--fluid-step-4);
+  white-space: nowrap;
 }
 h2 { font-size: var(--fluid-step-3); }
 h3 { font-size: var(--fluid-step-2); }
@@ -88,13 +88,13 @@ h6 { font-size: var(--fluid-step-0); }
 
 em {
   font-style: normal;
-  font-weight: $base_font_weight + 100;
+  font-weight: 400;
   padding: 0 calc(var(--fluid-gutter-sm) * 0.1);
 }
 
 input, textarea {
-  font-family: $base_font_family;
-  font-size: $base_font_size;
+  font-family: 'Poppins', serif;
+  font-size: 16px;
   font-style: normal;
   font-variant-ligatures: common-ligatures;
 }
@@ -120,63 +120,75 @@ main > section, main > aside {
   .card { animation: none; }
 }
 
-
-%bg-primary {
-  background: $primary_bg;
-  background: linear-gradient(180deg, $primary_bg 0%, $primary_bg_gradient 100%);
-  
-  color: $primary_fg;
-
-  a {
-    color: $primary_fg;
-  }
-
-  button {
-    background: rgba($primary_highlight, 1);
-  }
-
-  svg {
-    fill: rgba($primary_highlight, 0.8);
-  }
-
-  em {
-    color: $primary_emphasis;
-  }
-
+.primary,
+main#homepage > section,
+main#tag > section {
+  background: #d16f00;
+  background: linear-gradient(180deg, #d16f00 0%, #5105a7 100%);
+  color: #fff;
 }
 
-%bg-secondary {
+.primary a,
+main#homepage > section a,
+main#tag > section a {
+  color: #fff;
+}
+
+.primary button,
+main#homepage > section button,
+main#tag > section button {
+  background: rgba(119, 0, 255, 1);
+}
+
+.primary svg,
+main#homepage > section svg,
+main#tag > section svg {
+  fill: rgba(119, 0, 255, 0.8);
+}
+
+.primary em,
+main#homepage > section em,
+main#tag > section em {
+  color: #fff;
+}
+
+.secondary,
+dialog,
+main#homepage section#interests {
   background: none;
-  background-color: $secondary_bg;
-
-  color: $secondary_fg;
-
-  a {
-    color: $secondary_fg;
-  }
-
-  button {
-    background: rgba($primary_highlight, 1);
-  }
-
-  svg {
-    fill: rgba($secondary_highlight, 1);
-  }
-
-  em {
-    color: $secondary_emphasis;
-  }
+  background-color: white;
+  color: black;
 }
 
-.primary
-{
-  @extend %bg-primary;
+.secondary a,
+dialog a,
+main#homepage section#interests a {
+  color: black;
+}
+
+.secondary button,
+dialog button,
+main#homepage section#interests button {
+  background: rgba(119, 0, 255, 1);
+}
+
+.secondary svg,
+dialog svg,
+main#homepage section#interests svg {
+  fill: rgba(255, 255, 255, 1);
+}
+
+.secondary em,
+dialog em,
+main#homepage section#interests em {
+  color: black;
+}
+
+.primary {
   background-attachment: fixed;
 }
 
-.secondary
-{
-  @extend %bg-secondary;
+.secondary {
   background-attachment: fixed;
 }
 
@@ -184,8 +196,10 @@ main > section, main > aside {
   display: flex;
   flex-flow: row wrap;
   gap: calc(var(--fluid-gutter-sm) * 2) calc(var(--fluid-gutter) * 1.5);
-  
-  @media (max-width: 60rem) { 
+}
+
+@media (max-width: 60rem) {
+  .flex {
     flex-flow: column wrap;
     gap: calc(var(--fluid-gutter-sm) * 1.5);
   }
@@ -216,11 +230,11 @@ main > section, main > aside {
 .line-break-lg { height: calc(var(--fluid-gutter) * 3.5); }
 
 .line-break-left {
-  background: -webkit-linear-gradient(88deg, $primary_bg 49%, $secondary_bg 50%);
+  background: -webkit-linear-gradient(88deg, #d16f00 49%, white 50%);
 }
 
 .line-break-right {
-  background: -webkit-linear-gradient(-88deg, $primary_bg_gradient 49%, $secondary_bg 50%);
+  background: -webkit-linear-gradient(-88deg, #5105a7 49%, white 50%);
 }
 
 .wrapper {
@@ -238,7 +252,8 @@ main > section, main > aside {
 .hide {
   display: none !important;
 }
-// Legacy hide classes - can be replaced with container queries or removed
+
+/* Legacy hide classes - can be replaced with container queries or removed */
 @media (max-width: 32rem) { .hide-sm { display: inherit !important; } }
 @media (max-width: 53.125rem) { .hide-md { display: none !important; } }
 @media (min-width: 53.125rem) { .hide-lg { display: none !important; } }
@@ -260,7 +275,7 @@ main > section, main > aside {
 .typing-effect {
   overflow: hidden;
   margin: 0 auto;
-  animation: 
+  animation:
     typing 3.5s steps(40, end);
 }
 

@@ -1,27 +1,27 @@
 body > footer {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
 
-    #social {
-        align-items: center;
-        display: flex;
-        flex-flow: row nowrap;
-        gap: calc(var(--fluid-gutter-sm) * 0.25);
+body > footer #social {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: calc(var(--fluid-gutter-sm) * 0.25);
+}
 
-        li a {
-            background: none;
-            display: flex;
-            align-items: center;
-        }
+body > footer #social li a {
+  background: none;
+  display: flex;
+  align-items: center;
+}
 
-        li a:hover:after {
-            content: none;
-        }
+body > footer #social li a:hover:after {
+  content: none;
+}
 
-        svg {
-            height: clamp(16px, 2vw, 24px);
-            width: clamp(16px, 2vw, 24px);
-            fill: $secondary_fg;
-        }
-    }
+body > footer #social svg {
+  height: clamp(16px, 2vw, 24px);
+  width: clamp(16px, 2vw, 24px);
+  fill: black;
 }
