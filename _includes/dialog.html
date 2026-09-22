@@ -1,17 +1,18 @@
-<dialog>
-    <header class="flex">
-        <h3>Contact</h3>
-        <button class="close" aria-label="close" autofocus onclick="javascript: (() => document.querySelector('dialog')?.close())()"><i></i></button>
+<dialog class="border-0 rounded-[0.2em] my-[25vh] mx-[clamp(1rem,5vw,2rem)] py-(--fluid-gutter) px-[calc(var(--fluid-gutter)*1.5)] backdrop:bg-[rgba(0,0,0,0.85)] open:flex open:flex-col open:flex-nowrap open:justify-self-center open:gap-(--fluid-gutter-sm)">
+    <header class="flex flex-row! flex-nowrap! items-start justify-between">
+        <h3 class="m-0">Contact</h3>
+        <button class="close flex justify-end p-0 bg-none bg-transparent" aria-label="close" autofocus onclick="javascript: (() => document.querySelector('dialog')?.close())()"><i></i></button>
     </header>
     <p>I'm always on the look out for and interested to hear about new opportunities.</p>
     <p>Please fill in your name and email and I will try to respond within 24 hours.</p>
-    <form action="https://formkeep.com/f/f20b7c33521d"
+    <form class="flex flex-col flex-nowrap gap-(--fluid-gutter-sm)"
+          action="https://formkeep.com/f/f20b7c33521d"
           accept-charset="UTF-8"
           enctype="multipart/form-data"
           method="POST">
-        <input name="full_name" type="text" placeholder="Name" required>
-        <input name="email" type="email" placeholder="Email" required>
-        <textarea name="message" placeholder="Message" ></textarea>
+        <input class="border border-[#ccc] rounded-[0.2em] p-(--fluid-gutter-xs)" name="full_name" type="text" placeholder="Name" required>
+        <input class="border border-[#ccc] rounded-[0.2em] p-(--fluid-gutter-xs)" name="email" type="email" placeholder="Email" required>
+        <textarea class="border border-[#ccc] rounded-[0.2em] p-(--fluid-gutter-xs) resize-y h-[clamp(8em,15vh,12em)]" name="message" placeholder="Message" ></textarea>
         <button type="submit">Send</button>
     </form>
 </dialog>

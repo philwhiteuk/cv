@@ -21,7 +21,8 @@ category. One component per commit so each pass is independently revertible.
 | Subpage layout | ✅ migrated | `section.subpage` → utilities on `_layouts/subpage.html` + `pages/all-projects.html` (only other `subpage` user); `section.subpage .wrapper` → utilities on the layout's wrapper; `css/subpage.css` deleted + import removed |
 | Line-break dividers/spacers | 🗑 removed | Owner decision (PR #13 review): concept removed entirely — `_includes/line-break.html` deleted, both `line-break-md` spacers (aside, subpage layout) and the gradient divider above the aside dropped, all 5 `css/base.css` rules deleted. Intentional visual change, not a refactor |
 | Footer | ✅ migrated | All 5 `body > footer` rules → utilities in `_includes/footer.html`; `css/footer.css` deleted + import removed from `main.css`; social anchors get `bg-none bg-transparent` (old `background: none` shorthand) and `hover:after:content-none` (kills base `a[href^="https:"]` hover arrow on icons) |
-| Everything else (dialog, aside, projects, base) | ⏳ not started | |
+| Contact dialog | ✅ migrated | All rules → utilities in `_includes/dialog.html` (`open:` variant for `dialog[open]`, `backdrop:bg-[rgba(0,0,0,0.85)]` for the backdrop); dead `animation: fade-in` deleted — no `@keyframes fade-in` exists anywhere, so it was a no-op; kept custom: `dialog button.close i` (close.svg background-image composite) as the last rule in `css/dialog.css`; `dialog header` guards `flex-row! flex-nowrap!` against the `.flex` wrap default |
+| Everything else (aside, projects, base) | ⏳ not started | |
 
 ## Variable master list
 
@@ -74,6 +75,8 @@ variables elsewhere; do not name them after appearance or value.
   `--fluid-gutter-xs` covers the former elsewhere).
 - Duplicate `id="interests"` on the homepage section and `dl` (invalid HTML,
   currently harmless — JS targets `#interests .row` via the section).
+- `dialog[open]`'s `animation: fade-in` was dead (no keyframes defined) — deleted rather than reproduced. If an open animation is wanted later, add keyframes + an `--animate-*` token.
+- Off-scale arbitrary values kept deliberately in dialog: `my-[25vh]`, `mx-[clamp(1rem,5vw,2rem)]`, `px-[calc(var(--fluid-gutter)*1.5)]`, `rounded-[0.2em]`, `border-[#ccc]`, `h-[clamp(8em,15vh,12em)]`, `backdrop:bg-[rgba(0,0,0,0.85)]` — all one-off legacy values.
 - Off-scale arbitrary values kept deliberately in interests: `size-[clamp(3em,6vw,6em)]`
   (em/vw fluid icon size, one-off), `bg-[linear-gradient(...)]` (avoids
   Tailwind's `--tw-gradient-*` plumbing per element).

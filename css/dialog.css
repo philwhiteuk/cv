@@ -1,61 +1,7 @@
-dialog {
-  border: 0;
-  border-radius: 0.2em;
-  margin: 25vh clamp(1rem, 5vw, 2rem);
-  padding: var(--fluid-gutter) calc(var(--fluid-gutter) * 1.5);
-}
-
-dialog[open] {
-  animation: fade-in 0.5s ease-in-out;
-  display: flex;
-  justify-self: center;
-  flex-flow: column nowrap;
-  gap: var(--fluid-gutter-sm);
-}
-
-dialog header {
-  align-items: flex-start;
-  flex-flow: row nowrap !important;
-  justify-content: space-between;
-}
-
-dialog header h3 {
-  margin: 0;
-}
-
-dialog button.close {
-  background: none;
-  display: flex;
-  justify-content: flex-end;
-  padding: 0;
-}
-
 dialog button.close i {
   background: url("/cv/assets/images/close.svg") no-repeat center center;
   background-color: white;
   display: inline-block;
   width: clamp(1.25em, 2vw, 1.75em);
   height: clamp(1.25em, 2vw, 1.75em);
-}
-
-dialog form {
-  display: flex;
-  flex-flow: column nowrap;
-  gap: var(--fluid-gutter-sm);
-}
-
-dialog form input,
-dialog form textarea {
-  border: 1px solid #ccc;
-  border-radius: 0.2em;
-  padding: calc(var(--fluid-gutter-sm) * 0.5);
-}
-
-dialog form textarea {
-  resize: vertical;
-  height: clamp(8em, 15vh, 12em);
-}
-
-dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.85);
 }
