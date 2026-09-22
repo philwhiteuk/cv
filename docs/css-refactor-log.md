@@ -15,7 +15,8 @@ category. One component per commit so each pass is independently revertible.
 | Homepage section scroll-hint (bounce keyframes, `::after` dividers) | 🔒 custom | Pseudo-element + keyframes + odd/even border colours |
 | Interests slide-in animation (`@keyframes slide-in`, `@supports (animation-timeline: view())`) | 🔒 custom | Scroll-driven, JS-toggled via `.slide-in` class; `--from-x` hoisted to `:root` |
 | `prefers-reduced-motion` guards | 🔒 custom | `.row`/`.card` animation overrides |
-| Everything else (header, footer, dialog, aside, projects, tag, subpage, base) | ⏳ not started | |
+| Header | ✅ migrated | `header.css` deleted, all rules → utilities in `_includes/header.html`; `.menu-link` `@apply` component class for the 5 menu items; `menu-open` state-only `@custom-variant` composed with `max-md:` at point of use; `sticky` was a no-op conditional (page layout never matched) — made unconditional; legacy `hide-md`/`hide-lg` breakpoints in `base.css` moved 53.125rem → 48rem to match `max-md` (flip verified coherent, crossing now at 768px instead of 850px) |
+| Everything else (footer, dialog, aside, projects, tag, subpage, base) | ⏳ not started | |
 
 ## Variable master list
 
@@ -29,6 +30,8 @@ variables elsewhere; do not name them after appearance or value.
 | `--color-gradient-start` | `#d16f00` | Brand gradient start (primary backgrounds, interests icon fill, line-break gradients) |
 | `--color-gradient-end` | `#5105a7` | Brand gradient end |
 | `--text-interest-term` | `clamp(1em, calc(0.95em + 0.25vw), 1.2em)` | Interests `dt` term size (`text-interest-term` utility) |
+| `--color-accent` | `#7700ff` | Accent border/links (header border-top; base/tag still hard-coded — theme-block pass) |
+| `--shadow-header` | `0 2px 10px rgba(0, 0, 0, 0.3)` | Header drop shadow (`shadow-header` utility) |
 
 ### `:root`
 
@@ -43,11 +46,17 @@ variables elsewhere; do not name them after appearance or value.
 
 ## Flagged for later passes
 
-- `#7700ff` (accent links/buttons/borders across base, header, tag) → future
-  `--color-accent` token — belongs to the theme-block pass.
-- `max-width: 53.125rem` recurs in `header.css` (4×) and `base.css` hide-md/lg
-  → `@custom-variant` candidate when the nav gets its pass.
+- `#7700ff` (accent links/buttons in base, tag) → use existing `--color-accent`
+  token — belongs to the theme-block pass.
 - `max-width: 60rem` `.flex` restack → layout-primitives pass.
+- Off-scale arbitrary values kept deliberately in header: `z-[100]` (legacy
+  stacking context, one-off), `min-h-[7vh]` (viewport-proportional legacy value),
+  `border-t-[0.2rem]` (legacy border width, no Tailwind step),
+  `w-[clamp(2.5rem,2.5vw,4.5rem)]` / `w-[clamp(1.5rem,3vw,2.5rem)]` (fluid
+  legacy sizes), `rounded-[50%]` (`rounded-full` would distort the non-square
+  187×200 profile photo), `gap-[calc(var(--fluid-gutter-sm)*0.5)]` /
+  `gap-[calc(var(--fluid-gutter-sm)*0.2)]` (fluid gutter fractions,
+  `--fluid-gutter-xs` covers the former elsewhere).
 - Duplicate `id="interests"` on the homepage section and `dl` (invalid HTML,
   currently harmless — JS targets `#interests .row` via the section).
 - Off-scale arbitrary values kept deliberately in interests: `size-[clamp(3em,6vw,6em)]`
