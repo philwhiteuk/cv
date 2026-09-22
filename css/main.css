@@ -7,8 +7,6 @@
 @import "./homepage.css" layer(components);
 @import "./projects.css" layer(components);
 @import "./projects-filter.css" layer(components);
-@import "./subpage.css" layer(components);
-@import "./tag.css" layer(components);
 
 @theme {
   /* Animations */
