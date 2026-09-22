@@ -1,16 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
 @import "tailwindcss";
-@import "./aside.css";
-@import "./base.css";
-@import "./dialog.css";
-@import "./footer.css";
-@import "./homepage.css";
-@import "./projects.css";
-@import "./projects-filter.css";
-@import "./subpage.css";
-@import "./tag.css";
+
+@import "./aside.css" layer(components);
+@import "./base.css" layer(components);
+@import "./dialog.css" layer(components);
+@import "./footer.css" layer(components);
+@import "./homepage.css" layer(components);
+@import "./projects.css" layer(components);
+@import "./projects-filter.css" layer(components);
+@import "./subpage.css" layer(components);
+@import "./tag.css" layer(components);
 
 @theme {
+  /* Animations */
+  --animate-caret-blink: caret-blink 1s linear infinite;
+
+  @keyframes caret-blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
   /* Brand gradient */
   --color-gradient-start: #d16f00;
   --color-gradient-end: #5105a7;
@@ -30,6 +40,7 @@
   }
 }
 
+
 :root {
   /* Fluid type scale - step 0-6 */
   --fluid-step-0: clamp(0.875rem, calc(0.8rem + 0.375vw), 1rem);
@@ -45,6 +56,12 @@
   --fluid-gutter-sm: clamp(0.25rem, 3vw, 2rem);
   --fluid-gutter-lg: clamp(1.5rem, 6vw, 5rem);
   --fluid-gutter-xs: calc(var(--fluid-gutter-sm) * 0.5);
+
+  /* Homepage section layout */
+  --home-section-height: 95vh;
+  --home-section-scroll-offset: 7vh;
+  --home-section-overlap: -1vh;
+  --home-wrapper-gap: calc(var(--fluid-gutter) * 3);
 
   /* Animation */
   --from-x: -10vw;
