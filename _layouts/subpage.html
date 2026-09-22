@@ -1,11 +1,9 @@
 ---
 layout: default
 ---
-
-<section class="subpage">
-    <div class="wrapper">
+<section class="justify-items-center w-full">
+    <div class="wrapper flex flex-col flex-wrap items-start gap-y-[1em] gap-x-[3em]">
         {{ content }}
     </div>
+    {%- include aside.html -%}
 </section>
-<div class="line-break-md"></div>
-{%- include aside.html -%}

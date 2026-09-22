@@ -17,8 +17,11 @@ category. One component per commit so each pass is independently revertible.
 | Interests slide-in animation (`@keyframes slide-in`, `@supports (animation-timeline: view())`) | 🔒 custom | Scroll-driven, JS-toggled via `.slide-in` class; `--from-x` hoisted to `:root` |
 | `prefers-reduced-motion` guards | 🔒 custom | `.row`/`.card` animation overrides |
 | Header | ✅ migrated | `header.css` deleted, all rules → utilities in `_includes/header.html`; `.menu-link` `@apply` component class for the 5 menu items; `menu-open` state-only `@custom-variant` composed with `max-md:` at point of use; `sticky` was a no-op conditional (page layout never matched) — made unconditional; legacy `hide-md`/`hide-lg` breakpoints in `base.css` moved 53.125rem → 48rem to match `max-md` (flip verified coherent, crossing now at 768px instead of 850px) |
+| Tag page layout | ✅ migrated | `main#tag > section` → utilities on `_layouts/tag.html` section; `css/tag.css` deleted + import removed |
+| Subpage layout | ✅ migrated | `section.subpage` → utilities on `_layouts/subpage.html` + `pages/all-projects.html` (only other `subpage` user); `section.subpage .wrapper` → utilities on the layout's wrapper; `css/subpage.css` deleted + import removed |
+| Line-break dividers/spacers | 🗑 removed | Owner decision (PR #13 review): concept removed entirely — `_includes/line-break.html` deleted, both `line-break-md` spacers (aside, subpage layout) and the gradient divider above the aside dropped, all 5 `css/base.css` rules deleted. Intentional visual change, not a refactor |
 | Footer | ✅ migrated | All 5 `body > footer` rules → utilities in `_includes/footer.html`; `css/footer.css` deleted + import removed from `main.css`; social anchors get `bg-none bg-transparent` (old `background: none` shorthand) and `hover:after:content-none` (kills base `a[href^="https:"]` hover arrow on icons) |
-| Everything else (dialog, aside, projects, tag, subpage, base) | ⏳ not started | |
+| Everything else (dialog, aside, projects, base) | ⏳ not started | |
 
 ## Variable master list
 
