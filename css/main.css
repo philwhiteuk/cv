@@ -4,7 +4,6 @@
 @import "./aside.css" layer(components);
 @import "./base.css" layer(components);
 @import "./dialog.css" layer(components);
-@import "./footer.css" layer(components);
 @import "./homepage.css" layer(components);
 @import "./projects.css" layer(components);
 @import "./projects-filter.css" layer(components);
@@ -56,6 +55,7 @@
   --fluid-gutter-sm: clamp(0.25rem, 3vw, 2rem);
   --fluid-gutter-lg: clamp(1.5rem, 6vw, 5rem);
   --fluid-gutter-xs: calc(var(--fluid-gutter-sm) * 0.5);
+  --fluid-gutter-2xs: calc(var(--fluid-gutter-sm) * 0.25);
 
   /* Homepage section layout */
   --home-section-height: 95vh;

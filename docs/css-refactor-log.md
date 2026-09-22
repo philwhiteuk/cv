@@ -17,7 +17,8 @@ category. One component per commit so each pass is independently revertible.
 | Interests slide-in animation (`@keyframes slide-in`, `@supports (animation-timeline: view())`) | 🔒 custom | Scroll-driven, JS-toggled via `.slide-in` class; `--from-x` hoisted to `:root` |
 | `prefers-reduced-motion` guards | 🔒 custom | `.row`/`.card` animation overrides |
 | Header | ✅ migrated | `header.css` deleted, all rules → utilities in `_includes/header.html`; `.menu-link` `@apply` component class for the 5 menu items; `menu-open` state-only `@custom-variant` composed with `max-md:` at point of use; `sticky` was a no-op conditional (page layout never matched) — made unconditional; legacy `hide-md`/`hide-lg` breakpoints in `base.css` moved 53.125rem → 48rem to match `max-md` (flip verified coherent, crossing now at 768px instead of 850px) |
-| Everything else (footer, dialog, aside, projects, tag, subpage, base) | ⏳ not started | |
+| Footer | ✅ migrated | All 5 `body > footer` rules → utilities in `_includes/footer.html`; `css/footer.css` deleted + import removed from `main.css`; social anchors get `bg-none bg-transparent` (old `background: none` shorthand) and `hover:after:content-none` (kills base `a[href^="https:"]` hover arrow on icons) |
+| Everything else (dialog, aside, projects, tag, subpage, base) | ⏳ not started | |
 
 ## Variable master list
 
@@ -43,6 +44,7 @@ variables elsewhere; do not name them after appearance or value.
 | `--fluid-gutter-sm` | `clamp(0.25rem, 3vw, 2rem)` | Pre-existing. Small gutter step |
 | `--fluid-gutter-lg` | `clamp(1.5rem, 6vw, 5rem)` | Pre-existing. Large gutter step |
 | `--fluid-gutter-xs` | `calc(var(--fluid-gutter-sm) * 0.5)` | Half-step gutter (was an inline expression in interests `dt` + base h3–h6) |
+| `--fluid-gutter-2xs` | `calc(var(--fluid-gutter-sm) * 0.25)` | Quarter-step gutter (footer social gap; also recurs in projects-filter `.active-tag`/`.remove-tag` — use it there in the filter pass) |
 | `--from-x` | `-10vw` | Slide-in animation start offset (was declared inside `.slide-in` rule) |
 | `--home-section-height` | `95vh` | Homepage section min-height (was hard-coded in `main#homepage > section`) |
 | `--home-section-scroll-offset` | `7vh` | Homepage section scroll-margin-top (was hard-coded) |
