@@ -216,22 +216,6 @@ main#homepage section#interests em {
   height: 0;
 }
 
-.line-break, .line-break-md, .line-break-lg {
-  display: block;
-  width: 100%;
-}
-
-.line-break-md { height: calc(var(--fluid-gutter) * 1.5); }
-.line-break-lg { height: calc(var(--fluid-gutter) * 3.5); }
-
-.line-break-left {
-  background: -webkit-linear-gradient(88deg, #d16f00 49%, white 50%);
-}
-
-.line-break-right {
-  background: -webkit-linear-gradient(-88deg, #5105a7 49%, white 50%);
-}
-
 .wrapper {
   box-sizing: border-box;
   display: flex;
