@@ -41,6 +41,7 @@ variables elsewhere; do not name them after appearance or value.
 | `--color-field-border` | `#ccc` | Dialog form input/textarea border |
 | `--color-scrim` | `rgba(0, 0, 0, 0.85)` | Dialog backdrop dim layer (`bg-scrim` utility) |
 | `--color-icon-plate` | `#fff` | Close-icon backing plate |
+| `--color-social-icon-fill` | `#000` | Footer social icon SVG fill (was built-in `fill-black`) |
 
 ### `:root`
 
