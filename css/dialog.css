@@ -1,6 +1,6 @@
 dialog button.close i {
   background: url("/cv/assets/images/close.svg") no-repeat center center;
-  background-color: white;
+  background-color: var(--color-icon-plate);
   display: inline-block;
   width: clamp(1.25em, 2vw, 1.75em);
   height: clamp(1.25em, 2vw, 1.75em);

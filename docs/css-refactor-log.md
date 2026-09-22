@@ -38,6 +38,9 @@ variables elsewhere; do not name them after appearance or value.
 | `--text-interest-term` | `clamp(1em, calc(0.95em + 0.25vw), 1.2em)` | Interests `dt` term size (`text-interest-term` utility) |
 | `--color-accent` | `#7700ff` | Accent border/links (header border-top; base/tag still hard-coded — theme-block pass) |
 | `--shadow-header` | `0 2px 10px rgba(0, 0, 0, 0.3)` | Header drop shadow (`shadow-header` utility) |
+| `--color-field-border` | `#ccc` | Dialog form input/textarea border |
+| `--color-scrim` | `rgba(0, 0, 0, 0.85)` | Dialog backdrop dim layer (`bg-scrim` utility) |
+| `--color-icon-plate` | `#fff` | Close-icon backing plate |
 
 ### `:root`
 
@@ -76,7 +79,9 @@ variables elsewhere; do not name them after appearance or value.
 - Duplicate `id="interests"` on the homepage section and `dl` (invalid HTML,
   currently harmless — JS targets `#interests .row` via the section).
 - `dialog[open]`'s `animation: fade-in` was dead (no keyframes defined) — deleted rather than reproduced. If an open animation is wanted later, add keyframes + an `--animate-*` token.
-- Off-scale arbitrary values kept deliberately in dialog: `my-[25vh]`, `mx-[clamp(1rem,5vw,2rem)]`, `px-[calc(var(--fluid-gutter)*1.5)]`, `rounded-[0.2em]`, `border-[#ccc]`, `h-[clamp(8em,15vh,12em)]`, `backdrop:bg-[rgba(0,0,0,0.85)]` — all one-off legacy values.
+- Off-scale arbitrary values kept deliberately in dialog: `my-[25vh]`, `mx-[clamp(1rem,5vw,2rem)]`, `px-[calc(var(--fluid-gutter)*1.5)]`, `rounded-[0.2em]`, `h-[clamp(8em,15vh,12em)]` — one-off legacy values. Colours are tokens per the standing rule: `border-field-border`, `backdrop:bg-scrim`, close-icon plate uses `--color-icon-plate`.
+- **Standing rule (owner)**: all colours must be root-level role-named tokens (`@theme` `--color-*` in `css/main.css`); no inline colour literals in classes or CSS.
+- `@source not "../docs"` added to `css/main.css` — the refactor log's example class names were being picked up by the Tailwind scanner and emitted as dead utilities (`.fixed`, `.inline`, `.bg-[linear-gradient(...)]`, `.shadow`, various `gap-[...]`).
 - Off-scale arbitrary values kept deliberately in interests: `size-[clamp(3em,6vw,6em)]`
   (em/vw fluid icon size, one-off), `bg-[linear-gradient(...)]` (avoids
   Tailwind's `--tw-gradient-*` plumbing per element).

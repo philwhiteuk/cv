@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
 @import "tailwindcss";
+@source not "../docs";
 
 @import "./aside.css" layer(components);
 @import "./base.css" layer(components);
@@ -26,6 +27,9 @@
   --text-interest-term: clamp(1em, calc(0.95em + 0.25vw), 1.2em);
 
   --color-accent: #7700ff;
+  --color-field-border: #ccc;
+  --color-scrim: rgba(0, 0, 0, 0.85);
+  --color-icon-plate: #fff;
   --shadow-header: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
