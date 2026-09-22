@@ -58,6 +58,12 @@
   --fluid-gutter-lg: clamp(1.5rem, 6vw, 5rem);
   --fluid-gutter-xs: calc(var(--fluid-gutter-sm) * 0.5);
   --fluid-gutter-2xs: calc(var(--fluid-gutter-sm) * 0.25);
+  
+  --fluid-row-gap: clamp(1rem, 5vh, 4rem);
+  --fluid-row-gap-sm: clamp(0.25rem, 3vh, 2rem);
+  --fluid-row-gap-lg: clamp(1.5rem, 6vh, 5rem);
+  --fluid-row-gap-xs: calc(var(--fluid-row-gap-sm) * 0.5);
+  --fluid-row-gap-2xs: calc(var(--fluid-row-gap-sm) * 0.25);
 
   /* Homepage section layout */
   --home-section-height: 95vh;

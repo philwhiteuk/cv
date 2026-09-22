@@ -15,7 +15,7 @@ layout: default
       {% for interest in interests %}
       <div aria-label="{{ interest.title | slugify }}" class="row flex flex-row reveal">
           <img src='{{ interest.image | relative_url }}' alt='{{ interest.title }}' class='mx-(--fluid-gutter-sm) size-[clamp(3em,6vw,6em)] rounded-full object-cover bg-[linear-gradient(180deg,var(--color-gradient-start)_0%,var(--color-gradient-end)_100%)]' />
-          <div class="column flex flex-1 flex-col">
+          <div class="column flex flex-1 flex-col gap-(--fluid-row-gap-xs)">
               <dt class="text-interest-term font-semibold mb-(--fluid-gutter-xs)">{{ interest.title }}</dt>
               <dd>{{ interest.content }}</dd>
           </div>
