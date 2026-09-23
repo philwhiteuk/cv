@@ -14,11 +14,11 @@ main#homepage > section:not(:last-of-type)::after {
 }
 
 main#homepage > section:not(:last-of-type):nth-of-type(odd)::after {
-  border-color: white;
+  border-color: var(--color-on-primary);
 }
 
 main#homepage > section:not(:last-of-type):nth-of-type(even)::after {
-  border-color: #7700ff;
+  border-color: var(--color-accent);
 }
 
 @supports (animation-timeline: view()) {

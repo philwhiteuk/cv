@@ -26,7 +26,7 @@ body > *:not(dialog) {
 a, button {
   background: none;
   border: none;
-  color: #fff;
+  color: var(--color-link);
   cursor: pointer;
   display: inline;
   font-family: inherit;
@@ -37,7 +37,7 @@ a, button {
 }
 
 button {
-  color: #fff;
+  color: var(--color-link);
   padding: calc(var(--fluid-gutter-sm) * 0.3) var(--fluid-gutter-sm);
 }
 
@@ -50,7 +50,7 @@ a:hover {
 }
 
 a[href^="https:"] {
-  background: rgba(119, 0, 255, 0.5);
+  background: var(--color-external-link-bg);
   text-decoration: underline;
 }
 
@@ -116,72 +116,68 @@ main > section, main > aside {
   to   { opacity: 1; transform: none; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .card { animation: none; }
-}
-
 .primary,
 main#homepage > section,
 main#tag > section {
-  background: #d16f00;
-  background: linear-gradient(180deg, #d16f00 0%, #5105a7 100%);
-  color: #fff;
+  background: var(--color-gradient-start);
+  background: linear-gradient(180deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%);
+  color: var(--color-on-primary);
 }
 
 .primary a,
 main#homepage > section a,
 main#tag > section a {
-  color: #fff;
+  color: var(--color-on-primary);
 }
 
 .primary button,
 main#homepage > section button,
 main#tag > section button {
-  background: rgba(119, 0, 255, 1);
+  background: var(--color-accent);
 }
 
 .primary svg,
 main#homepage > section svg,
 main#tag > section svg {
-  fill: rgba(119, 0, 255, 0.8);
+  fill: var(--color-accent-soft);
 }
 
 .primary em,
 main#homepage > section em,
 main#tag > section em {
-  color: #fff;
+  color: var(--color-on-primary);
 }
 
 .secondary,
 dialog,
 main#homepage section#interests {
   background: none;
-  background-color: white;
-  color: black;
+  background-color: var(--color-surface-light);
+  color: var(--color-on-light);
 }
 
 .secondary a,
 dialog a,
 main#homepage section#interests a {
-  color: black;
+  color: var(--color-on-light);
 }
 
 .secondary button,
 dialog button,
 main#homepage section#interests button {
-  background: rgba(119, 0, 255, 1);
+  background: var(--color-accent);
 }
 
 .secondary svg,
 dialog svg,
 main#homepage section#interests svg {
-  fill: rgba(255, 255, 255, 1);
+  fill: var(--color-icon-on-light);
 }
 
 .secondary em,
 dialog em,
 main#homepage section#interests em {
-  color: black;
+  color: var(--color-on-light);
 }
 
 .primary {
