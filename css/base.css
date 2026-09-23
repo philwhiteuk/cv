@@ -130,16 +130,8 @@ main#tag > section a {
   color: var(--color-on-primary);
 }
 
-.primary button,
-main#homepage > section button,
-main#tag > section button {
+.primary button {
   background: var(--color-accent);
-}
-
-.primary svg,
-main#homepage > section svg,
-main#tag > section svg {
-  fill: var(--color-accent-soft);
 }
 
 .primary em,
@@ -156,28 +148,17 @@ main#homepage section#interests {
   color: var(--color-on-light);
 }
 
-.secondary a,
-dialog a,
-main#homepage section#interests a {
+.secondary a {
   color: var(--color-on-light);
 }
 
 .secondary button,
-dialog button,
-main#homepage section#interests button {
+dialog button {
   background: var(--color-accent);
 }
 
-.secondary svg,
-dialog svg,
-main#homepage section#interests svg {
+.secondary svg {
   fill: var(--color-icon-on-light);
-}
-
-.secondary em,
-dialog em,
-main#homepage section#interests em {
-  color: var(--color-on-light);
 }
 
 .primary {
