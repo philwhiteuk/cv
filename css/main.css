@@ -92,44 +92,43 @@
   main#tag > section {
     background: var(--color-gradient-start);
     background: linear-gradient(180deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%);
-    color: var(--color-on-primary);
+    @apply text-on-primary;
   }
 
   .primary a,
   main#homepage > section a,
   main#tag > section a {
-    color: var(--color-on-primary);
+    @apply text-on-primary;
   }
 
   .primary button {
-    background: var(--color-accent);
+    @apply bg-accent;
   }
 
   .primary em,
   main#homepage > section em,
   main#tag > section em {
-    color: var(--color-on-primary);
+    @apply text-on-primary;
   }
 
   .secondary,
   dialog,
   main#homepage section#interests {
     background: none;
-    background-color: var(--color-surface-light);
-    color: var(--color-on-light);
+    @apply bg-surface-light text-on-light;
   }
 
   .secondary a {
-    color: var(--color-on-light);
+    @apply text-on-light;
   }
 
   .secondary button,
   dialog button {
-    background: var(--color-accent);
+    @apply bg-accent;
   }
 
   .secondary svg {
-    fill: var(--color-icon-on-light);
+    @apply fill-icon-on-light;
   }
 
   .primary {
