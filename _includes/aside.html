@@ -1,6 +1,6 @@
-<aside class="primary">
+<aside class="primary bg-scroll text-[clamp(0.8em,calc(0.75em+0.25vw),0.95em)] justify-items-center min-h-[20vh] w-full">
     {% if page.url == "/" or page.url == "/about"  %}
-    <div class="wrapper reveal">
+    <div class="wrapper reveal mt-0">
         <div class="flex">
             <section class="column" aria-label="career-history">
                 <h2>Career</h2>
@@ -53,7 +53,7 @@
                     <ol class="education">
                     {% assign education = site.data.education | sort: "from_date" | reverse %}
                     {% for period in education %}
-                        <li>
+                        <li class="ml-[0.5em]">
                             <div>
                                 <span>{{ period.award }} {{ period.subject }}</span>
                                 <span><em>{{ period.institution }}</em></span>
@@ -66,9 +66,9 @@
                 <section aria-label="training">
                     <h2>Training</h2>
                     <ul>
-                        <li>Linux Foundation Systems Administrator</li>
-                        <li>ITIL Foundation in IT Service Management</li>
-                        <li>Prince 2 Foundation</li>
+                        <li class="list-[circle] ml-[1.5em]">Linux Foundation Systems Administrator</li>
+                        <li class="list-[circle] ml-[1.5em]">ITIL Foundation in IT Service Management</li>
+                        <li class="list-[circle] ml-[1.5em]">Prince 2 Foundation</li>
                     </ul>
                 </section>
             </div>

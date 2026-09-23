@@ -62,6 +62,17 @@
   .project {
     @apply transition-all duration-300 ease-[ease];
   }
+  aside h2 {
+    @apply bg-no-repeat mb-[0.8em] mt-[0.8em] py-[1em] pl-[2.5em] pr-0 bg-size-[50px_50px];
+    background-position: -4px center;
+  }
+  aside em {
+    @apply bg-none! bg-transparent! text-inherit! italic;
+  }
+  aside [aria-label="career-history"] h2 { background-image: url("/cv/assets/images/icons.svg#icon-career-view"); background-size: 50px 75px; }
+  aside [aria-label="skills"] h2 { background-image: url("/cv/assets/images/icons.svg#icon-skills-view"); background-size: 50px 75px; }
+  aside [aria-label="education"] h2 { background-image: url("/cv/assets/images/icons.svg#icon-education-view"); }
+  aside [aria-label="training"] h2 { background-image: url("/cv/assets/images/icons.svg#icon-training-view"); }
   .menu-link {
     @apply max-md:menu-open:inline-block! max-md:menu-open:px-0! max-md:menu-open:py-(--fluid-gutter-sm)! max-md:menu-open:text-center max-md:menu-open:w-full;
   }
