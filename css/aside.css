@@ -1,44 +1,7 @@
-aside.primary {
-  background-attachment: initial;
-}
-
-aside.secondary {
-  background-attachment: initial;
-}
-
-aside {
-  font-size: clamp(0.8em, calc(0.75em + 0.25vw), 0.95em);
-  justify-items: center;
-  min-height: 20vh;
-  width: 100%;
-}
-
-aside .wrapper { margin-top: 0; }
-
-aside h2 {
-  background-repeat: no-repeat;
-  background-size: 50px 50px;
-  background-position: -4px center;
-  margin: 0.8em 0;
-  padding: 1em 0 1em 2.5em;
-}
-
-aside em {
-  background: none !important;
-  color: inherit !important;
-  font-style: italic;
-}
-
-aside [aria-label=career-history] h2 {
-  background-image: url("/cv/assets/images/icons.svg#icon-career-view");
-  background-size: 50px 75px;
-}
-
 aside [aria-label=career-history] li {
   background: url("/cv/assets/images/branch-sprite.png") no-repeat 0 0;
   padding: 8px 0 8px 100px;
 }
-
 aside [aria-label=career-history] li.root  { background-position: 0 -530px; }
 aside [aria-label=career-history] li.trunk  { background-position: 0 -457px; }
 aside [aria-label=career-history] li.open-branch {
@@ -51,7 +14,6 @@ aside [aria-label=career-history] li.close-branch {
   padding-top: 30px;
 }
 aside [aria-label=career-history] li.top  { background-position: 0 15px; }
-
 @media (max-width: 32rem) {
   aside [aria-label=career-history] li {
     background: none !important;
@@ -61,26 +23,4 @@ aside [aria-label=career-history] li.top  { background-position: 0 15px; }
   aside [aria-label=career-history] li.close-branch {
     padding: 5px 0 !important;
   }
-}
-
-aside [aria-label=skills] h2 {
-  background-image: url("/cv/assets/images/icons.svg#icon-skills-view");
-  background-size: 50px 75px;
-}
-
-aside [aria-label=education] h2 {
-  background-image: url("/cv/assets/images/icons.svg#icon-education-view");
-}
-
-aside [aria-label=education] ol li {
-  margin-left: 0.5em;
-}
-
-aside [aria-label=training] h2 {
-  background-image: url("/cv/assets/images/icons.svg#icon-training-view");
-}
-
-aside [aria-label=training] ul li {
-  margin-left: 1.5em;
-  list-style: circle;
 }
