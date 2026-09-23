@@ -11,8 +11,7 @@ category. One component per commit so each pass is independently revertible.
 |---|---|---|
 | Homepage Welcome section | ✅ migrated | `main#homepage > section` + `.wrapper` layout rules → utilities on all 3 homepage sections/wrappers (shared homepage layout, so also covers `#interests` + `#recent-projects` shells); `.term-caret` → `animate-caret-blink` (`@theme` token, keyframes renamed `slow-blink`→`caret-blink`) + `before:content-['\_']`; dead `.typing-effect` + `@keyframes typing` deleted; component imports moved into `layer(components)` so utilities reliably win |
 | Homepage interests section | ✅ migrated | `dl dt`, `dl img` rules → utilities; `.row` deleted (class kept in markup as JS / `prefers-reduced-motion` hook); dead `alternate` class removed; 2 redundant rules deleted (`background-attachment: fixed`, `dl text-align: left` — both already covered by broader rules) |
-| Layout primitives (`.flex`, `.column`, `.break`) | ⏳ partial | `.column` rule still needed by aside + projects include; `.flex` shared by dialog/aside/projects incl. `max-width: 60rem` restack (line-breaks removed in #14) | `.column` rule still needed by aside + projects include; `.flex` shared by dialog/aside/projects incl. `max-width: 60rem` restack |
-| Theme blocks (`.primary`/`.secondary` + a/button/svg/em descendants) | ⏳ partial | 3-way selector group with `dialog`; interests branches inert (its content has no a/button/svg/em). Future: `--color-accent` for `#7700ff` |
+| Layout primitives (`.flex`, `.column`, `.break`) | ✅ migrated | Superseded by the "Layout primitives" pass below |
 | Homepage section scroll-hint (bounce keyframes, `::after` dividers) | 🔒 custom | Pseudo-element + keyframes + odd/even border colours |
 | Interests slide-in animation (`@keyframes slide-in`, `@supports (animation-timeline: view())`) | 🔒 custom | Scroll-driven, JS-toggled via `.slide-in` class; `--from-x` hoisted to `:root` |
 | `prefers-reduced-motion` guards | 🔒 custom | `.row`/`.card` animation overrides |
@@ -26,7 +25,9 @@ category. One component per commit so each pass is independently revertible.
 | Projects filter UI | ✅ migrated | All `css/projects-filter.css` rules → utilities in `pages/all-projects.html`; file deleted + import removed. Dead CSS removed: `.active-tags`/`.active-tag`/`.remove-tag` (5 rules) — markup never rendered by any template or JS. Tag-cloud dedupe: aside + filters copies replaced by one shared `@apply` component block in `main.css` (tiers must stay class-based — computed by Liquid). Active state via `aria-pressed:` variants (JS toggles `active` class + `aria-pressed` together). New tokens: chip/focus colour set + `--tag-cloud-gap`. `.project` transition moved to shared components block |
 | Aside | ✅ migrated (sprite kept custom) | Base rule → utilities on `_includes/aside.html` (`bg-scroll` etc.); `wrapper` mt-0, education `ml-[0.5em]`, training `list-[circle] ml-[1.5em]` → utilities; h2 icon chrome + per-section icons + `em` restore → semantic `@apply` block in `main.css` (multi-word `bg-position` arbitrary values fail to compile — plain CSS keeps `-4px center`; Lightning CSS minifies to `-4px`, one-value implies center, output identical). Kept custom in `css/aside.css`: career-history branch-sprite (data-driven `li` classes + `max-[32rem]` override with `!important`) |
 | Layout primitives | ✅ migrated | `.wrapper` (12 usages) + `.flex`/`.column` (JS hooks + name collision with utilities — component-layer `@apply` definitions in `main.css`); `.flex` restack kept as plain `@media (max-width: 60rem)` (Tailwind `max-[60rem]:` compiles to `width < 60rem`, differs from `max-width` at exactly 960px); `.break` → inline `basis-full h-0` (2 usages); `.hide` → `hidden!`, `.hide-lg` → `min-md:hidden!`; `.hide-sm`/`.hide-md` deleted — zero usages |
-| Base globals + theme blocks (`css/base.css`) | ⏳ not started | |
+| Theme blocks (`.primary`/`.secondary` + a/button/svg/em descendants) | ✅ migrated | 3-way selector group with `dialog` kept as-is (interests branches inert — its content has no a/button/svg/em); all 14 colour literals → tokens; dead `.card` reduced-motion guard deleted (`.card` has zero usages — only `article.project` exists) |
+| Base globals (`css/base.css` element rules) | ✅ kept custom | Global element selectors (`html`, `*`, `a`, `button`, headings, `main > section` snap) apply site-wide, not per-component — utilities on templates can't replace them without duplicating on every element. Colours tokenised (`--color-link`, `--color-external-link-bg`); rest is typography/scroll-snap structure. `@keyframes reveal` + `.reveal` kept custom (scroll-driven, `prefers-reduced-motion` guard) |
+| Homepage scroll-hint dividers (`css/homepage.css`) | ✅ kept custom | Keyframes + `::after` dividers stay custom; divider border colours tokenised (`--color-on-primary`, `--color-accent`) |
 
 ## Variable master list
 
@@ -55,6 +56,13 @@ variables elsewhere; do not name them after appearance or value.
 | `--color-chip-border-idle` | `rgba(255, 255, 255, 0.4)` | Reset-button idle border |
 | `--color-focus-ring` | `#fff` | Keyboard focus outline (chips, reset button) |
 | `--tag-cloud-gap` | `calc(var(--fluid-gutter-sm) * 0.3)` | Tag-cloud gap (aside + filters, was duplicated inline) |
+| `--color-link` | `#fff` | Default `a`/`button` text colour (base globals) |
+| `--color-on-primary` | `#fff` | Text on gradient/primary surfaces (theme blocks, odd scroll-hint divider) |
+| `--color-surface-light` | `#fff` | Light surface background (`.secondary`, dialog, interests) |
+| `--color-on-light` | `#000` | Text on light surfaces (`.secondary` descendants, even scroll-hint divider uses `--color-accent`) |
+| `--color-icon-on-light` | `#fff` | SVG icon fill on light surfaces (`.secondary`, dialog, interests) |
+| `--color-accent-soft` | `rgba(119, 0, 255, 0.8)` | Soft accent SVG fill on primary surfaces (`.primary` descendants) |
+| `--color-external-link-bg` | `rgba(119, 0, 255, 0.5)` | External-link (`a[href^="https:"]`) background tint |
 
 ### `:root`
 
@@ -73,15 +81,13 @@ variables elsewhere; do not name them after appearance or value.
 | `--home-wrapper-gap` | `calc(var(--fluid-gutter) * 3)` | Homepage wrapper column-gap (was inline in `main#homepage > section .wrapper`) |
 
 ## Flagged for later passes
-- **`@keyframes bounce` name collision (pre-existing, live on `main`)**: the custom
-  scroll-hint keyframes in `css/homepage.css` share a name with Tailwind's
-  default `bounce`; the default wins, so the authored `translateX(-50%)`
-  centered bounce is currently not what renders. Fixing it is a behavior
-  change — needs an explicit decision (rename to e.g. `section-divider-bounce`).
-
-- `#7700ff` (accent links/buttons in base, tag) → use existing `--color-accent`
-  token — belongs to the theme-block pass.
-- `max-width: 60rem` `.flex` restack → layout-primitives pass.
+- ~~`@keyframes bounce` name collision~~ — resolved in #20: keyframes moved
+  into `@theme` in `css/main.css` (which wins over Tailwind's default) and
+  re-centred via `translateX(-0%)` alongside the utility-positioned divider;
+  compiled output now emits exactly one `bounce` definition.
+- ~~`#7700ff` (accent links/buttons in base, tag)~~ — tokenised to
+  `--color-accent` in the theme-block pass.
+- ~~`max-width: 60rem` `.flex` restack~~ — handled in the layout-primitives pass.
 - Off-scale arbitrary values kept deliberately in header: `z-[100]` (legacy
   stacking context, one-off), `min-h-[7vh]` (viewport-proportional legacy value),
   `border-t-[0.2rem]` (legacy border width, no Tailwind step),
