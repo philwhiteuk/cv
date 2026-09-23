@@ -1,7 +1,7 @@
 <footer class="secondary snap-start snap-always">
   <div class="wrapper">
     <p>© {{ site.title | escape }} {{ site.time | date: "%Y" }}</p>
-    <ul id="social" class="flex flex-row flex-nowrap items-center gap-(--fluid-gutter-2xs)">
+    <ul id="social" class="flex flex-row flex-nowrap items-center gap-(--spacing-fluid-2xs)">
       {%- if site.github_username -%}<li><a class="flex items-center bg-none bg-transparent hover:after:content-none" href="https://github.com/{{ site.github_username }}"><svg class="size-[clamp(16px,2vw,24px)] fill-(--color-social-icon-fill)"><use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use></svg></a></li>{%- endif -%}
       {%- if site.linkedin_username -%}<li><a class="flex items-center bg-none bg-transparent hover:after:content-none" href="https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}"><svg class="size-[clamp(16px,2vw,24px)] fill-(--color-social-icon-fill)"><use xlink:href="{{ '/assets/minima-social-icons.svg#linkedin' | relative_url }}"></use></svg></a></li>{%- endif -%}
     </ul>

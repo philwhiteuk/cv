@@ -1,18 +1,18 @@
-<dialog class="rounded-[0.2em] my-[25vh] mx-[clamp(1rem,5vw,2rem)] py-(--fluid-gutter) px-[calc(var(--fluid-gutter)*1.5)] backdrop:bg-scrim open:flex open:flex-col open:flex-nowrap open:justify-self-center open:gap-(--fluid-gutter-sm)">
+<dialog class="rounded-[0.2em] my-[25vh] mx-[clamp(1rem,5vw,2rem)] py-(--spacing-fluid) px-[calc(var(--spacing-fluid)*1.5)] backdrop:bg-scrim open:flex open:flex-col open:flex-nowrap open:justify-self-center open:gap-(--spacing-fluid-sm)">
     <header class="flex flex-row! flex-nowrap! items-start justify-between">
         <h3 class="m-0">Contact</h3>
         <button class="close flex justify-end p-0 bg-none bg-transparent" aria-label="close" autofocus onclick="javascript: (() => document.querySelector('dialog')?.close())()"><i></i></button>
     </header>
     <p>I'm always on the look out for and interested to hear about new opportunities.</p>
     <p>Please fill in your name and email and I will try to respond within 24 hours.</p>
-    <form class="flex flex-col flex-nowrap gap-(--fluid-gutter-sm)"
+    <form class="flex flex-col flex-nowrap gap-(--spacing-fluid-sm)"
           action="https://formkeep.com/f/f20b7c33521d"
           accept-charset="UTF-8"
           enctype="multipart/form-data"
           method="POST">
-        <input class="border border-field-border rounded-[0.2em] p-(--fluid-gutter-xs)" name="full_name" type="text" placeholder="Name" required>
-        <input class="border border-field-border rounded-[0.2em] p-(--fluid-gutter-xs)" name="email" type="email" placeholder="Email" required>
-        <textarea class="border border-field-border rounded-[0.2em] p-(--fluid-gutter-xs) resize-y h-[clamp(8em,15vh,12em)]" name="message" placeholder="Message" ></textarea>
+        <input class="border border-field-border rounded-[0.2em] p-(--spacing-fluid-xs)" name="full_name" type="text" placeholder="Name" required>
+        <input class="border border-field-border rounded-[0.2em] p-(--spacing-fluid-xs)" name="email" type="email" placeholder="Email" required>
+        <textarea class="border border-field-border rounded-[0.2em] p-(--spacing-fluid-xs) resize-y h-[clamp(8em,15vh,12em)]" name="message" placeholder="Message" ></textarea>
         <button type="submit">Send</button>
     </form>
 </dialog>

@@ -1,5 +1,5 @@
 html {
-  font-family: 'Poppins', serif;
+  font-family: var(--font-sans);
   font-size: 16px;
   font-style: normal;
   font-variant-ligatures: common-ligatures;
@@ -25,7 +25,7 @@ a, button {
 
 button {
   color: var(--color-link);
-  padding: calc(var(--fluid-gutter-sm) * 0.3) var(--fluid-gutter-sm);
+  padding: calc(var(--spacing-fluid-sm) * 0.3) var(--spacing-fluid-sm);
 }
 
 a:visited {
@@ -52,31 +52,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  margin: var(--fluid-gutter-sm) 0;
+  margin: var(--spacing-fluid-sm) 0;
 }
 
 h2 {
-  margin: var(--fluid-gutter) 0;
+  margin: var(--spacing-fluid) 0;
 }
 
 h3, h4, h5, h6 {
-  margin: calc(var(--fluid-gutter-sm) * 0.5) 0;
+  margin: calc(var(--spacing-fluid-sm) * 0.5) 0;
 }
 
 h1 {
-  font-size: var(--fluid-step-4);
+  font-size: var(--text-fluid-4);
   white-space: nowrap;
 }
-h2 { font-size: var(--fluid-step-3); }
-h3 { font-size: var(--fluid-step-2); }
-h4 { font-size: var(--fluid-step-1); }
-h5 { font-size: var(--fluid-step-0); }
-h6 { font-size: var(--fluid-step-0); }
+h2 { font-size: var(--text-fluid-3); }
+h3 { font-size: var(--text-fluid-2); }
+h4 { font-size: var(--text-fluid-1); }
+h5 { font-size: var(--text-fluid-0); }
+h6 { font-size: var(--text-fluid-0); }
 
 em {
   font-style: normal;
   font-weight: 400;
-  padding: 0 calc(var(--fluid-gutter-sm) * 0.1);
+  padding: 0 calc(var(--spacing-fluid-sm) * 0.1);
 }
 
 main > section, main > aside {

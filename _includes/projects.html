@@ -8,18 +8,18 @@
 {% endif %}
 <section class="flex column">
     {% for project in projects %}
-    <article class="project column reveal bg-card-surface rounded-lg p-(--fluid-gutter-sm) text-left w-full scroll-mt-[10vh] snap-start snap-always">
-        <h3 class="text-[clamp(1.1rem,calc(1.05rem+0.25vw),1.5rem)] mb-(--fluid-gutter-xs)">{{ project.title }}</h3>
+    <article class="project column reveal bg-card-surface rounded-lg p-(--spacing-fluid-sm) text-left w-full scroll-mt-[10vh] snap-start snap-always">
+        <h3 class="text-[clamp(1.1rem,calc(1.05rem+0.25vw),1.5rem)] mb-(--spacing-fluid-xs)">{{ project.title }}</h3>
         <span>
         {% if project.role and project.org %}
-            <h4 class="inline text-[1rem] my-[calc(var(--fluid-gutter-sm)*0.25)]">{{ project.role }}</h4>
-            <h5 class="inline text-[1rem] my-[calc(var(--fluid-gutter-sm)*0.25)] opacity-80 before:content-['@'] before:-ml-[0.25em]">{{ project.org }}</h5>
+            <h4 class="inline text-[1rem] my-[calc(var(--spacing-fluid-sm)*0.25)]">{{ project.role }}</h4>
+            <h5 class="inline text-[1rem] my-[calc(var(--spacing-fluid-sm)*0.25)] opacity-80 before:content-['@'] before:-ml-[0.25em]">{{ project.org }}</h5>
         {% endif %}
         {% if project.external_link %}
             <a class="external-link text-meta opacity-70 break-all" target="_blank" href="{{ project.external_link }}" title="External link">{{ project.external_link }}</a>
         {% endif %}
         </span>
-        <div class="content text-[clamp(0.875rem,calc(0.85rem+0.125vw),1rem)] leading-[1.6] [&_p]:my-(--fluid-gutter-sm)">
+        <div class="content text-[clamp(0.875rem,calc(0.85rem+0.125vw),1rem)] leading-[1.6] [&_p]:my-(--spacing-fluid-sm)">
             {% assign truncated_content = project.content | truncatewords: 60 %}
             {% if truncated_content != project.content %}
             <details class="expandable inline cursor-pointer [&[open]>summary]:hidden">
@@ -30,11 +30,11 @@
             {{ project.content | markdownify }}
             {% endif %}
         </div>
-        <ul class="tags flex flex-row flex-wrap items-center justify-end gap-(--fluid-gutter-xs) mt-(--fluid-gutter-sm)">
+        <ul class="tags flex flex-row flex-wrap items-center justify-end gap-(--spacing-fluid-xs) mt-(--spacing-fluid-sm)">
             {% assign tags_by_title = project.tags | sort %}
             {% for tag in tags_by_title %}
             {% assign tag_data = site.tags | where: "title", tag | first %}
-            <li class="bg-tag-chip text-meta rounded-[20px] px-(--fluid-gutter-xs) py-[calc(var(--fluid-gutter-sm)*0.05)]">
+            <li class="bg-tag-chip text-meta rounded-[20px] px-(--spacing-fluid-xs) py-[calc(var(--spacing-fluid-sm)*0.05)]">
                 {% if tag_data %}
                 <a href="{{ tag_data.url | relative_url }}">{{ tag }}</a>
                 {% else %}
@@ -47,5 +47,5 @@
     {% endfor %}
 </section>
 {% if include.shortlist == true %}
-<a id="view-all" class="self-end mt-(--fluid-gutter-sm)" href="{{ 'projects' | relative_url }}" title="View all projects"><em>View All Projects ></em></a>
+<a id="view-all" class="self-end mt-(--spacing-fluid-sm)" href="{{ 'projects' | relative_url }}" title="View all projects"><em>View All Projects ></em></a>
 {% endif %}

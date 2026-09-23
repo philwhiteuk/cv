@@ -15,9 +15,9 @@ permalink: /projects
         <small>(Select tags to filter projects. Multiple tags will be combined with AND logic.)</small>
     </div>
     <div class="wrapper">
-        <div id="project-filters" class="w-full mb-(--fluid-gutter-sm)">
-            <section class="mb-(--fluid-gutter-sm)" aria-label="skills">
-                <h3 class="text-[clamp(1rem,calc(0.95rem+0.25vw),1.25rem)] mb-(--fluid-gutter-xs)">Filter by Tag</h3>
+        <div id="project-filters" class="w-full mb-(--spacing-fluid-sm)">
+            <section class="mb-(--spacing-fluid-sm)" aria-label="skills">
+                <h3 class="text-[clamp(1rem,calc(0.95rem+0.25vw),1.25rem)] mb-(--spacing-fluid-xs)">Filter by Tag</h3>
                 <ul class="tag-cloud">
                   {% assign all_projects = site.projects %}
                   {% assign total = all_projects.size %}
@@ -44,8 +44,8 @@ permalink: /projects
                   {% endfor %}
                 </ul>
             </section>
-            <div class="flex justify-end mt-(--fluid-gutter-xs)">
-                <button class="reset-filters inline-flex items-center justify-center rounded-[20px] text-[clamp(0.75rem,calc(0.7rem+0.25vw),0.9rem)] bg-tag-chip border border-solid border-chip-border-idle transition-all duration-200 ease-[ease] px-(--fluid-gutter-xs) py-[calc(var(--fluid-gutter-sm)*0.15)] hover:bg-chip-hover-strong hover:border-chip-border focus:outline-2 focus:outline focus:outline-(--color-focus-ring) focus:outline-offset-2 active:scale-[0.98]">Reset</button>
+            <div class="flex justify-end mt-(--spacing-fluid-xs)">
+                <button class="reset-filters inline-flex items-center justify-center rounded-[20px] text-[clamp(0.75rem,calc(0.7rem+0.25vw),0.9rem)] bg-tag-chip border border-solid border-chip-border-idle transition-all duration-200 ease-[ease] px-(--spacing-fluid-xs) py-[calc(var(--spacing-fluid-sm)*0.15)] hover:bg-chip-hover-strong hover:border-chip-border focus:outline-2 focus:outline focus:outline-(--color-focus-ring) focus:outline-offset-2 active:scale-[0.98]">Reset</button>
             </div>
         </div>
     </div>

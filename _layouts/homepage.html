@@ -2,21 +2,21 @@
 layout: default
 ---
 <section id="welcome" class="bg-fixed relative flex flex-col flex-wrap items-center justify-around w-full min-h-(--home-section-height) snap-start snap-always transition-all duration-300 ease-[ease] scroll-mt-(--home-section-scroll-offset) scroll-mb-(--home-section-overlap)">
-  <div class="wrapper reveal flex flex-col flex-wrap items-start gap-(--fluid-gutter-sm) gap-x-(--home-wrapper-gap) w-full m-0 px-(--fluid-gutter) pb-(--fluid-gutter) text-left z-2">
+  <div class="wrapper reveal flex flex-col flex-wrap items-start gap-(--spacing-fluid-sm) gap-x-(--home-wrapper-gap) w-full m-0 px-(--spacing-fluid) pb-(--spacing-fluid) text-left z-2">
     {{ content }}
   </div>
 </section>
 
 <section id="interests" class="bg-fixed relative flex flex-col flex-wrap items-center justify-around w-full min-h-(--home-section-height) snap-start snap-always transition-all duration-300 ease-[ease] scroll-mt-(--home-section-scroll-offset) scroll-mb-(--home-section-overlap)">
-  <div class="wrapper flex flex-col flex-wrap items-start gap-(--fluid-gutter-sm) gap-x-(--home-wrapper-gap) w-full m-0 px-(--fluid-gutter) pb-(--fluid-gutter) text-left z-2">
+  <div class="wrapper flex flex-col flex-wrap items-start gap-(--spacing-fluid-sm) gap-x-(--home-wrapper-gap) w-full m-0 px-(--spacing-fluid) pb-(--spacing-fluid) text-left z-2">
     <h2>What makes me tick?</h2>
     <dl id="interests" class="flex">
       {% assign interests = site.interests | sort: 'order' %}
       {% for interest in interests %}
       <div aria-label="{{ interest.title | slugify }}" class="row flex flex-row reveal">
-          <img src='{{ interest.image | relative_url }}' alt='{{ interest.title }}' class='mx-(--fluid-gutter-sm) size-[clamp(3em,6vw,6em)] rounded-full object-cover bg-[linear-gradient(180deg,var(--color-gradient-start)_0%,var(--color-gradient-end)_100%)]' />
-          <div class="column flex flex-1 flex-col gap-(--fluid-row-gap-xs)">
-              <dt class="text-interest-term font-semibold mb-(--fluid-gutter-xs)">{{ interest.title }}</dt>
+          <img src='{{ interest.image | relative_url }}' alt='{{ interest.title }}' class='mx-(--spacing-fluid-sm) size-[clamp(3em,6vw,6em)] rounded-full object-cover bg-[linear-gradient(180deg,var(--color-gradient-start)_0%,var(--color-gradient-end)_100%)]' />
+          <div class="column flex flex-1 flex-col gap-(--spacing-fluid-row-xs)">
+              <dt class="text-interest-term font-semibold mb-(--spacing-fluid-xs)">{{ interest.title }}</dt>
               <dd>{{ interest.content }}</dd>
           </div>
       </div>
@@ -26,7 +26,7 @@ layout: default
 </section>
 
 <section id="recent-projects" class="bg-fixed relative flex flex-col flex-wrap items-center justify-around w-full min-h-(--home-section-height) snap-start snap-always transition-all duration-300 ease-[ease] scroll-mt-(--home-section-scroll-offset) scroll-mb-(--home-section-overlap)">
-  <div class="wrapper flex flex-col flex-wrap items-start gap-(--fluid-gutter-sm) gap-x-(--home-wrapper-gap) w-full m-0 px-(--fluid-gutter) pb-(--fluid-gutter) text-left z-2">
+  <div class="wrapper flex flex-col flex-wrap items-start gap-(--spacing-fluid-sm) gap-x-(--home-wrapper-gap) w-full m-0 px-(--spacing-fluid) pb-(--spacing-fluid) text-left z-2">
     <h2>What have I been working on?</h2>
     {%- include projects.html shortlist=true -%}
   </div>

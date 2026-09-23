@@ -28,6 +28,7 @@ category. One component per commit so each pass is independently revertible.
 | Theme blocks (`.primary`/`.secondary` + a/button/svg/em descendants) | ✅ migrated | 3-way selector group with `dialog` kept as-is (interests branches inert — its content has no a/button/svg/em); all 14 colour literals → tokens; dead `.card` reduced-motion guard deleted (`.card` has zero usages — only `article.project` exists) |
 | Base globals (`css/base.css` element rules) | ✅ kept custom | Global element selectors (`html`, `*`, `a`, `button`, headings, `main > section` snap) apply site-wide, not per-component — utilities on templates can't replace them without duplicating on every element. Colours tokenised (`--color-link`, `--color-external-link-bg`); rest is typography/scroll-snap structure. `@keyframes reveal` + `.reveal` kept custom (scroll-driven, `prefers-reduced-motion` guard). Follow-up dead-branch prune (post-#21): removed `.primary svg` group + `main#homepage/tag > section` button/svg branches (no svgs or section-level buttons render in those contexts), `dialog a`/`dialog svg`/`dialog em` branches (dialog has only the close `<i>` background icon, no anchors/svgs/em), and all `main#homepage section#interests` a/button/svg/em branches (interests `dd` is raw text, no links/controls/icons). Orphaned token `--color-accent-soft` removed with it. Kept: `.primary em`/homepage/tag `em` (markdown `*emphasis*` renders real `em`s in all three), `dialog button` (Send + close), `.secondary a/button/svg` (header/footer) |
 | Homepage scroll-hint dividers (`css/homepage.css`) | ✅ kept custom | Keyframes + `::after` dividers stay custom; divider border colours tokenised (`--color-on-primary`, `--color-accent`) |
+| Design tokens → `@theme` | ♻️ migrated | All `:root` design tokens moved into the `@theme` block with Tailwind namespaces, renamed atomically across all 8 usage files: `--fluid-step-N` → `--text-fluid-N`, `--fluid-gutter` → `--spacing-fluid` (`-sm/-lg/-xs/-2xs` follow), `--fluid-row-gap-*` → `--spacing-fluid-row-*`, `'Poppins'` literal → `--font-sans` (now drives Preflight's own `html` font rule via `--default-font-family`), plus `--text-base`/`--tracking-base`/`--leading-base` overrides. Utilities now auto-generate: `text-fluid-0…6`, `p-/m-/gap-fluid*`, `font-sans`, `tracking-base`, `leading-base`, `text-base`. Remaining `:root` vars are one-off layout metrics (`--tag-cloud-gap`, `--home-*`, `--from-x`), not design tokens. Dead Sass-era `_sass/default.scss` deleted (duplicated tokens; imports only files removed in e4a99d7; nothing referenced it) |
 | Preflight-duplicate reset rules (`css/base.css`) | 🗑 removed | Preflight has been live since the Tailwind build (e4a99d7) — deleted the hand-rolled duplicates it was masking: `* { margin/padding/list-style }`, `a, button` background/border/font-inherit/text-decoration resets, `input, textarea` font reset. Deltas kept (Preflight doesn't cover them): `a, button { color/cursor/display }`, `button { padding }`, `html { line-height: 1.5em }` (unitless `1.5` would recompute per element). Also dropped redundant `box-border` (`.wrapper`), `border-0` (dialog markup) — Preflight box-sizes and zeroes borders. `_sass/default.scss` flagged dead (imports `_sass/theme/_*.scss` deleted in e4a99d7; site loads only the Tailwind-built `assets/css/main.css`) |
 
 ## Variable master list
@@ -68,17 +69,15 @@ variables elsewhere; do not name them after appearance or value.
 
 | Variable | Value | Role |
 |---|---|---|
-| `--fluid-step-0…6` | clamp scale | Pre-existing. Fluid type scale |
-| `--fluid-gutter` | `clamp(1rem, 5vw, 4rem)` | Pre-existing. Base fluid gutter |
-| `--fluid-gutter-sm` | `clamp(0.25rem, 3vw, 2rem)` | Pre-existing. Small gutter step |
-| `--fluid-gutter-lg` | `clamp(1.5rem, 6vw, 5rem)` | Pre-existing. Large gutter step |
-| `--fluid-gutter-xs` | `calc(var(--fluid-gutter-sm) * 0.5)` | Half-step gutter (was an inline expression in interests `dt` + base h3–h6) |
-| `--fluid-gutter-2xs` | `calc(var(--fluid-gutter-sm) * 0.25)` | Quarter-step gutter (footer social gap; also recurs in projects-filter `.active-tag`/`.remove-tag` — use it there in the filter pass) |
+| ~~`--fluid-step-0…6`~~ | clamp scale | → `@theme` `--text-fluid-0…6` (design tokens pass) |
+| ~~`--fluid-gutter*`~~ | clamp scale | → `@theme` `--spacing-fluid*` (design tokens pass) |
+| ~~`--fluid-row-gap*`~~ | clamp scale | → `@theme` `--spacing-fluid-row*` (design tokens pass) |
 | `--from-x` | `-10vw` | Slide-in animation start offset (was declared inside `.slide-in` rule) |
 | `--home-section-height` | `95vh` | Homepage section min-height (was hard-coded in `main#homepage > section`) |
 | `--home-section-scroll-offset` | `7vh` | Homepage section scroll-margin-top (was hard-coded) |
 | `--home-section-overlap` | `-1vh` | Homepage section overlap/scroll-margin-bottom — one role, used by both the section utilities and the kept-custom scroll-hint rule (was hard-coded `-1vh` in two places) |
-| `--home-wrapper-gap` | `calc(var(--fluid-gutter) * 3)` | Homepage wrapper column-gap (was inline in `main#homepage > section .wrapper`) |
+| `--home-wrapper-gap` | `calc(var(--spacing-fluid) * 3)` | Homepage wrapper column-gap (was inline in `main#homepage > section .wrapper`) |
+| `--tag-cloud-gap` | `calc(var(--spacing-fluid-sm) * 0.3)` | Tag-cloud gap (aside + filters, was duplicated inline) |
 
 ## Flagged for later passes
 - ~~`@keyframes bounce` name collision~~ — resolved in #20: keyframes moved
