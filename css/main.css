@@ -6,7 +6,6 @@
 @import "./base.css" layer(components);
 @import "./dialog.css" layer(components);
 @import "./homepage.css" layer(components);
-@import "./projects-filter.css" layer(components);
 
 @theme {
   /* Animations */
@@ -32,6 +31,11 @@
   --color-social-icon-fill: #000;
   --color-card-surface: rgba(0, 0, 0, 0.2);
   --color-tag-chip: rgba(255, 255, 255, 0.2);
+  --color-chip-hover: rgba(255, 255, 255, 0.1);
+  --color-chip-hover-strong: rgba(255, 255, 255, 0.3);
+  --color-chip-border: #fff;
+  --color-chip-border-idle: rgba(255, 255, 255, 0.4);
+  --color-focus-ring: #fff;
   --text-meta: clamp(0.75rem, calc(0.7rem + 0.25vw), 0.95rem);
   --shadow-header: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
@@ -39,6 +43,25 @@
 @custom-variant menu-open (&:is(#menu-toggle:checked ~ ul, #menu-toggle:checked ~ ul *));
 
 @layer components {
+  .tag-cloud {
+    @apply flex w-full flex-wrap justify-evenly gap-(--tag-cloud-gap);
+  }
+  .tag-cloud__item {
+    @apply flex-none;
+  }
+  .tag-cloud__item a {
+    @apply inline-block cursor-pointer rounded-[0.3em] px-[0.4em] py-[0.2em] border-[0.05em] border-solid border-transparent transition-all duration-200 ease-[ease];
+  }
+  .tag-cloud__item a:hover {
+    @apply border-chip-border! bg-chip-hover;
+  }
+  .tag-cloud__item--xl a { @apply text-[clamp(1.2em,calc(1.1em+0.5vw),1.5em)]; }
+  .tag-cloud__item--lg a { @apply text-[clamp(1em,calc(0.95em+0.25vw),1.2em)]; }
+  .tag-cloud__item--md a { @apply text-[clamp(0.875em,calc(0.85em+0.125vw),1em)]; }
+  .tag-cloud__item--sm a { @apply text-[clamp(0.75em,calc(0.7em+0.25vw),0.8em)]; }
+  .project {
+    @apply transition-all duration-300 ease-[ease];
+  }
   .menu-link {
     @apply max-md:menu-open:inline-block! max-md:menu-open:px-0! max-md:menu-open:py-(--fluid-gutter-sm)! max-md:menu-open:text-center max-md:menu-open:w-full;
   }
@@ -61,6 +84,7 @@
   --fluid-gutter-lg: clamp(1.5rem, 6vw, 5rem);
   --fluid-gutter-xs: calc(var(--fluid-gutter-sm) * 0.5);
   --fluid-gutter-2xs: calc(var(--fluid-gutter-sm) * 0.25);
+  --tag-cloud-gap: calc(var(--fluid-gutter-sm) * 0.3);
   
   --fluid-row-gap: clamp(1rem, 5vh, 4rem);
   --fluid-row-gap-sm: clamp(0.25rem, 3vh, 2rem);

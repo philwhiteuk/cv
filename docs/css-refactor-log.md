@@ -11,7 +11,7 @@ category. One component per commit so each pass is independently revertible.
 |---|---|---|
 | Homepage Welcome section | ✅ migrated | `main#homepage > section` + `.wrapper` layout rules → utilities on all 3 homepage sections/wrappers (shared homepage layout, so also covers `#interests` + `#recent-projects` shells); `.term-caret` → `animate-caret-blink` (`@theme` token, keyframes renamed `slow-blink`→`caret-blink`) + `before:content-['\_']`; dead `.typing-effect` + `@keyframes typing` deleted; component imports moved into `layer(components)` so utilities reliably win |
 | Homepage interests section | ✅ migrated | `dl dt`, `dl img` rules → utilities; `.row` deleted (class kept in markup as JS / `prefers-reduced-motion` hook); dead `alternate` class removed; 2 redundant rules deleted (`background-attachment: fixed`, `dl text-align: left` — both already covered by broader rules) |
-| Layout primitives (`.flex`, `.column`, `.break`, line-breaks) | ⏳ partial | `.column` rule still needed by aside + projects include; `.flex` shared by dialog/aside/projects incl. `max-width: 60rem` restack |
+| Layout primitives (`.flex`, `.column`, `.break`) | ⏳ partial | `.column` rule still needed by aside + projects include; `.flex` shared by dialog/aside/projects incl. `max-width: 60rem` restack (line-breaks removed in #14) | `.column` rule still needed by aside + projects include; `.flex` shared by dialog/aside/projects incl. `max-width: 60rem` restack |
 | Theme blocks (`.primary`/`.secondary` + a/button/svg/em descendants) | ⏳ partial | 3-way selector group with `dialog`; interests branches inert (its content has no a/button/svg/em). Future: `--color-accent` for `#7700ff` |
 | Homepage section scroll-hint (bounce keyframes, `::after` dividers) | 🔒 custom | Pseudo-element + keyframes + odd/even border colours |
 | Interests slide-in animation (`@keyframes slide-in`, `@supports (animation-timeline: view())`) | 🔒 custom | Scroll-driven, JS-toggled via `.slide-in` class; `--from-x` hoisted to `:root` |
@@ -23,7 +23,7 @@ category. One component per commit so each pass is independently revertible.
 | Footer | ✅ migrated | All 5 `body > footer` rules → utilities in `_includes/footer.html`; `css/footer.css` deleted + import removed from `main.css`; social anchors get `bg-none bg-transparent` (old `background: none` shorthand) and `hover:after:content-none` (kills base `a[href^="https:"]` hover arrow on icons) |
 | Contact dialog | ✅ migrated | All rules → utilities in `_includes/dialog.html` (`open:` variant for `dialog[open]`, `backdrop:bg-[rgba(0,0,0,0.85)]` for the backdrop); dead `animation: fade-in` deleted — no `@keyframes fade-in` exists anywhere, so it was a no-op; kept custom: `dialog button.close i` (close.svg background-image composite) as the last rule in `css/dialog.css`; `dialog header` guards `flex-row! flex-nowrap!` against the `.flex` wrap default |
 | Project card | ✅ migrated | All 24 rules in `css/projects.css` → utilities on `_includes/projects.html`; file deleted + import removed. `article.project`, `.flex.column` kept as class names (JS hooks in `assets/projects-filter.js`). New tokens: `--color-card-surface`, `--color-tag-chip` (also used by filters pass), `--text-meta`. Redundant declarations dropped (already covered by base): chip `color:#fff`, `background:none`, `border:none`, hover underline. `summary` marker tricks via arbitrary variants; `[open]` state via `[&[open]>summary]:hidden`; content-paragraph margins via `[&_p]:my-(--fluid-gutter-sm)` |
-| Everything else (aside, filters, base) | ⏳ not started | |
+| Projects filter UI | ✅ migrated | All `css/projects-filter.css` rules → utilities in `pages/all-projects.html`; file deleted + import removed. Dead CSS removed: `.active-tags`/`.active-tag`/`.remove-tag` (5 rules) — markup never rendered by any template or JS. Tag-cloud dedupe: aside + filters copies replaced by one shared `@apply` component block in `main.css` (tiers must stay class-based — computed by Liquid). Active state via `aria-pressed:` variants (JS toggles `active` class + `aria-pressed` together). New tokens: chip/focus colour set + `--tag-cloud-gap`. `.project` transition moved to shared components block |
 
 ## Variable master list
 
@@ -46,6 +46,12 @@ variables elsewhere; do not name them after appearance or value.
 | `--color-card-surface` | `rgba(0, 0, 0, 0.2)` | Project card translucent background (`bg-card-surface` utility) |
 | `--color-tag-chip` | `rgba(255, 255, 255, 0.2)` | Project tag chips + active filter chips (`bg-tag-chip` utility) |
 | `--text-meta` | `clamp(0.75rem, calc(0.7rem + 0.25vw), 0.95rem)` | Small meta text: external links, tag chips, filter chips (`text-meta` utility) |
+| `--color-chip-hover` | `rgba(255, 255, 255, 0.1)` | Tag-cloud chip hover background |
+| `--color-chip-hover-strong` | `rgba(255, 255, 255, 0.3)` | Chip hover-while-active + reset-button hover background |
+| `--color-chip-border` | `#fff` | Active chip / reset-button border |
+| `--color-chip-border-idle` | `rgba(255, 255, 255, 0.4)` | Reset-button idle border |
+| `--color-focus-ring` | `#fff` | Keyboard focus outline (chips, reset button) |
+| `--tag-cloud-gap` | `calc(var(--fluid-gutter-sm) * 0.3)` | Tag-cloud gap (aside + filters, was duplicated inline) |
 
 ### `:root`
 

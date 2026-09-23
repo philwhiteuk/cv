@@ -68,42 +68,6 @@ aside [aria-label=skills] h2 {
   background-size: 50px 75px;
 }
 
-aside [aria-label=skills] .tag-cloud {
-  display: flex;
-  flex-wrap: wrap;
-  gap: calc(var(--fluid-gutter-sm) * 0.3);
-  justify-content: space-evenly;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-
-aside [aria-label=skills] .tag-cloud__item {
-  margin: 0;
-  flex: 0 0 auto;
-}
-
-aside [aria-label=skills] .tag-cloud__item a {
-  border: transparent solid 0.05em;
-  border-radius: 0.3em;
-  display: inline-block;
-  padding: 0.2em 0.4em;
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.2s ease;
-}
-
-aside [aria-label=skills] .tag-cloud__item a:hover {
-  border-color: #fff !important;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-aside [aria-label=skills] .tag-cloud__item--xl a { font-size: clamp(1.2em, calc(1.1em + 0.5vw), 1.5em); }
-aside [aria-label=skills] .tag-cloud__item--lg a { font-size: clamp(1em, calc(0.95em + 0.25vw), 1.2em); }
-aside [aria-label=skills] .tag-cloud__item--md a { font-size: clamp(0.875em, calc(0.85em + 0.125vw), 1em); }
-aside [aria-label=skills] .tag-cloud__item--sm a { font-size: clamp(0.75em, calc(0.7em + 0.25vw), 0.8em); }
-
 aside [aria-label=education] h2 {
   background-image: url("/cv/assets/images/icons.svg#icon-education-view");
 }
