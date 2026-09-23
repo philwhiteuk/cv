@@ -22,7 +22,8 @@ category. One component per commit so each pass is independently revertible.
 | Line-break dividers/spacers | 🗑 removed | Owner decision (PR #13 review): concept removed entirely — `_includes/line-break.html` deleted, both `line-break-md` spacers (aside, subpage layout) and the gradient divider above the aside dropped, all 5 `css/base.css` rules deleted. Intentional visual change, not a refactor |
 | Footer | ✅ migrated | All 5 `body > footer` rules → utilities in `_includes/footer.html`; `css/footer.css` deleted + import removed from `main.css`; social anchors get `bg-none bg-transparent` (old `background: none` shorthand) and `hover:after:content-none` (kills base `a[href^="https:"]` hover arrow on icons) |
 | Contact dialog | ✅ migrated | All rules → utilities in `_includes/dialog.html` (`open:` variant for `dialog[open]`, `backdrop:bg-[rgba(0,0,0,0.85)]` for the backdrop); dead `animation: fade-in` deleted — no `@keyframes fade-in` exists anywhere, so it was a no-op; kept custom: `dialog button.close i` (close.svg background-image composite) as the last rule in `css/dialog.css`; `dialog header` guards `flex-row! flex-nowrap!` against the `.flex` wrap default |
-| Everything else (aside, projects, base) | ⏳ not started | |
+| Project card | ✅ migrated | All 24 rules in `css/projects.css` → utilities on `_includes/projects.html`; file deleted + import removed. `article.project`, `.flex.column` kept as class names (JS hooks in `assets/projects-filter.js`). New tokens: `--color-card-surface`, `--color-tag-chip` (also used by filters pass), `--text-meta`. Redundant declarations dropped (already covered by base): chip `color:#fff`, `background:none`, `border:none`, hover underline. `summary` marker tricks via arbitrary variants; `[open]` state via `[&[open]>summary]:hidden`; content-paragraph margins via `[&_p]:my-(--fluid-gutter-sm)` |
+| Everything else (aside, filters, base) | ⏳ not started | |
 
 ## Variable master list
 
@@ -42,6 +43,9 @@ variables elsewhere; do not name them after appearance or value.
 | `--color-scrim` | `rgba(0, 0, 0, 0.85)` | Dialog backdrop dim layer (`bg-scrim` utility) |
 | `--color-icon-plate` | `#fff` | Close-icon backing plate |
 | `--color-social-icon-fill` | `#000` | Footer social icon SVG fill (was built-in `fill-black`) |
+| `--color-card-surface` | `rgba(0, 0, 0, 0.2)` | Project card translucent background (`bg-card-surface` utility) |
+| `--color-tag-chip` | `rgba(255, 255, 255, 0.2)` | Project tag chips + active filter chips (`bg-tag-chip` utility) |
+| `--text-meta` | `clamp(0.75rem, calc(0.7rem + 0.25vw), 0.95rem)` | Small meta text: external links, tag chips, filter chips (`text-meta` utility) |
 
 ### `:root`
 
