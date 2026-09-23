@@ -8,7 +8,7 @@
             <input class="hide" id="menu-toggle" type="checkbox" />
             <label for="menu-toggle" class="hide-lg block w-[clamp(1.5rem,3vw,2.5rem)] h-[clamp(1.5rem,3vw,2.5rem)] bg-[url(/cv/assets/images/icons.svg#icon-menu-view)] bg-no-repeat bg-[size:clamp(1.5rem,3vw,2.5rem)]" aria-label="menu toggle"></label>
             <div class="hide-lg break"></div>
-            <ul class="hide-sm hide-md flex flex-row! flex-nowrap! items-center justify-end gap-(--fluid-gutter)! max-md:menu-open:flex! max-md:menu-open:flex-col! max-md:menu-open:gap-[calc(var(--fluid-gutter-sm)*0.2)]! max-md:menu-open:mb-(--fluid-gutter)! max-md:menu-open:w-full">
+            <ul class="flex flex-row! flex-nowrap! items-center justify-end gap-(--fluid-gutter)! max-md:hidden! max-md:menu-open:block! max-md:menu-open:gap-[calc(var(--fluid-gutter-sm)*0.2)]! max-md:menu-open:mb-(--fluid-gutter)! max-md:menu-open:w-full">
                 {%- assign pages = site.pages | sort: 'order' -%}
                 {% for _page in pages %}
                 {% if _page.title %}
