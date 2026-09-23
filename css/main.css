@@ -3,8 +3,6 @@
 @source not "../docs";
 
 @import "./base.css" layer(components);
-@import "./dialog.css" layer(components);
-@import "./homepage.css" layer(components);
 
 @theme {
   /* Animations */
@@ -102,6 +100,33 @@
     aside [aria-label="career-history"] li { @apply bg-none! p-[5px_0]!; }
     aside [aria-label="career-history"] li.open-branch,
     aside [aria-label="career-history"] li.close-branch { @apply p-[5px_0]!; }
+  }
+  dialog button.close i {
+    @apply bg-[url(/cv/assets/images/close.svg)] bg-no-repeat bg-center bg-icon-plate inline-block size-[clamp(1.25em,2vw,1.75em)];
+  }
+  main#homepage > section:not(:last-of-type) {
+    @apply mb-(--home-section-overlap);
+  }
+  main#homepage > section:not(:last-of-type)::after {
+    @apply content-[''] bottom-[6vh] h-0 w-[clamp(5rem,15vw,10rem)] border opacity-50 animate-[bounce_2s_infinite];
+  }
+  main#homepage > section:not(:last-of-type):nth-of-type(odd)::after {
+    @apply border-(--color-on-primary);
+  }
+  main#homepage > section:not(:last-of-type):nth-of-type(even)::after {
+    @apply border-accent;
+  }
+  @supports (animation-timeline: view()) {
+    main#homepage section#interests .slide-in {
+      @apply animate-[0.5s_linear_0.1s_both_slide-in];
+    }
+  }
+  main#homepage section#interests .row {
+    @apply motion-reduce:animate-none;
+  }
+  @keyframes slide-in {
+    0% { opacity: 0; transform: translateX(var(--from-x)); }
+    100% { opacity: 1; transform: translateX(0); }
   }
   .wrapper {
     @apply box-border flex flex-row flex-wrap justify-between gap-(--fluid-gutter-sm) max-w-[1024px] my-(--fluid-gutter-sm) px-(--fluid-gutter) w-full;
