@@ -192,49 +192,5 @@ main#homepage section#interests em {
   background-attachment: fixed;
 }
 
-.flex {
-  display: flex;
-  flex-flow: row wrap;
-  gap: calc(var(--fluid-gutter-sm) * 2) calc(var(--fluid-gutter) * 1.5);
-}
-
-@media (max-width: 60rem) {
-  .flex {
-    flex-flow: column wrap;
-    gap: calc(var(--fluid-gutter-sm) * 1.5);
-  }
-}
-
-.column {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.break {
-  flex-basis: 100%;
-  height: 0;
-}
-
-.wrapper {
-  box-sizing: border-box;
-  display: flex;
-  flex-flow: row wrap;
-  gap: var(--fluid-gutter-sm);
-  justify-content: space-between;
-  max-width: 1024px;
-  padding: 0 var(--fluid-gutter);
-  margin: var(--fluid-gutter-sm) 0;
-  width: 100%;
-}
-
-.hide {
-  display: none !important;
-}
-
-/* Legacy hide classes - can be replaced with container queries or removed */
-@media (max-width: 32rem) { .hide-sm { display: inherit !important; } }
-@media (max-width: 48rem) { .hide-md { display: none !important; } }
-@media (min-width: 48rem) { .hide-lg { display: none !important; } }
 
 

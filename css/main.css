@@ -73,6 +73,20 @@
   aside [aria-label="skills"] h2 { background-image: url("/cv/assets/images/icons.svg#icon-skills-view"); background-size: 50px 75px; }
   aside [aria-label="education"] h2 { background-image: url("/cv/assets/images/icons.svg#icon-education-view"); }
   aside [aria-label="training"] h2 { background-image: url("/cv/assets/images/icons.svg#icon-training-view"); }
+  .wrapper {
+    @apply box-border flex flex-row flex-wrap justify-between gap-(--fluid-gutter-sm) max-w-[1024px] my-(--fluid-gutter-sm) px-(--fluid-gutter) w-full;
+  }
+  .flex {
+    @apply flex flex-row flex-wrap gap-y-[calc(var(--fluid-gutter-sm)*2)] gap-x-[calc(var(--fluid-gutter)*1.5)];
+  }
+  @media (max-width: 60rem) {
+    .flex {
+      @apply flex-col flex-wrap gap-[calc(var(--fluid-gutter-sm)*1.5)];
+    }
+  }
+  .column {
+    @apply flex flex-col flex-1;
+  }
   .menu-link {
     @apply max-md:menu-open:inline-block! max-md:menu-open:px-0! max-md:menu-open:py-(--fluid-gutter-sm)! max-md:menu-open:text-center max-md:menu-open:w-full;
   }
