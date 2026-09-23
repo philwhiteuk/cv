@@ -129,7 +129,7 @@
     100% { opacity: 1; transform: translateX(0); }
   }
   .wrapper {
-    @apply box-border flex flex-row flex-wrap justify-between gap-(--fluid-gutter-sm) max-w-[1024px] my-(--fluid-gutter-sm) px-(--fluid-gutter) w-full;
+    @apply flex flex-row flex-wrap justify-between gap-(--fluid-gutter-sm) max-w-[1024px] my-(--fluid-gutter-sm) px-(--fluid-gutter) w-full;
   }
   .flex {
     @apply flex flex-row flex-wrap gap-y-[calc(var(--fluid-gutter-sm)*2)] gap-x-[calc(var(--fluid-gutter)*1.5)];

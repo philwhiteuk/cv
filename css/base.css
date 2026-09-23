@@ -10,12 +10,6 @@ html {
   scroll-snap-type: y mandatory !important;
 }
 
-* {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
 body > *:not(dialog) {
   display: flex;
   flex-flow: row wrap;
@@ -24,16 +18,9 @@ body > *:not(dialog) {
 }
 
 a, button {
-  background: none;
-  border: none;
   color: var(--color-link);
   cursor: pointer;
   display: inline;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-  text-decoration: none;
 }
 
 button {
@@ -90,13 +77,6 @@ em {
   font-style: normal;
   font-weight: 400;
   padding: 0 calc(var(--fluid-gutter-sm) * 0.1);
-}
-
-input, textarea {
-  font-family: 'Poppins', serif;
-  font-size: 16px;
-  font-style: normal;
-  font-variant-ligatures: common-ligatures;
 }
 
 main > section, main > aside {
@@ -168,6 +148,3 @@ dialog button {
 .secondary {
   background-attachment: fixed;
 }
-
-
-
