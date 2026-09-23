@@ -2,7 +2,7 @@
 @import "tailwindcss";
 @source not "../docs";
 
-@import "./base.css" layer(components);
+@import "./base.css" layer(base);
 
 @theme {
   /* Animations */
@@ -87,6 +87,59 @@
 @custom-variant menu-open (&:is(#menu-toggle:checked ~ ul, #menu-toggle:checked ~ ul *));
 
 @layer components {
+  .primary,
+  main#homepage > section,
+  main#tag > section {
+    background: var(--color-gradient-start);
+    background: linear-gradient(180deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%);
+    color: var(--color-on-primary);
+  }
+
+  .primary a,
+  main#homepage > section a,
+  main#tag > section a {
+    color: var(--color-on-primary);
+  }
+
+  .primary button {
+    background: var(--color-accent);
+  }
+
+  .primary em,
+  main#homepage > section em,
+  main#tag > section em {
+    color: var(--color-on-primary);
+  }
+
+  .secondary,
+  dialog,
+  main#homepage section#interests {
+    background: none;
+    background-color: var(--color-surface-light);
+    color: var(--color-on-light);
+  }
+
+  .secondary a {
+    color: var(--color-on-light);
+  }
+
+  .secondary button,
+  dialog button {
+    background: var(--color-accent);
+  }
+
+  .secondary svg {
+    fill: var(--color-icon-on-light);
+  }
+
+  .primary {
+    background-attachment: fixed;
+  }
+
+  .secondary {
+    background-attachment: fixed;
+  }
+
   .tag-cloud {
     @apply flex w-full flex-wrap justify-evenly gap-(--tag-cloud-gap);
   }

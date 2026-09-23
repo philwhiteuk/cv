@@ -24,7 +24,6 @@ a, button {
 }
 
 button {
-  color: var(--color-link);
   padding: calc(var(--spacing-fluid-sm) * 0.3) var(--spacing-fluid-sm);
 }
 
@@ -52,26 +51,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+  font-size: var(--text-fluid-4);
   margin: var(--spacing-fluid-sm) 0;
+  white-space: nowrap;
 }
 
 h2 {
+  font-size: var(--text-fluid-3);
   margin: var(--spacing-fluid) 0;
 }
 
-h3, h4, h5, h6 {
-  margin: calc(var(--spacing-fluid-sm) * 0.5) 0;
-}
-
-h1 {
-  font-size: var(--text-fluid-4);
-  white-space: nowrap;
-}
-h2 { font-size: var(--text-fluid-3); }
 h3 { font-size: var(--text-fluid-2); }
 h4 { font-size: var(--text-fluid-1); }
 h5 { font-size: var(--text-fluid-0); }
 h6 { font-size: var(--text-fluid-0); }
+
+h3, h4, h5, h6 {
+  margin: calc(var(--spacing-fluid-sm) * 0.5) 0;
+}
 
 em {
   font-style: normal;
@@ -94,57 +91,4 @@ main > section, main > aside {
 @keyframes reveal {
   from { opacity: 0.1; transform: translateZ(8rem) translateY(4rem) scale(0.97); }
   to   { opacity: 1; transform: none; }
-}
-
-.primary,
-main#homepage > section,
-main#tag > section {
-  background: var(--color-gradient-start);
-  background: linear-gradient(180deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%);
-  color: var(--color-on-primary);
-}
-
-.primary a,
-main#homepage > section a,
-main#tag > section a {
-  color: var(--color-on-primary);
-}
-
-.primary button {
-  background: var(--color-accent);
-}
-
-.primary em,
-main#homepage > section em,
-main#tag > section em {
-  color: var(--color-on-primary);
-}
-
-.secondary,
-dialog,
-main#homepage section#interests {
-  background: none;
-  background-color: var(--color-surface-light);
-  color: var(--color-on-light);
-}
-
-.secondary a {
-  color: var(--color-on-light);
-}
-
-.secondary button,
-dialog button {
-  background: var(--color-accent);
-}
-
-.secondary svg {
-  fill: var(--color-icon-on-light);
-}
-
-.primary {
-  background-attachment: fixed;
-}
-
-.secondary {
-  background-attachment: fixed;
 }
