@@ -10,12 +10,25 @@
 @theme {
   /* Animations */
   --animate-caret-blink: caret-blink 1s linear infinite;
-
+  
   @keyframes caret-blink {
     50% {
       opacity: 0;
     }
   }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-0%) translateY(0);
+    }
+    40% {
+        transform: translateX(-0%) translateY(-20px);
+    }
+    60% {
+        transform: translateX(-0%) translateY(-5px);
+    }
+  }
+  
 
   /* Brand gradient */
   --color-gradient-start: #d16f00;
