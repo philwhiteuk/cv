@@ -2,7 +2,6 @@
 @import "tailwindcss";
 @source not "../docs";
 
-@import "./aside.css" layer(components);
 @import "./base.css" layer(components);
 @import "./dialog.css" layer(components);
 @import "./homepage.css" layer(components);
@@ -92,6 +91,18 @@
   aside [aria-label="skills"] h2 { background-image: url("/cv/assets/images/icons.svg#icon-skills-view"); background-size: 50px 75px; }
   aside [aria-label="education"] h2 { background-image: url("/cv/assets/images/icons.svg#icon-education-view"); }
   aside [aria-label="training"] h2 { background-image: url("/cv/assets/images/icons.svg#icon-training-view"); }
+  aside [aria-label="career-history"] li { @apply bg-[url(/cv/assets/images/branch-sprite.png)] bg-no-repeat bg-[position:0_0] pt-2 pr-0 pb-2 pl-[100px]; }
+  aside [aria-label="career-history"] li.root { @apply bg-[position:0_-530px]; }
+  aside [aria-label="career-history"] li.trunk { @apply bg-[position:0_-457px]; }
+  aside [aria-label="career-history"] li.open-branch { @apply bg-[position:0_-303px] pb-[37px]; }
+  aside [aria-label="career-history"] li.branch { @apply bg-[position:0_-217px]; }
+  aside [aria-label="career-history"] li.close-branch { @apply bg-[position:0_-104px] pt-[30px]; }
+  aside [aria-label="career-history"] li.top { @apply bg-[position:0_15px]; }
+  @media (max-width: 32rem) {
+    aside [aria-label="career-history"] li { @apply bg-none! p-[5px_0]!; }
+    aside [aria-label="career-history"] li.open-branch,
+    aside [aria-label="career-history"] li.close-branch { @apply p-[5px_0]!; }
+  }
   .wrapper {
     @apply box-border flex flex-row flex-wrap justify-between gap-(--fluid-gutter-sm) max-w-[1024px] my-(--fluid-gutter-sm) px-(--fluid-gutter) w-full;
   }
