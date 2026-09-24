@@ -55,33 +55,44 @@
   --spacing-fluid-row-xs: calc(var(--spacing-fluid-row-sm) * 0.5);
   --spacing-fluid-row-2xs: calc(var(--spacing-fluid-row-sm) * 0.25);
 
-  /* Brand gradient */
-  --color-gradient-start: #d16f00;
-  --color-gradient-end: #5105a7;
-
   /* Component type scale */
   --text-interest-term: clamp(1em, calc(0.95em + 0.25vw), 1.2em);
-
-  --color-accent: #7700ff;
-  --color-field-border: #ccc;
-  --color-scrim: rgba(0, 0, 0, 0.85);
-  --color-icon-plate: #000;
-  --color-social-icon-fill: #000;
-  --color-card-surface: rgba(0, 0, 0, 0.2);
-  --color-tag-chip: rgba(255, 255, 255, 0.2);
-  --color-chip-hover: rgba(255, 255, 255, 0.1);
-  --color-chip-hover-strong: rgba(255, 255, 255, 0.3);
-  --color-chip-border: #fff;
-  --color-chip-border-idle: rgba(255, 255, 255, 0.4);
-  --color-focus-ring: #fff;
-  --color-link: #fff;
-  --color-on-primary: #fff;
-  --color-surface-light: #fff;
-  --color-on-light: #000;
-  --color-icon-on-light: #fff;
-  --color-external-link-bg: rgba(119, 0, 255, 0.5);
   --text-meta: clamp(0.75rem, calc(0.7rem + 0.25vw), 0.95rem);
-  --shadow-header: 0 2px 10px rgba(0, 0, 0, 0.3);
+
+  /* Colour primitives — the only raw colour values; every other
+     --color-* token derives from these or is a unique brand colour */
+  --color-white: oklch(100% 0 0);
+  --color-black: oklch(0% 0 0);
+
+  /* Brand colours (unique — no repeats elsewhere) */
+  --color-gradient-start: oklch(64.16% 0.1556 56.81);
+  --color-gradient-end: oklch(38.79% 0.2114 293.45);
+  --color-accent: oklch(52.08% 0.2929 290.98);
+  --color-field-border: oklch(84.52% 0 0);
+
+  /* White-derived */
+  --color-chip-border: var(--color-white);
+  --color-focus-ring: var(--color-white);
+  --color-link: var(--color-white);
+  --color-on-primary: var(--color-white);
+  --color-surface-light: var(--color-white);
+  --color-icon-on-light: var(--color-white);
+  --color-tag-chip: color-mix(in oklab, var(--color-white) 20%, transparent);
+  --color-chip-hover: color-mix(in oklab, var(--color-white) 10%, transparent);
+  --color-chip-hover-strong: color-mix(in oklab, var(--color-white) 30%, transparent);
+  --color-chip-border-idle: color-mix(in oklab, var(--color-white) 40%, transparent);
+
+  /* Black-derived */
+  --color-icon-plate: var(--color-black);
+  --color-social-icon-fill: var(--color-black);
+  --color-on-light: var(--color-black);
+  --color-scrim: color-mix(in oklab, var(--color-black) 85%, transparent);
+  --color-card-surface: color-mix(in oklab, var(--color-black) 20%, transparent);
+
+  /* Accent-derived */
+  --color-external-link-bg: color-mix(in oklab, var(--color-accent) 50%, transparent);
+
+  --shadow-header: 0 2px 10px color-mix(in oklab, var(--color-black) 30%, transparent);
 }
 
 @custom-variant menu-open (&:is(#menu-toggle:checked ~ ul, #menu-toggle:checked ~ ul *));
@@ -113,7 +124,7 @@ body > *:not(dialog) {
   main#homepage > section,
   main#tag > section {
     background: var(--color-gradient-start);
-    background: linear-gradient(180deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%);
+    background: linear-gradient(in srgb, 180deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%);
     @apply text-on-primary;
   }
 

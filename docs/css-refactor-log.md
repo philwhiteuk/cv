@@ -32,6 +32,7 @@ category. One component per commit so each pass is independently revertible.
 | Intentionally-custom one-offs | ♻️ relocated + flagged | `.reveal` + `@keyframes reveal` (scroll-driven `view()` animation) and `body > *:not(dialog)` (body-level flex layout) moved out of layers into main.css as unlayered rules — no utility/theme equivalents, verified no markup utility conflicts. Kept in their layers on purpose (utilities must keep winning): `background-attachment: fixed` on `.primary`/`.secondary` (components layer — `bg-scroll`/`bg-fixed` utilities override it), `a[href^="https:"]:hover::after` arrow (base layer — footer's `hover:after:content-none` overrides it). All four annotated `/* Intentionally custom */` in source |
 | Theme blocks → `@layer components` `@apply` | ♻️ migrated | `.primary`/`.secondary`/`dialog` + descendant rules (a/button/svg/em) rewritten with `@apply` against theme tokens (`text-on-primary`, `bg-accent`, `bg-surface-light`, `text-on-light`, `fill-icon-on-light`); selector grouping kept intact. Gradient stays a raw `linear-gradient(180deg, …)` declaration — `@apply bg-gradient-to-b` would emit `in oklab` interpolation and shift the orange→purple mid-tones; `background: none` shorthand on `.secondary` kept raw (resets bg-image before `bg-surface-light`). Only compiled diff: `background` → `background-color` longhand on the two button rules (no bg-image on buttons to reset) |
 | Element defaults → `@layer base` | ♻️ migrated | `css/base.css` import flipped `layer(components)` → `layer(base)`; trimmed to pure element defaults (html, a/button, headings, `em`, `main > section/aside` scroll) referencing `@theme` tokens (`var(--font-sans)`, `--text-fluid-*`, `--spacing-fluid-*`). Duplicate `button { color }` collapsed into `a, button`. Non-element rules (`.primary`/`.secondary` groups, `.reveal`, `body > *:not(dialog)`) moved into `main.css` components layer verbatim — cascade-identical (base < components). Verified in compiled output: base rules after Preflight (so `line-height: 1.5em` still beats its unitless `1.5`), utilities after base (markup utilities still win) |
+| Colours → OKLCH primitives | ♻️ migrated | All `@theme` colour values standardised to OKLCH. New primitives `--color-white`/`--color-black` (the only raw colour values) hold the repeated `#fff`/`#000`; every other token derives from a primitive or is a unique brand colour: solid tokens via `var()`, alpha tokens via `color-mix(in oklab, … , transparent)` (Tailwind v4 compiles these to the original hex fallback + `@supports` progressive enhancement — resolved colours byte-identical, no visual change). Brand colours converted with verified 2-decimal OKLCH values that round-trip to the exact sRGB originals. Both brand gradients (`.primary` rule, interests `img` utility) pinned `linear-gradient(in srgb, …)` — OKLCH endpoints would otherwise flip CSS Color 4 smart-default interpolation to OKLab and shift the orange→purple mid-tones |
 | Design tokens → `@theme` | ♻️ migrated | All `:root` design tokens moved into the `@theme` block with Tailwind namespaces, renamed atomically across all 8 usage files: `--fluid-step-N` → `--text-fluid-N`, `--fluid-gutter` → `--spacing-fluid` (`-sm/-lg/-xs/-2xs` follow), `--fluid-row-gap-*` → `--spacing-fluid-row-*`, `'Poppins'` literal → `--font-sans` (now drives Preflight's own `html` font rule via `--default-font-family`), plus `--text-base`/`--tracking-base`/`--leading-base` overrides. Utilities now auto-generate: `text-fluid-0…6`, `p-/m-/gap-fluid*`, `font-sans`, `tracking-base`, `leading-base`, `text-base`. Remaining `:root` vars are one-off layout metrics (`--tag-cloud-gap`, `--home-*`, `--from-x`), not design tokens. Dead Sass-era `_sass/default.scss` deleted (duplicated tokens; imports only files removed in e4a99d7; nothing referenced it) |
 | Preflight-duplicate reset rules (`css/base.css`) | 🗑 removed | Preflight has been live since the Tailwind build (e4a99d7) — deleted the hand-rolled duplicates it was masking: `* { margin/padding/list-style }`, `a, button` background/border/font-inherit/text-decoration resets, `input, textarea` font reset. Deltas kept (Preflight doesn't cover them): `a, button { color/cursor/display }`, `button { padding }`, `html { line-height: 1.5em }` (unitless `1.5` would recompute per element). Also dropped redundant `box-border` (`.wrapper`), `border-0` (dialog markup) — Preflight box-sizes and zeroes borders. `_sass/default.scss` flagged dead (imports `_sass/theme/_*.scss` deleted in e4a99d7; site loads only the Tailwind-built `assets/css/main.css`) |
 
@@ -44,30 +45,31 @@ variables elsewhere; do not name them after appearance or value.
 
 | Variable | Value | Role |
 |---|---|---|
-| `--color-gradient-start` | `#d16f00` | Brand gradient start (primary backgrounds, interests icon fill, line-break gradients) |
-| `--color-gradient-end` | `#5105a7` | Brand gradient end |
+| `--color-white` | `oklch(100% 0 0)` | White primitive — every solid-white token derives from it |
+| `--color-black` | `oklch(0% 0 0)` | Black primitive — every solid-black token + black alpha mixes derive from it |
+| `--color-gradient-start` | `oklch(64.16% 0.1556 56.81)` | Brand gradient start (primary backgrounds, interests icon fill) |
+| `--color-gradient-end` | `oklch(38.79% 0.2114 293.45)` | Brand gradient end |
 | `--text-interest-term` | `clamp(1em, calc(0.95em + 0.25vw), 1.2em)` | Interests `dt` term size (`text-interest-term` utility) |
-| `--color-accent` | `#7700ff` | Accent border/links (header border-top; base/tag still hard-coded — theme-block pass) |
-| `--shadow-header` | `0 2px 10px rgba(0, 0, 0, 0.3)` | Header drop shadow (`shadow-header` utility) |
-| `--color-field-border` | `#ccc` | Dialog form input/textarea border |
-| `--color-scrim` | `rgba(0, 0, 0, 0.85)` | Dialog backdrop dim layer (`bg-scrim` utility) |
-| `--color-icon-plate` | `#fff` | Close-icon backing plate |
-| `--color-social-icon-fill` | `#000` | Footer social icon SVG fill (was built-in `fill-black`) |
-| `--color-card-surface` | `rgba(0, 0, 0, 0.2)` | Project card translucent background (`bg-card-surface` utility) |
-| `--color-tag-chip` | `rgba(255, 255, 255, 0.2)` | Project tag chips + active filter chips (`bg-tag-chip` utility) |
+| `--color-accent` | `oklch(52.08% 0.2929 290.98)` | Accent border/buttons (header border-top, theme-block buttons) |
+| `--shadow-header` | `0 2px 10px color-mix(in oklab, var(--color-black) 30%, transparent)` | Header drop shadow (`shadow-header` utility) |
+| `--color-field-border` | `oklch(84.52% 0 0)` | Dialog form input/textarea border |
+| `--color-scrim` | `color-mix(in oklab, var(--color-black) 85%, transparent)` | Dialog backdrop dim layer (`bg-scrim` utility) |
+| `--color-icon-plate` | `var(--color-black)` | Close-icon backing plate |
+| `--color-social-icon-fill` | `var(--color-black)` | Footer social icon SVG fill (was built-in `fill-black`) |
+| `--color-card-surface` | `color-mix(in oklab, var(--color-black) 20%, transparent)` | Project card translucent background (`bg-card-surface` utility) |
+| `--color-tag-chip` | `color-mix(in oklab, var(--color-white) 20%, transparent)` | Project tag chips + active filter chips (`bg-tag-chip` utility) |
 | `--text-meta` | `clamp(0.75rem, calc(0.7rem + 0.25vw), 0.95rem)` | Small meta text: external links, tag chips, filter chips (`text-meta` utility) |
-| `--color-chip-hover` | `rgba(255, 255, 255, 0.1)` | Tag-cloud chip hover background |
-| `--color-chip-hover-strong` | `rgba(255, 255, 255, 0.3)` | Chip hover-while-active + reset-button hover background |
-| `--color-chip-border` | `#fff` | Active chip / reset-button border |
-| `--color-chip-border-idle` | `rgba(255, 255, 255, 0.4)` | Reset-button idle border |
-| `--color-focus-ring` | `#fff` | Keyboard focus outline (chips, reset button) |
-| `--tag-cloud-gap` | `calc(var(--fluid-gutter-sm) * 0.3)` | Tag-cloud gap (aside + filters, was duplicated inline) |
-| `--color-link` | `#fff` | Default `a`/`button` text colour (base globals) |
-| `--color-on-primary` | `#fff` | Text on gradient/primary surfaces (theme blocks, odd scroll-hint divider) |
-| `--color-surface-light` | `#fff` | Light surface background (`.secondary`, dialog, interests) |
-| `--color-on-light` | `#000` | Text on light surfaces (`.secondary` descendants, even scroll-hint divider uses `--color-accent`) |
-| `--color-icon-on-light` | `#fff` | SVG icon fill on light surfaces (`.secondary` descendants: footer social icons) |
-| `--color-external-link-bg` | `rgba(119, 0, 255, 0.5)` | External-link (`a[href^="https:"]`) background tint |
+| `--color-chip-hover` | `color-mix(in oklab, var(--color-white) 10%, transparent)` | Tag-cloud chip hover background |
+| `--color-chip-hover-strong` | `color-mix(in oklab, var(--color-white) 30%, transparent)` | Chip hover-while-active + reset-button hover background |
+| `--color-chip-border` | `var(--color-white)` | Active chip / reset-button border |
+| `--color-chip-border-idle` | `color-mix(in oklab, var(--color-white) 40%, transparent)` | Reset-button idle border |
+| `--color-focus-ring` | `var(--color-white)` | Keyboard focus outline (chips, reset button) |
+| `--color-link` | `var(--color-white)` | Default `a`/`button` text colour (base globals) |
+| `--color-on-primary` | `var(--color-white)` | Text on gradient/primary surfaces (theme blocks, odd scroll-hint divider) |
+| `--color-surface-light` | `var(--color-white)` | Light surface background (`.secondary`, dialog, interests) |
+| `--color-on-light` | `var(--color-black)` | Text on light surfaces (`.secondary` descendants, even scroll-hint divider uses `--color-accent`) |
+| `--color-icon-on-light` | `var(--color-white)` | SVG icon fill on light surfaces (`.secondary` descendants: footer social icons) |
+| `--color-external-link-bg` | `color-mix(in oklab, var(--color-accent) 50%, transparent)` | External-link (`a[href^="https:"]`) background tint |
 
 ### `:root`
 

@@ -14,7 +14,7 @@ layout: default
       {% assign interests = site.interests | sort: 'order' %}
       {% for interest in interests %}
       <div aria-label="{{ interest.title | slugify }}" class="row flex flex-row reveal">
-          <img src='{{ interest.image | relative_url }}' alt='{{ interest.title }}' class='mx-(--spacing-fluid-sm) size-[clamp(3em,6vw,6em)] rounded-full object-cover bg-[linear-gradient(180deg,var(--color-gradient-start)_0%,var(--color-gradient-end)_100%)]' />
+          <img src='{{ interest.image | relative_url }}' alt='{{ interest.title }}' class='mx-(--spacing-fluid-sm) size-[clamp(3em,6vw,6em)] rounded-full object-cover bg-[linear-gradient(in_srgb,180deg,var(--color-gradient-start)_0%,var(--color-gradient-end)_100%)]' />
           <div class="column flex flex-1 flex-col gap-(--spacing-fluid-row-xs)">
               <dt class="text-interest-term font-semibold mb-(--spacing-fluid-xs)">{{ interest.title }}</dt>
               <dd>{{ interest.content }}</dd>
