@@ -124,6 +124,7 @@ body > *:not(dialog) {
   main#homepage > section,
   main#tag > section {
     background: var(--color-gradient-start);
+    background: linear-gradient(180deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%);
     background: linear-gradient(in srgb, 180deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%);
     @apply text-on-primary;
   }
