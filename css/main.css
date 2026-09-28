@@ -225,7 +225,7 @@ body > *:not(dialog) {
     @apply mb-(--home-section-overlap);
   }
   main#homepage > section:not(:last-of-type)::after {
-    @apply content-[''] bottom-[6vh] h-0 w-[clamp(5rem,15vw,10rem)] border opacity-50 animate-[bounce_2s_infinite];
+    @apply absolute content-[''] bottom-[10vh] h-0 w-[clamp(5rem,15vw,10rem)] border opacity-50 animate-[bounce_2s_infinite];
   }
   main#homepage > section:not(:last-of-type):nth-of-type(odd)::after {
     @apply border-(--color-on-primary);
