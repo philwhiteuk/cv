@@ -188,6 +188,7 @@ body > *:not(dialog) {
      chip/ring/link tokens so white-derived defaults stay visible */
   main#default > .secondary,
   main#homepage section#recent-projects,
+  main#homepage section#interests,
   main#tag > section {
     background:
       repeating-linear-gradient(
