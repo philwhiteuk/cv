@@ -87,7 +87,7 @@
   --color-social-icon-fill: var(--color-black);
   --color-on-light: var(--color-black);
   --color-scrim: color-mix(in oklab, var(--color-black) 85%, transparent);
-  --color-card-surface: color-mix(in oklab, var(--color-black) 20%, transparent);
+  --color-card-surface: oklch(97.8% 0 0);
 
   /* Accent-derived */
   --color-external-link-bg: color-mix(in oklab, var(--color-accent) 50%, transparent);
@@ -209,6 +209,15 @@ body > *:not(dialog) {
   .tag-cloud__item--sm a { @apply text-[clamp(0.75em,calc(0.7em+0.25vw),0.8em)]; }
   .project {
     @apply transition-all duration-300 ease-[ease];
+    background:
+      repeating-linear-gradient(
+        -45deg,
+        transparent 0,
+        transparent 0.4em,
+        color-mix(in oklab, var(--color-black) 4%, transparent) 0.4em,
+        color-mix(in oklab, var(--color-black) 4%, transparent) 0.45em
+      ),
+      var(--color-card-surface);
   }
   aside h2 {
     @apply bg-no-repeat mb-[0.8em] mt-[0.8em] py-[1em] pl-[2.5em] pr-0 bg-size-[50px_50px];
