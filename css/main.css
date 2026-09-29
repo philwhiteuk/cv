@@ -197,6 +197,7 @@ body > *:not(dialog) {
         color-mix(in oklab, var(--color-black) 4%, transparent) 0.45em
       ),
       var(--color-surface-light);
+    background-attachment: fixed;
     --color-chip-border: var(--color-black);
     --color-focus-ring: var(--color-black);
     --color-link: var(--color-black);
