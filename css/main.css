@@ -121,10 +121,16 @@ body > *:not(dialog) {
 
 @layer components {
   .primary,
-  main#homepage > section,
-  main#tag > section {
+  main#homepage > section {
     background: var(--color-gradient-start);
     @apply text-on-primary;
+  }
+
+  main#homepage > section#interests,
+  main#homepage section#recent-projects,
+  main#tag > section {
+    background: none;
+    @apply bg-surface-light text-on-light;
   }
 
   main#homepage > section#welcome {
@@ -143,24 +149,18 @@ body > *:not(dialog) {
   }
 
   .primary em,
-  main#homepage > section em,
-  main#tag > section em {
+  main#homepage > section em {
     @apply text-on-primary;
   }
 
   .secondary,
-  dialog,
-  main#homepage section#interests,
-  main#homepage section#recent-projects {
+  dialog {
     background: none;
     @apply bg-surface-light text-on-light;
   }
 
-  .secondary a {
-    @apply text-on-light;
-  }
-
-  main#homepage section#recent-projects a {
+  .secondary a,
+  main#tag > section a {
     @apply text-on-light;
   }
 
@@ -187,7 +187,8 @@ body > *:not(dialog) {
   /* Light surfaces with hatched backgrounds need dark-derived
      chip/ring/link tokens so white-derived defaults stay visible */
   main#default > .secondary,
-  main#homepage section#recent-projects {
+  main#homepage section#recent-projects,
+  main#tag > section {
     background:
       repeating-linear-gradient(
         -45deg,
