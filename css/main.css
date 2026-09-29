@@ -209,6 +209,11 @@ body > *:not(dialog) {
     --color-chip-border-idle: color-mix(in oklab, var(--color-black) 40%, transparent);
   }
 
+  #interests img {
+    background: oklch(0% 0 0 / 43%);
+    box-shadow: none;
+    border: 1px solid oklch(0% 0 0 / 38%);
+  }
   .tag-cloud {
     @apply flex w-full flex-wrap justify-evenly gap-(--tag-cloud-gap);
   }
@@ -281,7 +286,7 @@ body > *:not(dialog) {
     @apply flex flex-row flex-wrap justify-between gap-(--spacing-fluid-sm) max-w-[1024px] my-(--spacing-fluid-sm) px-(--spacing-fluid) w-full;
   }
   .flex {
-    @apply flex flex-row flex-wrap gap-y-[calc(var(--spacing-fluid-sm)*2)] gap-x-[calc(var(--spacing-fluid)*1.5)];
+    @apply flex flex-row flex-wrap gap-y-[calc(var(--spacing-fluid-sm)*2)] gap-x-[calc(var(--spacing-fluid)*0.8)];
   }
   @media (max-width: 60rem) {
     .flex {
