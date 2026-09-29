@@ -150,12 +150,17 @@ body > *:not(dialog) {
 
   .secondary,
   dialog,
-  main#homepage section#interests {
+  main#homepage section#interests,
+  main#homepage section#recent-projects {
     background: none;
     @apply bg-surface-light text-on-light;
   }
 
   .secondary a {
+    @apply text-on-light;
+  }
+
+  main#homepage section#recent-projects a {
     @apply text-on-light;
   }
 
@@ -179,9 +184,10 @@ body > *:not(dialog) {
     background-attachment: fixed;
   }
 
-  /* Projects page: secondary surface needs dark-derived chip/ring/link
-     tokens so white-derived defaults stay visible */
-  main#default > .secondary {
+  /* Light surfaces with hatched backgrounds need dark-derived
+     chip/ring/link tokens so white-derived defaults stay visible */
+  main#default > .secondary,
+  main#homepage section#recent-projects {
     background:
       repeating-linear-gradient(
         -45deg,
