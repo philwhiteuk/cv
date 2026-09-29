@@ -88,6 +88,7 @@
   --color-on-light: var(--color-black);
   --color-scrim: color-mix(in oklab, var(--color-black) 85%, transparent);
   --color-card-surface: oklch(97.8% 0 0);
+  --color-hatch-stripe: color-mix(in oklab, var(--color-black) 4%, transparent);
 
   /* Accent-derived */
   --color-external-link-bg: color-mix(in oklab, var(--color-accent) 50%, transparent);
@@ -191,14 +192,13 @@ body > *:not(dialog) {
   main#homepage section#interests,
   main#tag > section {
     background:
-      repeating-linear-gradient(
+      linear-gradient(
         -45deg,
-        transparent 0,
-        transparent 0.4em,
-        color-mix(in oklab, var(--color-black) 4%, transparent) 0.4em,
-        color-mix(in oklab, var(--color-black) 4%, transparent) 0.45em
+        var(--color-hatch-stripe) 25%,
+        transparent 25%
       ),
       var(--color-surface-light);
+    background-size: 8px 8px, 100% 100%;
     background-attachment: fixed;
     --color-chip-border: var(--color-black);
     --color-focus-ring: var(--color-black);
