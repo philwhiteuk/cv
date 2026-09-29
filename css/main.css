@@ -182,6 +182,15 @@ body > *:not(dialog) {
   /* Projects page: secondary surface needs dark-derived chip/ring/link
      tokens so white-derived defaults stay visible */
   main#default > .secondary {
+    background:
+      repeating-linear-gradient(
+        -45deg,
+        transparent 0,
+        transparent 0.4em,
+        color-mix(in oklab, var(--color-black) 4%, transparent) 0.4em,
+        color-mix(in oklab, var(--color-black) 4%, transparent) 0.45em
+      ),
+      var(--color-surface-light);
     --color-chip-border: var(--color-black);
     --color-focus-ring: var(--color-black);
     --color-link: var(--color-black);
@@ -209,15 +218,8 @@ body > *:not(dialog) {
   .tag-cloud__item--sm a { @apply text-[clamp(0.75em,calc(0.7em+0.25vw),0.8em)]; }
   .project {
     @apply transition-all duration-300 ease-[ease];
-    background:
-      repeating-linear-gradient(
-        -45deg,
-        transparent 0,
-        transparent 0.4em,
-        color-mix(in oklab, var(--color-black) 4%, transparent) 0.4em,
-        color-mix(in oklab, var(--color-black) 4%, transparent) 0.45em
-      ),
-      var(--color-card-surface);
+    background: var(--color-card-surface);
+    box-shadow: 0 1px 4px color-mix(in oklab, var(--color-black) 20%, transparent);
   }
   aside h2 {
     @apply bg-no-repeat mb-[0.8em] mt-[0.8em] py-[1em] pl-[2.5em] pr-0 bg-size-[50px_50px];
