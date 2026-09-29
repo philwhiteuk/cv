@@ -48,13 +48,13 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: var(--text-fluid-4);
-  margin: var(--spacing-fluid-sm) 0;
+  margin: var(--spacing-fluid-row-sm) 0;
   white-space: nowrap;
 }
 
 h2 {
   font-size: var(--text-fluid-3);
-  margin: var(--spacing-fluid) 0;
+  margin: var(--spacing-fluid-row) 0;
 }
 
 h3 { font-size: var(--text-fluid-2); }
@@ -63,7 +63,17 @@ h5 { font-size: var(--text-fluid-0); }
 h6 { font-size: var(--text-fluid-0); }
 
 h3, h4, h5, h6 {
-  margin: calc(var(--spacing-fluid-sm) * 0.5) 0;
+  margin: calc(var(--spacing-fluid-row-sm) * 0.5) 0;
+}
+
+/* Intentionally custom — consistent accent-block headings everywhere
+   except the homepage welcome section */
+section:not(#welcome) > :is(h1, h2, h3),
+aside :is(h1, h2, h3),
+dialog :is(h1, h2, h3) {
+  background-color: var(--color-accent);
+  color: var(--color-on-primary);
+  padding: 0.8rem 0.1rem;
 }
 
 em {
