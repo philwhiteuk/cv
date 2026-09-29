@@ -68,7 +68,7 @@ h3, h4, h5, h6 {
 
 /* Intentionally custom — consistent accent-block h2 headings on top-level
    sections (aside and homepage welcome excluded) */
-main > section:not(#welcome) h2,
+main > section:not(#welcome) h2:not(aside h2),
 dialog h2 {
   background-color: var(--color-accent);
   color: var(--color-on-primary);
