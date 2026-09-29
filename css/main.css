@@ -191,15 +191,13 @@ body > *:not(dialog) {
   main#homepage section#recent-projects,
   main#homepage section#interests,
   main#tag > section {
-    background:
-      repeating-linear-gradient(
-        -45deg,
-        transparent 0,
-        transparent 7px,
-        var(--color-hatch-stripe) 7px,
-        var(--color-hatch-stripe) 8px
-      ),
-      var(--color-surface-light);
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent 0,
+      transparent 6px,
+      var(--color-hatch-stripe) 6px,
+      var(--color-hatch-stripe) 7px
+    ), var(--color-surface-light);
     background-attachment: fixed;
     --color-chip-border: var(--color-black);
     --color-focus-ring: var(--color-black);
