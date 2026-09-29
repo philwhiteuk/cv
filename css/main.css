@@ -179,6 +179,18 @@ body > *:not(dialog) {
     background-attachment: fixed;
   }
 
+  /* Projects page: secondary surface needs dark-derived chip/ring/link
+     tokens so white-derived defaults stay visible */
+  main#default > .secondary {
+    --color-chip-border: var(--color-black);
+    --color-focus-ring: var(--color-black);
+    --color-link: var(--color-black);
+    --color-tag-chip: color-mix(in oklab, var(--color-black) 10%, transparent);
+    --color-chip-hover: color-mix(in oklab, var(--color-black) 10%, transparent);
+    --color-chip-hover-strong: color-mix(in oklab, var(--color-black) 20%, transparent);
+    --color-chip-border-idle: color-mix(in oklab, var(--color-black) 40%, transparent);
+  }
+
   .tag-cloud {
     @apply flex w-full flex-wrap justify-evenly gap-(--tag-cloud-gap);
   }
