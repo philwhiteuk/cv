@@ -65,9 +65,9 @@
   --color-black: oklch(0% 0 0);
 
   /* Brand colours (unique — no repeats elsewhere) */
-  --color-gradient-start: oklch(62% 0.055 56.81);
-  --color-gradient-end: oklch(40% 0.06 293.45);
-  --color-accent: oklch(48% 0.08 290.98);
+  --color-gradient-start: oklch(64.16% 0.1556 56.81);
+  --color-gradient-end: oklch(38.79% 0.2114 293.45);
+  --color-accent: oklch(52.08% 0.2929 290.98);
   --color-field-border: oklch(84.52% 0 0);
 
   /* White-derived */
