@@ -8,7 +8,7 @@
 {% endif %}
 <section class="flex column">
     {% for project in projects %}
-    <article class="project column reveal bg-card-surface rounded-lg p-(--spacing-fluid-sm) text-left w-full scroll-mt-[10vh] snap-start snap-always">
+    <article class="project column reveal bg-card-surface rounded-xs p-(--spacing-fluid-sm) text-left w-full scroll-mt-[10vh] snap-start snap-always">
         <h3 class="text-[clamp(1.1rem,calc(1.05rem+0.25vw),1.5rem)] mb-(--spacing-fluid-xs)">{{ project.title }}</h3>
         <span>
         {% if project.role and project.org %}
